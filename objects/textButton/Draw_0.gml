@@ -1,0 +1,10 @@
+if live_call() return live_result;
+
+event_inherited();
+
+draw_set_font(font);
+draw_set_halign(fa_center);
+draw_set_valign(fa_center);
+var c=c_white;
+if image_index c=BLACK_COLOR;
+draw_text_color(x, y+1+image_index, text, c, c, c, c, 1);
