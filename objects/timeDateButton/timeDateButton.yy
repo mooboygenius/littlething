@@ -29,6 +29,7 @@
   "properties": [],
   "overriddenProperties": [
     {"propertyId":{"name":"font","path":"objects/textButton/textButton.yy",},"objectId":{"name":"textButton","path":"objects/textButton/textButton.yy",},"value":"fntSmaller","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"lockSize","path":"objects/button/button.yy",},"objectId":{"name":"button","path":"objects/button/button.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "Objects",
