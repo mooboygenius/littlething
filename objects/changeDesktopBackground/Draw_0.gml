@@ -5,6 +5,8 @@ event_inherited();
 if surface_exists(finalSurf) {
 	surface_set_target(finalSurf);
 	draw_clear_alpha(c_white, 1);
+	var t=current_time/30;
+	draw_sprite_tiled(sprCoolBackground, 0, t, t);
 	if surface_exists(childrenObjectSurf) draw_surface(childrenObjectSurf, 0, 0);
 	draw_set_font(fntSystem);
 	draw_set_halign(fa_center);

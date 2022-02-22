@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"sprWindowBackground","path":"sprites/sprWindowBackground/sprWindowBackground.yy",},"order":15,},
+    {"id":{"name":"sprCoolBackground","path":"sprites/sprCoolBackground/sprCoolBackground.yy",},"order":18,},
     {"id":{"name":"sprDesktopBackground1","path":"sprites/sprDesktopBackground1/sprDesktopBackground1.yy",},"order":7,},
     {"id":{"name":"sprCursorStretchVertical","path":"sprites/sprCursorStretchVertical/sprCursorStretchVertical.yy",},"order":5,},
     {"id":{"name":"GMLive_notOnce","path":"scripts/GMLive_notOnce/GMLive_notOnce.yy",},"order":1,},

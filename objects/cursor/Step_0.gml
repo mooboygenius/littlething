@@ -1,8 +1,16 @@
 if live_call() return live_result;
 event_inherited();
 var l=.5;
-x=lerp(x, getMouseX(), l);
-y=lerp(y, getMouseY(), l);
+var gx=(window_mouse_get_x()-window_get_x())/WINDOW_SCALE,
+gy=(window_mouse_get_y()-window_get_y())/WINDOW_SCALE;
+if os_browser==browser_not_a_browser {
+	gx=getMouseX();
+	gy=getMouseY();
+}
+x=lerp(x, gx, l);
+y=lerp(y, gy, l);
+
+show_debug_message(concat(x, ", ", y, "  ", mouse_x, ", ", mouse_y));
 var lx=(previousX-x)*1;
 angle=lerp(angle, lx, .25);
 previousX=x;
