@@ -2,19 +2,16 @@ if live_call() return live_result;
 
 event_inherited();
 
-var w=200,
-h=ceil(200/16*9);
+var w=180,
+h=ceil(w/4*3);
 setWindowSize(self, 0, 0, w, h);
 centerWindow(self);
+refreshPortSize();
 
-var inst=instance_create_depth(150, 20, depth-1, promptButton);
-var inst2=instance_create_depth(100, 40, depth-1, promptButton);
-var inst3=instance_create_depth(50, 80, depth-1, windowCloseButton);
-with inst {
-	text="Change desktop BG";
+var cx=portWidth div 2,
+cy=portHeight div 2+40;
+uploadButton=instance_create_depth(cx, cy, depth-1, promptButton);
+with uploadButton {
+	text="Select BG";
 }
-with inst2 text="uhhh";
-ds_list_add(children, inst);
-ds_list_add(children, inst2);
-ds_list_add(children, inst3);
-lockSize=false;
+ds_list_add(children, uploadButton);

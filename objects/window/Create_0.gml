@@ -51,5 +51,7 @@ finalSurf=-1;
 
 portWidth=windowWidth;
 portHeight=windowHeight;
+oldPortWidth=portWidth;
+oldPortHeight=portHeight;
 
 children=ds_list_create();

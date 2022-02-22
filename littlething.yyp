@@ -43,6 +43,7 @@
     {"id":{"name":"scrStrings","path":"scripts/scrStrings/scrStrings.yy",},"order":1,},
     {"id":{"name":"GMLive_roomLoader","path":"scripts/GMLive_roomLoader/GMLive_roomLoader.yy",},"order":2,},
     {"id":{"name":"scrEffects","path":"scripts/scrEffects/scrEffects.yy",},"order":3,},
+    {"id":{"name":"sprShrimpDance","path":"sprites/sprShrimpDance/sprShrimpDance.yy",},"order":17,},
     {"id":{"name":"GMLive_node","path":"scripts/GMLive_node/GMLive_node.yy",},"order":2,},
     {"id":{"name":"taskbar","path":"objects/taskbar/taskbar.yy",},"order":2,},
     {"id":{"name":"scrInput","path":"scripts/scrInput/scrInput.yy",},"order":0,},

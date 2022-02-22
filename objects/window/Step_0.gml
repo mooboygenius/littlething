@@ -125,10 +125,12 @@ border[borders.bottom][1]=[bl, bb-w, br, bb+w];
 portWidth=floor(windowWidth-6);
 portHeight=floor(windowHeight-13);
 
-for (var i=0; i<ds_list_size(children); i++) {
-	with children[| i] {
-		x=other.x+3+xstart;
-		y=other.y+10+ystart;
-		visible=false;
+if ds_exists(children, ds_type_list) {
+	for (var i=0; i<ds_list_size(children); i++) {
+		with children[| i] {
+			x=other.x+3+xstart;
+			y=other.y+10+ystart;
+			visible=false;
+		}
 	}
 }

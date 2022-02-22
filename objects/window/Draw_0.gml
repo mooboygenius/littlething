@@ -9,11 +9,15 @@ portY=floor(by+10);
 
 #region final surface
 if surface_exists(finalSurf) {
-	surface_resize(finalSurf, portWidth, portHeight);
 	draw_surface(finalSurf, portX, portY);
 	surface_set_target(finalSurf);
 	draw_clear_alpha(0, 0);
 	surface_reset_target();
+	if portWidth!=oldPortWidth || portHeight!=oldPortHeight {
+		oldPortWidth=portWidth;
+		oldPortHeight=portHeight;
+		surface_resize(finalSurf, portWidth, portHeight);
+	}
 } else {
 	finalSurf=surface_create(portWidth, portHeight);
 }
@@ -28,9 +32,11 @@ if surface_exists(childrenObjectSurf) {
 	surface_resize(childrenObjectSurf, portWidth, portHeight);
 	surface_set_target(childrenObjectSurf);
 	draw_clear_alpha(0, 0);
-	for (var i=0; i<ds_list_size(children); i++) {
-		with children[| i] {
-			drawScript(xstart, ystart);
+	if ds_exists(children, ds_type_list) {
+		for (var i=0; i<ds_list_size(children); i++) {
+			with children[| i] {
+				drawScript(xstart, ystart);
+			}
 		}
 	}
 	surface_reset_target();

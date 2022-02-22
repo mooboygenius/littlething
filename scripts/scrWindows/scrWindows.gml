@@ -21,3 +21,8 @@ function setWindowSize(instance, left, top, width, height) {
 		windowHeight=height;
 	}
 }
+
+function refreshPortSize() {
+	portWidth=floor(windowWidth-6);
+	portHeight=floor(windowHeight-13);
+}
