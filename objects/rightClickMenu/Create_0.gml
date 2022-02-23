@@ -42,3 +42,5 @@ mouseIsInMenu=false;
 
 x=floor(x);
 y=floor(y);
+
+life=0;

@@ -1,6 +1,9 @@
 if live_call() return live_result;
 
 event_inherited();
+
+show_debug_message("guh");
+
 enum menuState {appear, idle, close}
 switch state {
 	case menuState.appear:
@@ -14,7 +17,8 @@ switch state {
 		waveIntensity=lerp(waveIntensity, 0, .1);
 		ditherIndex=max(0, ditherIndex-.3);
 		
-		if (input(mb_left, PRESS) || input(mb_right, PRESS)) && !mouseIsInMenu{
+		if (input(mb_left, PRESS) || input(mb_right, PRESS)) && !mouseIsInMenu && life>1 {
+			show_debug_message("fark");
 			grace=max(grace, 5);
 			state=menuState.close;
 		}
@@ -32,3 +36,5 @@ switch state {
 }
 
 mouseIsInMenu=false;
+
+life++;

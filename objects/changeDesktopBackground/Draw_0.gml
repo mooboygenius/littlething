@@ -22,6 +22,7 @@ if surface_exists(finalSurf) {
 	descx=portWidth div 2-string_width(desc) div 2-24,
 	descy=56+wave(-2, 2, 2);
 	draw_text(descx, descy, desc);
+	draw_set_color(c_white);
 	draw_sprite(sprShrimpDance, current_time/100, portWidth div 2+56, 60+wave(-2, 2, 2, .5));
 	surface_reset_target();
 } else {

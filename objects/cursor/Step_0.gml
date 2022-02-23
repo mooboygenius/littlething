@@ -10,12 +10,13 @@ if os_browser==browser_not_a_browser {
 x=lerp(x, gx, l);
 y=lerp(y, gy, l);
 
-show_debug_message(concat(x, ", ", y, "  ", mouse_x, ", ", mouse_y));
+//show_debug_message(concat(x, ", ", y, "  ", mouse_x, ", ", mouse_y));
 var lx=(previousX-x)*1;
 angle=lerp(angle, lx, .25);
 previousX=x;
 
 if input(mb_right, PRESS) {
+	show_debug_message("right clicked");
 	with rightClickMenu {
 		grace=max(grace, 5);
 		state=menuState.close;

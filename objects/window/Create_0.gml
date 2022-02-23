@@ -48,6 +48,7 @@ originalBottom=border[borders.bottom][0];
 backgroundSurface=-1;
 childrenObjectSurf=-1;
 finalSurf=-1;
+storeFinalSurf=-1;
 
 portWidth=windowWidth;
 portHeight=windowHeight;

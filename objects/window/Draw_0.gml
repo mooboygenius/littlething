@@ -1,5 +1,6 @@
 if live_call() return live_result;
 
+
 #region variable setup
 var bx=border[borders.left][0],
 by=border[borders.top][0],
@@ -8,16 +9,29 @@ portY=floor(by+10);
 #endregion
 
 #region final surface
+if !surface_exists(storeFinalSurf) {
+	storeFinalSurf=surface_create(portWidth, portHeight);
+}
+
 if surface_exists(finalSurf) {
-	draw_surface(finalSurf, portX, portY);
+	var surfToDraw=finalSurf;
+	if surface_exists(storeFinalSurf) {
+		if portWidth!=oldPortWidth || portHeight!=oldPortHeight {
+			oldPortWidth=portWidth;
+			oldPortHeight=portHeight;
+			surface_resize(finalSurf, portWidth, portHeight);
+			surfToDraw=storeFinalSurf;
+		} else {
+			if surface_get_width(storeFinalSurf)!=portWidth || surface_get_height(storeFinalSurf)!=portHeight {
+					surface_resize(storeFinalSurf, portWidth, portHeight);
+			}
+			surface_copy(storeFinalSurf, 0, 0, finalSurf);
+		}
+	}
+	draw_surface(surfToDraw, portX, portY);
 	surface_set_target(finalSurf);
 	draw_clear_alpha(0, 0);
 	surface_reset_target();
-	if portWidth!=oldPortWidth || portHeight!=oldPortHeight {
-		oldPortWidth=portWidth;
-		oldPortHeight=portHeight;
-		surface_resize(finalSurf, portWidth, portHeight);
-	}
 } else {
 	finalSurf=surface_create(portWidth, portHeight);
 }
