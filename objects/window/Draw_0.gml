@@ -28,7 +28,7 @@ if surface_exists(finalSurf) {
 			surface_copy(storeFinalSurf, 0, 0, finalSurf);
 		}
 	}
-	draw_surface(surfToDraw, portX, portY);
+	draw_surface_stretched(surfToDraw, portX, portY, portWidth, portHeight);
 	surface_set_target(finalSurf);
 	draw_clear_alpha(0, 0);
 	surface_reset_target();
