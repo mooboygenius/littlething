@@ -17,13 +17,13 @@ if surface_exists(finalSurf) {
 	draw_set_color(BLACK_COLOR);
 	draw_text(hx, hy, h);
 	draw_set_font(fntSmaller);
-	var desc=descriptionText,
-	descx=portWidth div 2-string_width(desc) div 2-24,
-	descy=56+wave(-2, 2, 2);
+	var desc="pick from 8 beautiful backgroundz",
+	descx=4,
+	descy=32+wave(-2, 2, 2);
 	draw_text(descx, descy, desc);
 	draw_set_font(fntSystem);
 	draw_set_color(c_white);
-	draw_sprite(image, current_time/100, portWidth div 2+56, 60+wave(-2, 2, 2, .5));
+	draw_sprite(image, current_time/100, portWidth div 2+56, 40+wave(-2, 2, 2, .5));
 	surface_reset_target();
 } else {
 	finalSurf=surface_create(portWidth, portHeight);
