@@ -38,7 +38,7 @@ dragBottom=y;
 
 pullingBorder=-1;
 
-state=0;
+state=windowStates.opening1;
 
 originalRight=border[borders.right][0];
 originalTop=border[borders.top][0];
@@ -49,6 +49,7 @@ backgroundSurface=-1;
 childrenObjectSurf=-1;
 finalSurf=-1;
 storeFinalSurf=-1;
+windowScale=0;
 
 portWidth=windowWidth;
 portHeight=windowHeight;
@@ -56,3 +57,4 @@ oldPortWidth=portWidth;
 oldPortHeight=portHeight;
 
 children=ds_list_create();
+grace=2;

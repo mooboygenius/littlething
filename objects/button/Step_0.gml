@@ -4,12 +4,13 @@ event_inherited();
 switch state {
 	case 0:
 		image_index=getMouseOverSelf();
-		if getHighestInstanceUnderMouse()==id && input(mb_left, RELEASE) {
-			clickFunction();
+		if getHighestInstanceUnderMouse()==id {
+			hoveringOver=true;
+			if input(mb_left, RELEASE) {
+				clickFunction();
+			}
+		} else {
+			hoveringOver=false;
 		}
-	break;
-	
-	case 1:
-		
 	break;
 }

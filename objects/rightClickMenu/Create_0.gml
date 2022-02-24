@@ -10,12 +10,27 @@ createOption=function(label, func=function() {}, drawFunction=function() {}) {
 }
 
 createOption("Change BG", function() {
-	instance_create_depth(0, 0, 0, changeDesktopBackground);
+	with instance_create_depth(0, 0, 0, changeDesktopBackground) {
+		
+	}
 	state=menuState.close;
 	grace=5;
 });
-createOption("Donkey");
-createOption("Diaper man");
+createOption("Make new thing", function() {
+	state=menuState.close;
+	with instance_create_depth(x, y, depth-1, rightClickMenu) {
+		options=-1;
+		createOption("Text doc");
+		createOption("Pretty picture");
+		createOption("Shrimp");
+		draw_set_font(fntSystem);
+		numberOfOptions=array_length(options);
+		lineBreakHeight=14;
+		windowPadHeight=4;
+		windowPadWidth=ceil(windowPadHeight*1.25);
+		windowHeight=windowPadHeight*2+lineBreakHeight*numberOfOptions;
+	}
+});
 
 draw_set_font(fntSystem);
 numberOfOptions=array_length(options);

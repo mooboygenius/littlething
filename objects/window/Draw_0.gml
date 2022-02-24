@@ -1,9 +1,10 @@
 if live_call() return live_result;
 
+if grace>0 setSwapAmountShader(c_white, c_white, 1, 1);
 
 #region variable setup
-var bx=border[borders.left][0],
-by=border[borders.top][0],
+var bx=border[borders.left][0]+(windowWidth-windowWidth*windowScale)/2,
+by=border[borders.top][0]+(windowHeight-windowHeight*windowScale)/2,
 portX=bx+3,
 portY=floor(by+10);
 #endregion
@@ -28,7 +29,7 @@ if surface_exists(finalSurf) {
 			surface_copy(storeFinalSurf, 0, 0, finalSurf);
 		}
 	}
-	draw_surface_stretched(surfToDraw, portX, portY, portWidth, portHeight);
+	draw_surface_stretched(surfToDraw, portX, portY, portWidth*windowScale, portHeight*windowScale);
 	surface_set_target(finalSurf);
 	draw_clear_alpha(0, 0);
 	surface_reset_target();
@@ -38,7 +39,7 @@ if surface_exists(finalSurf) {
 #endregion
 
 #region window frame
-draw_sprite_stretched(sprite_index, 0, bx, by, windowWidth, windowHeight);
+draw_sprite_stretched(sprite_index, 0, bx, by, windowWidth*windowScale, windowHeight*windowScale);
 #endregion
 
 #region children object surface
@@ -79,5 +80,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 var tx=ceil(x+3), ty=ceil(y+1),
 c=BLACK_COLOR;
-draw_text_color(tx, ty, name, c, c, c, c, 1);
+draw_text_transformed_color(tx, ty, name, windowScale, 1, 0, c, c, c, c, 1);
 #endregion
+
+shader_reset();

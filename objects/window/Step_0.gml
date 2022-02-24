@@ -3,12 +3,31 @@ if live_call() return live_result;
 event_inherited();
 
 enum windowStates {
+	opening1=-3,
+	opening2=-2,
 	idle=0,
 	moving=1,
 	resizing=2,
 	close=-5
 }
 switch state {
+	case windowStates.opening1:
+		var t=1.05;
+		windowScale=lerp(windowScale, t, .4);
+		if windowScale>=t-.02 {
+			windowScale=t;
+			state=windowStates.opening2;
+		}
+	break;
+	
+	case windowStates.opening2:
+		windowScale=lerp(windowScale, 1, .3);
+		if windowScale<=1.05 {
+			windowScale=1;
+			state=windowStates.idle;
+		}
+	break;
+	
 	case windowStates.close:
 		instance_destroy();
 	break;
@@ -100,7 +119,7 @@ image_xscale=windowWidth/sprite_get_width(sprite_index);
 image_yscale=windowHeight/sprite_get_height(sprite_index);
 
 var p=6,
-bx=border[borders.right][0]-7,
+bx=lerp(border[borders.left][0], border[borders.right][0]-7, windowScale),
 by=border[borders.top][0]+4;
 for (var i=0; i<array_length(butt); i++) {
 	var inst=butt[i];

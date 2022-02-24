@@ -24,3 +24,5 @@ clickFunction=function() {
 	// @function clickFunction()
 	/* do nothing */
 }
+
+hoveringOver=false;
