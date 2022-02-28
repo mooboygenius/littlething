@@ -24,6 +24,26 @@ if surface_exists(windowSurface) {
 			c1=c_aqua;
 			c2=c_blue;
 		}
+		
+		while bottom>room_height {
+			bottom--;
+			y--;
+		}
+		
+		while top<0 {
+			top++;
+			y++;
+		}
+		
+		while right>room_width {
+			right--;
+			x--;
+		}
+		
+		while left<0 {
+			left++;
+			x++;
+		}
 	
 		//draw_rectangle_color(left, top, right, bottom, c1, c1, c2, c2, false);
 	

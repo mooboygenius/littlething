@@ -49,6 +49,7 @@
     {"id":{"name":"GMLive_node","path":"scripts/GMLive_node/GMLive_node.yy",},"order":2,},
     {"id":{"name":"taskbar","path":"objects/taskbar/taskbar.yy",},"order":2,},
     {"id":{"name":"scrInput","path":"scripts/scrInput/scrInput.yy",},"order":0,},
+    {"id":{"name":"scrMenus","path":"scripts/scrMenus/scrMenus.yy",},"order":6,},
     {"id":{"name":"windowCloseButton","path":"objects/windowCloseButton/windowCloseButton.yy",},"order":11,},
     {"id":{"name":"notepadWindow","path":"objects/notepadWindow/notepadWindow.yy",},"order":16,},
     {"id":{"name":"GMLive_builder","path":"scripts/GMLive_builder/GMLive_builder.yy",},"order":0,},

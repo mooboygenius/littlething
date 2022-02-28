@@ -21,7 +21,21 @@ if input(mb_right, PRESS) {
 		grace=max(grace, 5);
 		state=menuState.close;
 	}
-	instance_create_depth(x, y, depth+1, rightClickMenu);
+	var inst=getHighestInstanceUnderMouse(),
+	a=-1,
+	p=noone;
+	with inst {
+		if is_array(uniqueRightClickMenuOptions) {
+			a=uniqueRightClickMenuOptions;
+			p=self;
+		}
+	}
+	with instance_create_depth(x, y, depth+1, rightClickMenu) {
+		if is_array(a) {
+			setMenuOptions(a);
+			parent=p;
+		}
+	}
 }
 
 if pullHorizontal {

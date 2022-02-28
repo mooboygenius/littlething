@@ -7,12 +7,13 @@ if DEV_MODE && input(vk_f1) {
 	}
 }
 if hoveringOver {
-	draw_sprite_ext(sprDesktopHover, 0, nearestAcceptableX, nearestAcceptableY, 1-squish, 1+squish, 0, c_white, 1);
+	draw_sprite_ext(sprDesktopHover, 0, selectionBoxX, selectionBoxY, 1-squish, 1+squish, 0, c_white, 1);
 }
 
 if visible {
 	var dx=x,
 	dy=y;
 	if hoveringOver dy+=wave(-2, 2, .5);
+	if state==fileState.rename dy+=wave(-1, 1, 2);
 	drawScript(dx, dy);
 }

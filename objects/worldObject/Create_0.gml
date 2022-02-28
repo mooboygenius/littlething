@@ -16,3 +16,5 @@ drawScript=function(x, y) {
 	/// @function drawScript(x, y)
 	defaultDrawScript(x, y);
 }
+
+uniqueRightClickMenuOptions=-1;
