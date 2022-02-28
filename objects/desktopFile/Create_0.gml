@@ -27,7 +27,7 @@ holdTimer=0;
 nearestAcceptableX=x;
 nearestAcceptableY=y;
 
-#macro DESKTOP_FILE_OFFSET_X -8
-#macro DESKTOP_FILE_OFFSET_Y -16
-#macro DESKTOP_FILE_SHIFT_X 32
-#macro DESKTOP_FILE_SHIFT_Y 40
+offsetX=20;
+offsetY=16;
+shiftX=40;
+shiftY=40;

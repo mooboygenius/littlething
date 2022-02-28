@@ -8,8 +8,9 @@ switch state {
 		x=lerp(x, nearestAcceptableX, l);
 		y=lerp(y, nearestAcceptableY, l);
 		if hoveringOver && input(mb_left) {
+			if holdTimer==0 grace=4;
 			holdTimer++;
-			if holdTimer>5 && (previousMouseX!=getMouseX() || previousMouseY!=getMouseY()) {
+			if holdTimer>2 && (previousMouseX!=getMouseX() || previousMouseY!=getMouseY()) {
 				state=100;
 				grace=2;
 			}
@@ -54,9 +55,9 @@ if hoveringOver {
 xScale=lerp(xScale, xsc, .2);
 angle=lerp(angle, ang, .2);
 
-var offx=0,
-offy=0,
-shiftx=32,
-shifty=40;
-nearestAcceptableX=round(x/shiftx)*shiftx+offx;
-nearestAcceptableY=round(y/shifty)*shifty+offy;
+offsetX=20;
+offsetY=16;
+shiftX=40;
+shiftY=40;
+nearestAcceptableX=round((x-offsetX)/shiftX)*shiftX+offsetX;
+nearestAcceptableY=round((y-offsetY)/shiftY)*shiftY+offsetY;

@@ -1,5 +1,11 @@
 if live_call() return live_result;
-
+if DEV_MODE && input(vk_f1) {
+	for (var xx=offsetX; xx<room_width; xx+=shiftX) {
+		for (var yy=offsetY; yy<room_height; yy+=shiftY) {
+			draw_sprite(sprDesktopHover, 0, xx, yy);
+		}
+	}
+}
 if hoveringOver {
 	draw_sprite_ext(sprDesktopHover, 0, nearestAcceptableX, nearestAcceptableY, 1-squish, 1+squish, 0, c_white, 1);
 }

@@ -29,7 +29,8 @@ switch state {
 	break;
 	
 	case windowStates.close:
-		instance_destroy();
+		windowScale-=.2;
+		if windowScale<=0 instance_destroy();
 	break;
 	
 	case windowStates.idle:
@@ -126,6 +127,8 @@ for (var i=0; i<array_length(butt); i++) {
 	with inst {
 		x=bx;
 		y=by;
+		image_xscale=other.windowScale;
+		image_yscale=other.windowScale;
 	}
 	bx-=p;
 }
