@@ -19,9 +19,11 @@
     {"id":{"name":"GMLive_vm","path":"scripts/GMLive_vm/GMLive_vm.yy",},"order":5,},
     {"id":{"name":"sprRightClickMenu","path":"sprites/sprRightClickMenu/sprRightClickMenu.yy",},"order":8,},
     {"id":{"name":"timeDateButton","path":"objects/timeDateButton/timeDateButton.yy",},"order":7,},
+    {"id":{"name":"scrFiles","path":"scripts/scrFiles/scrFiles.yy",},"order":7,},
     {"id":{"name":"windowButton","path":"objects/windowButton/windowButton.yy",},"order":10,},
     {"id":{"name":"GMLive_parser","path":"scripts/GMLive_parser/GMLive_parser.yy",},"order":4,},
     {"id":{"name":"game","path":"objects/game/game.yy",},"order":0,},
+    {"id":{"name":"sprNotepad","path":"sprites/sprNotepad/sprNotepad.yy",},"order":0,},
     {"id":{"name":"GMLive_http","path":"scripts/GMLive_http/GMLive_http.yy",},"order":0,},
     {"id":{"name":"sprRightClickMenuSelection","path":"sprites/sprRightClickMenuSelection/sprRightClickMenuSelection.yy",},"order":9,},
     {"id":{"name":"fntSystem","path":"fonts/fntSystem/fntSystem.yy",},"order":0,},
@@ -78,6 +80,7 @@
     {"id":{"name":"sprCursor","path":"sprites/sprCursor/sprCursor.yy",},"order":3,},
     {"id":{"name":"shWave","path":"shaders/shWave/shWave.yy",},"order":5,},
     {"id":{"name":"fntSmaller","path":"fonts/fntSmaller/fntSmaller.yy",},"order":1,},
+    {"id":{"name":"textDocument","path":"objects/textDocument/textDocument.yy",},"order":18,},
     {"id":{"name":"preload","path":"rooms/preload/preload.yy",},"order":0,},
   ],
   "Options": [
@@ -127,6 +130,7 @@
     {"folderPath":"folders/Extensions/GMLive/Internal/Misc.yy","order":2,"resourceVersion":"1.0","name":"Misc","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Extensions/GMLive/Internal/Runtime.yy","order":3,"resourceVersion":"1.0","name":"Runtime","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Extensions/GMLive/Public.yy","order":2,"resourceVersion":"1.0","name":"Public","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Sprites/notepad.yy","order":21,"resourceVersion":"1.0","name":"notepad","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

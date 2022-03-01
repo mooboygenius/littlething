@@ -88,7 +88,7 @@ switch state {
 		yScale+=r;
 		if xScale>1.4 {
 			state=fileState.disappear+1;
-			grace=10;
+			grace=1;
 		}
 	break;
 	
@@ -120,13 +120,10 @@ if state<fileState.disappear {
 		ang=wave(-1, 1, .5)*5;
 	}
 	xScale=lerp(xScale, xsc, .2);
+	yScale=lerp(yScale, 1, .2);
 	angle=lerp(angle, ang, .2);
 }
 
-offsetX=20;
-offsetY=16;
-shiftX=40;
-shiftY=40;
 nearestAcceptableX=round((x-offsetX)/shiftX)*shiftX+offsetX;
 nearestAcceptableY=round((y-offsetY)/shiftY)*shiftY+offsetY;
 var l=.4;
