@@ -10,6 +10,7 @@ enum windowStates {
 	resizing=2,
 	close=-5
 }
+
 switch state {
 	case windowStates.opening1:
 		var t=1.05;
@@ -34,7 +35,7 @@ switch state {
 	break;
 	
 	case windowStates.idle:
-		if !lockPosition && getMouseInRectangle(dragLeft, dragTop, dragRight, dragBottom) && getHighestInstanceUnderMouse()==id && input(mb_left) state=1;
+		if !lockPosition && getMouseInRectangle(dragLeft, dragTop, dragRight, dragBottom) && getHighestInstanceUnderMouse()==id && input(mb_left, PRESS) state=windowStates.moving;
 		
 		for (var i=0; i<array_length(border); i++) {
 			var a=[0, 0, 0, 0];
@@ -104,6 +105,26 @@ switch state {
 	break;
 }
 
+// keep borders contained
+while border[borders.right][0]>room_width {
+	border[borders.right][0]--;
+	border[borders.left][0]--;
+}
+
+while border[borders.left][0]<0 {
+	border[borders.right][0]++;
+	border[borders.left][0]++;
+}
+
+while border[borders.bottom][0]>room_height {
+	border[borders.top][0]--;
+	border[borders.bottom][0]--;
+}
+
+while border[borders.top][0]<0 {
+	border[borders.top][0]++;
+	border[borders.bottom][0]++;
+}
 
 dragLeft=border[borders.left][0]+1;
 dragTop=border[borders.top][0]+1;
@@ -122,15 +143,19 @@ image_yscale=windowHeight/sprite_get_height(sprite_index);
 var p=6,
 bx=lerp(border[borders.left][0], border[borders.right][0]-7, windowScale),
 by=border[borders.top][0]+4;
-for (var i=0; i<array_length(butt); i++) {
-	var inst=butt[i];
-	with inst {
-		x=bx;
-		y=by;
-		image_xscale=other.windowScale;
-		image_yscale=other.windowScale;
+
+if hasButtons {
+	for (var i=0; i<array_length(butt); i++) {
+		var inst=butt[i];
+		with inst {
+			x=bx;
+			y=by;
+			image_xscale=other.windowScale;
+			image_yscale=other.windowScale;
+			depth=other.depth-1;
+		}
+		bx-=p;
 	}
-	bx-=p;
 }
 
 var w=4,
@@ -153,6 +178,16 @@ if ds_exists(children, ds_type_list) {
 			x=other.x+3+xstart;
 			y=other.y+10+ystart;
 			visible=false;
+			depth=other.depth-1;
 		}
 	}
+}
+
+if getHighestInstanceUnderMouse()==id && input(mb_left, PRESS) {
+	show_debug_message("gaww");
+	var d=depth;
+	with window {
+		if depth<d d=depth;
+	}
+	if d!=depth depth=d-10;
 }

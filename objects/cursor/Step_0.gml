@@ -51,3 +51,9 @@ if pullHorizontal {
 hoveringOver=false;
 pullHorizontal=false;
 pullVertical=false;
+
+var d=depth;
+with worldObject {
+	if depth<d d=depth-10;
+}
+depth=d;

@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprWindowFrame",
-    "path": "sprites/sprWindowFrame/sprWindowFrame.yy",
+    "name": "sprFilledWindowFrame",
+    "path": "sprites/sprFilledWindowFrame/sprFilledWindowFrame.yy",
   },
   "solid": false,
   "visible": true,
@@ -33,8 +33,11 @@
     {"varType":2,"value":"test window","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"name","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":3,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"lockSize","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":3,"value":"0","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"lockPosition","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":3,"value":"True","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"hasButtons","tags":[],"resourceType":"GMObjectProperty",},
   ],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"hasShadow","path":"objects/worldObject/worldObject.yy",},"objectId":{"name":"worldObject","path":"objects/worldObject/worldObject.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
     "name": "Objects",
     "path": "folders/Objects.yy",

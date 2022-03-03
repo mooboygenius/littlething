@@ -15,14 +15,17 @@ switch state {
 		var l=.8;
 		x=lerp(x, nearestAcceptableX, l);
 		y=lerp(y, nearestAcceptableY, l);
+		
+		if hoveringOver && input(mb_left, RELEASE) {
+			state=fileState.open;
+			grace=5;
+			squish=-1;
+			show_debug_message("opening file");
+		}
+		
 		if hoveringOver && input(mb_left) {
 			if holdTimer==0 grace=4;
 			holdTimer++;
-			if input(mb_left, RELEASE) {
-				state=10;
-				grace=5;
-				squish=-1;
-			}
 			if holdTimer>2 && (previousMouseX!=getMouseX() || previousMouseY!=getMouseY()) {
 				state=100;
 				grace=2;
@@ -33,7 +36,14 @@ switch state {
 	break;
 	
 	case fileState.open:
-		
+		if instance_number(window)<MAXIMUM_WINDOWS {
+			childWindow=instance_create_depth(x, y, depth-10, windowToOpen);
+		} else {
+			if !instance_exists(tooManyWindows) {
+				instance_create_depth(x, y, depth-10, tooManyWindows);
+			}
+		}
+		state=fileState.idle;
 	break;
 	
 	case fileState.move:

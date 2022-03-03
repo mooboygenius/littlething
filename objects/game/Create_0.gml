@@ -8,7 +8,8 @@ if live_call() return live_result;
 #macro WINDOW_SCALE 3
 #macro WINDOW_WIDTH GAME_WIDTH*WINDOW_SCALE
 #macro WINDOW_HEIGHT GAME_HEIGHT*WINDOW_SCALE
-#macro BLACK_COLOR $FF211F1B
+#macro BLACK_COLOR $211F1B
+#macro WINDOW_COLOR $C2A7A3
 
 view_camera[0]=camera_create_view(0, 0, GAME_WIDTH, GAME_HEIGHT);
 view_enabled=true;
@@ -22,3 +23,5 @@ room_goto(START_ROOM);
 globalvar previousMouseX, previousMouseY;
 previousMouseX=getMouseX();
 previousMouseY=getMouseY();
+
+#macro MAXIMUM_WINDOWS 4

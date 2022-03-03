@@ -9,6 +9,10 @@ portX=bx+3,
 portY=floor(by+10);
 #endregion
 
+#region window frame
+drawScript(bx, by);
+#endregion
+
 #region final surface
 if !surface_exists(storeFinalSurf) {
 	storeFinalSurf=surface_create(portWidth, portHeight);
@@ -36,10 +40,6 @@ if surface_exists(finalSurf) {
 } else {
 	finalSurf=surface_create(portWidth, portHeight);
 }
-#endregion
-
-#region window frame
-draw_sprite_stretched(sprite_index, 0, bx, by, windowWidth*windowScale, windowHeight*windowScale);
 #endregion
 
 #region children object surface

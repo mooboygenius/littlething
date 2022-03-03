@@ -6,3 +6,7 @@ function concat() {
 	}
 	return str;
 }
+
+function characterIsReal(str) {
+	return string_pos(str, "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890-=`~!@#$%^&*()_+[]\\{}|;':\",./<>? ");
+}

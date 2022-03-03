@@ -17,4 +17,9 @@ drawScript=function(x, y) {
 	defaultDrawScript(x, y);
 }
 
+drawShadowScript=function(x, y) {
+	/// @function drawShadowScript(x, y)
+	drawScript(x, y);
+}
+
 uniqueRightClickMenuOptions=-1;

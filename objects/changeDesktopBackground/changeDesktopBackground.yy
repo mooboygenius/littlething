@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprWindowFrame",
-    "path": "sprites/sprWindowFrame/sprWindowFrame.yy",
+    "name": "sprFilledWindowFrame",
+    "path": "sprites/sprFilledWindowFrame/sprFilledWindowFrame.yy",
   },
   "solid": false,
   "visible": true,

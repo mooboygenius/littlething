@@ -38,3 +38,9 @@ switch state {
 mouseIsInMenu=false;
 
 life++;
+
+var d=depth;
+with worldObject {
+	if depth<d d=depth-10;
+}
+depth=d;

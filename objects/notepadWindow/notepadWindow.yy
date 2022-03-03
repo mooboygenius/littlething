@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprWindowFrame",
-    "path": "sprites/sprWindowFrame/sprWindowFrame.yy",
+    "name": "sprFilledWindowFrame",
+    "path": "sprites/sprFilledWindowFrame/sprFilledWindowFrame.yy",
   },
   "solid": false,
   "visible": true,
@@ -23,9 +23,16 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"name","path":"objects/window/window.yy",},"objectId":{"name":"window","path":"objects/window/window.yy",},"value":"Shrimppad","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
     "name": "Objects",
     "path": "folders/Objects.yy",

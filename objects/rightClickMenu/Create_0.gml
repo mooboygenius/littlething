@@ -25,6 +25,11 @@ defaultOptions=[
 			];
 			setMenuOptions(a);
 		}
+	}),
+	
+	createOption("Close all", function() {
+		state=menuState.close;
+		with window state=windowStates.close;
 	})
 ];
 

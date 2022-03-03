@@ -13,13 +13,27 @@ function centerWindow(instance) {
 
 function setWindowSize(instance, left, top, width, height) {
 	with instance {
+		var right=left+width,
+		bottom=top+height;
 		border[borders.left][0]=left;
 		border[borders.top][0]=top;
-		border[borders.right][0]=left+width;
-		border[borders.bottom][0]=top+height;
+		border[borders.right][0]=right;
+		border[borders.bottom][0]=bottom;
 		windowWidth=width;
 		windowHeight=height;
 	}
+}
+
+function getActiveWindow() {
+	var d=0,
+	active=noone;
+	with window {
+		if depth<d {
+			d=depth;
+			active=self;
+		}
+	}
+	return active;
 }
 
 function refreshPortSize() {

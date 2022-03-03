@@ -2,14 +2,19 @@ if live_call() return live_result;
 
 event_inherited();
 
-depth-=20;
+var d=depth;
+with window {
+	if depth<d d=depth;
+}
+depth=d-20;
 
-var l=1;
-butt[0]=instance_create_depth(x, y, depth-1, windowCloseButton);
-butt[1]=instance_create_depth(x, y, depth-1, windowMaximizeButton);
-butt[2]=instance_create_depth(x, y, depth-1, windowMinimizeButton);
-for (var i=0; i<array_length(butt); i++) {
-	with butt[i] parentWindow=other.id;
+if hasButtons {
+	butt[0]=instance_create_depth(x, y, depth-1, windowCloseButton);
+	butt[1]=instance_create_depth(x, y, depth-1, windowMaximizeButton);
+	butt[2]=instance_create_depth(x, y, depth-1, windowMinimizeButton);
+	for (var i=0; i<array_length(butt); i++) {
+		with butt[i] parentWindow=other.id;
+	}
 }
 
 
@@ -58,3 +63,11 @@ oldPortHeight=portHeight;
 
 children=ds_list_create();
 grace=2;
+
+drawScript=function(x, y) {
+	draw_sprite_stretched(sprite_index, 0, x, y, windowWidth*windowScale, windowHeight*windowScale);
+}
+
+drawShadowScript=function(x, y) {
+	drawScript(x, y);
+}

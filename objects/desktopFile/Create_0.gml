@@ -13,7 +13,7 @@ fileDrawScript=function(x, y) {
 	draw_set_valign(fa_center);
 	draw_set_color(c_white);
 	var tx=x, ty=y+16;
-	var c=BLACK_COLOR,
+	var c=c_white,
 	t=fileName;
 	if state==fileState.rename {
 		var r=1000;
@@ -72,3 +72,5 @@ uniqueRightClickMenuOptions=[
 		with rightClickMenu state=menuState.close;
 	})
 ];
+
+childWindow=noone;
