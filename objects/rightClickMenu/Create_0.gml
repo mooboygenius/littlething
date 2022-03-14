@@ -1,5 +1,7 @@
 if live_call() return live_result;
 
+uniqueRightClickMenuOptions=-1;
+
 options=-1;
 enum optionData {label, selected, effect, funct, drawFunct}
 
@@ -20,7 +22,10 @@ defaultOptions=[
 					with createNewFile(getMouseX(), getMouseY(), "", textDocument) state=fileState.rename;
 					state=menuState.close;
 				}),
-				createOption("Pretty picture"),
+				createOption("Pretty picture", function() {
+					with createNewFile(getMouseX(), getMouseY(), "", paintDocument) state=fileState.rename;
+					state=menuState.close;
+				}),
 				createOption("Shrimp")
 			];
 			setMenuOptions(a);

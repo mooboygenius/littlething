@@ -60,6 +60,8 @@ portWidth=windowWidth;
 portHeight=windowHeight;
 oldPortWidth=portWidth;
 oldPortHeight=portHeight;
+portX=0;
+portY=0;
 
 children=ds_list_create();
 grace=2;

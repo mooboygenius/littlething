@@ -38,7 +38,9 @@ if input(mb_right, PRESS) {
 	}
 }
 
-if pullHorizontal {
+if drawing {
+	sprite_index=sprCursorPencil;
+} else if pullHorizontal {
 	sprite_index=sprCursorStretchHorizontal;
 } else if pullVertical {
 	sprite_index=sprCursorStretchVertical;
@@ -51,6 +53,7 @@ if pullHorizontal {
 hoveringOver=false;
 pullHorizontal=false;
 pullVertical=false;
+drawing=false;
 
 var d=depth;
 with worldObject {

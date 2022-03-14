@@ -5,3 +5,4 @@ previousX=x;
 hoveringOver=false;
 pullHorizontal=false;
 pullVertical=false;
+drawing=false;

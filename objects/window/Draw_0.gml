@@ -4,8 +4,8 @@ if grace>0 setSwapAmountShader(c_white, c_white, 1, 1);
 
 #region variable setup
 var bx=border[borders.left][0]+(windowWidth-windowWidth*windowScale)/2,
-by=border[borders.top][0]+(windowHeight-windowHeight*windowScale)/2,
-portX=bx+3,
+by=border[borders.top][0]+(windowHeight-windowHeight*windowScale)/2;
+portX=bx+3;
 portY=floor(by+10);
 #endregion
 
@@ -79,7 +79,7 @@ draw_set_font(fntSmaller);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 var tx=ceil(x+3), ty=ceil(y+1),
-c=BLACK_COLOR;
+c=nameColor;
 draw_text_transformed_color(tx, ty, name, windowScale, 1, 0, c, c, c, c, 1);
 #endregion
 

@@ -4,7 +4,6 @@ if live_call() return live_result;
 event_inherited();
 
 previousHovering=false;
-fileName="shrimp.txt";
 
 fileDrawScript=function(x, y) {
 	/// @function fileDrawScript(x, y)

@@ -35,8 +35,8 @@
     {"propertyId":{"name":"lockPosition","path":"objects/window/window.yy",},"objectId":{"name":"window","path":"objects/window/window.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "change background",
+    "path": "folders/Objects/change background.yy",
   },
   "resourceVersion": "1.0",
   "name": "changeDesktopBackground",

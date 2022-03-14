@@ -15,12 +15,14 @@ void main()
     gl_FragColor = v_vColour * texture2D( gm_BaseTexture, v_vTexcoord);
 	if (gl_FragColor.a==1.) {
 		
+		// blackening
 		if (mod(realPos.x, lineDistance.x)==0.0 || mod(realPos.y, lineDistance.y)==0.0) {
-			gl_FragColor.rgb*=(1.-intensity);
+			gl_FragColor.rgb*=(1.-intensity*.1);
 		}
 		
+		// whitening
 		if (mod(realPos.y+1., lineDistance.y)==0.0) {
-			gl_FragColor.rgb*=intensity*5.;
+			gl_FragColor.rgb*=intensity*2.;
 		}
 		
 	}

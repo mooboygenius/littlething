@@ -7,7 +7,7 @@ depth-=10;
 
 
 buttonDrawScript=function(x, y) {
-	// @function buttonDrawScript(x, y)
+	/// @function buttonDrawScript(x, y)
 	if sprite_exists(buttonSprite) {
 		var dx=x,
 		dy=y+image_index;
@@ -21,7 +21,7 @@ drawScript=function(x, y) {
 }
 
 clickFunction=function() {
-	// @function clickFunction()
+	/// @function clickFunction()
 	/* do nothing */
 }
 

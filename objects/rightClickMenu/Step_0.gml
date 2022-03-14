@@ -2,8 +2,6 @@ if live_call() return live_result;
 
 event_inherited();
 
-show_debug_message("guh");
-
 enum menuState {appear, idle, close}
 switch state {
 	case menuState.appear:

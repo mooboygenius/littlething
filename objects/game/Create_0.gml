@@ -16,12 +16,31 @@ view_enabled=true;
 view_set_visible(0, true);
 view_set_camera(0, view_camera[0]);
 window_set_size(WINDOW_WIDTH, WINDOW_HEIGHT);
+surface_resize(application_surface, GAME_WIDTH, GAME_HEIGHT);
+display_set_gui_size(WINDOW_WIDTH, WINDOW_HEIGHT);
 
-#macro START_ROOM rmTest
+#macro START_ROOM rmBootup
+#macro dev:START_ROOM rmTest
 room_goto(START_ROOM);
 
 globalvar previousMouseX, previousMouseY;
 previousMouseX=getMouseX();
 previousMouseY=getMouseY();
 
-#macro MAXIMUM_WINDOWS 4
+#macro MAXIMUM_WINDOWS 6
+
+application_surface_draw_enable(false);
+
+crtOn=false;
+
+passSurf1=-1;
+passSurf2=-1
+
+globalvar gameFrame;
+gameFrame=0;
+
+globalvar currentMusic;
+currentMusic=noone;
+
+audio_group_load(bgm);
+audio_group_load(sfx);

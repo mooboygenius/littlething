@@ -12,3 +12,8 @@ function lerpAngle(from, to, amount) {
 	next=from-diff;
 	return lerp(from, next, amount);
 }
+
+function setSpriteSize(width, height, defaultWidth=sprite_get_width(sprite_index), defaultHeight=sprite_get_height(sprite_index)) {
+	image_xscale=width/defaultWidth;
+	image_yscale=height/defaultHeight;
+}
