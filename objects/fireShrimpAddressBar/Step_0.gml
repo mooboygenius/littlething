@@ -21,6 +21,14 @@ switch substate {
 			if !string_pos(".shrimp", text) text=text+".shrimp";
 			text=string_replace_all(text, " ", "");
 			substate=urlStates.idle;
+			
+			var windowToCreate=shrimpNotFound;
+			if ds_map_exists(realWebsites, text) {
+				windowToCreate=realWebsites[? text];
+			}
+			with parentWindow {
+				createNewPage(windowToCreate);
+			}
 		}
 	break;
 }

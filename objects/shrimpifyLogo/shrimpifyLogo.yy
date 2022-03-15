@@ -27,6 +27,7 @@
   "properties": [],
   "overriddenProperties": [
     {"propertyId":{"name":"fileName","path":"objects/desktopFile/desktopFile.yy",},"objectId":{"name":"desktopFile","path":"objects/desktopFile/desktopFile.yy",},"value":"Shrimpify","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"windowToOpen","path":"objects/desktopFile/desktopFile.yy",},"objectId":{"name":"desktopFile","path":"objects/desktopFile/desktopFile.yy",},"value":"shrimpify","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "shrimpify",

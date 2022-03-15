@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "fire shrimp",
-    "path": "folders/Sprites/fire shrimp.yy",
+    "name": "shrimple",
+    "path": "folders/Sprites/fire shrimp/shrimple.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprShrimpleLogo",

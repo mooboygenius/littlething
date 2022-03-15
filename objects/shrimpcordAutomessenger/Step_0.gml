@@ -434,6 +434,36 @@ if timer<0 {
 	}
 	#endregion
 
+	#region default statements if nothing has been said so far
+	if ret=="" {
+		if quirky>.3 && chance(quirky) {
+			ret+=choose(
+				"E"+string_repeat("e", irandom(2))+string_repeat("r", irandom_range(1, 3))+string_repeat("m", irandom_range(1, 3))+string_repeat(".", irandom_range(2, 6)),
+				"U"+string_repeat("h", irandom_range(3, 6))+string_repeat(".", irandom_range(2, 5)),
+				"A"+string_repeat("a", irandom(2))+string_repeat("w", irandom_range(2, 4))+"k"+string_repeat("i", irandom_range(1, 2))+string_repeat("e", irandom_range(1, 3))+string_repeat("s", irandom_range(1, 5))+string_repeat("!", irandom_range(2, 4)),
+				"W"+string_repeat("e", irandom_range(2, 4))+"ird"+string_repeat(".", irandom_range(2, 4))
+			);
+		} else if aggression>.3 && chance(aggression) {
+			ret+=choose(
+				"WTF"+choose("", " do you "+choose("even ", "")+"want?"),
+				"Don't "+choose("speak", "talk")+" to me.",
+				"Stop "+choose("fucking ", "")+choose("talking"+choose(".", " to me."), "doing that.", "typing."),
+				choose("I don't care.", "Don't care."),
+				"Whatever."+choose(" Don't care.", ""),
+				"Shut "+choose("", "the fuck ", "the hell ")+" up."
+			);
+		} else {
+			ret+=choose(
+				"What are you "+choose("even ", "")+choose("trying to say?", "saying?"),
+				"Huh?",
+				"What?",
+				"I'm confused.",
+				choose("Idk ", "I dunno ", "I don't know ", "I'm not sure ")+" how to "+choose("respond"+choose(" to that", ""), "answer"+choose(" that", ""))+"."
+			);
+		}
+	}
+	#endregion
+
 	#region end of sentence
 	var numberOfEnds=1;
 	repeat(8) {

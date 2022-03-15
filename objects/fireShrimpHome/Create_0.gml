@@ -2,12 +2,22 @@ if live_call() return live_result;
 
 event_inherited();
 
-searchBar=instance_create_depth(-100, -100, depth-1, shrimpleSearchBar);
-ds_list_add(children, searchBar);
-
-searchButton=instance_create_depth(-100, -100, depth-1, textButton);
-with searchButton {
-	canDeactivate=false;
-	text="Shearch";
+font=fntSmaller;
+links=ds_list_create();
+var addWebsite=function(url) {
+	/// @function addWebsite(url)
+	var inst=instance_create_depth(-100, -100, depth-1, textLink);
+	with inst {
+		font=other.font;
+		text=url;
+	}
+	ds_list_add(links, inst);
+	ds_list_add(children, inst);
 }
-ds_list_add(children, searchButton);
+addWebsite("Shrimple");
+addWebsite("Fireshrimp");
+addWebsite("Shrimpgrounds");
+addWebsite("YouShrimp");
+addWebsite("Shrimpedia");
+addWebsite("Shrimper");
+addWebsite("Adult Shrimps Only");

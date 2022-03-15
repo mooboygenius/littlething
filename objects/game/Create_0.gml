@@ -44,3 +44,8 @@ currentMusic=noone;
 
 audio_group_load(bgm);
 audio_group_load(sfx);
+
+globalvar realWebsites;
+realWebsites=ds_map_create();
+ds_map_add(realWebsites, "www.fireshrimp.shrimp", fireShrimpHome);
+ds_map_add(realWebsites, "www.shrimple.shrimp", shrimple);

@@ -16,14 +16,16 @@ switch state {
 		x=lerp(x, nearestAcceptableX, l);
 		y=lerp(y, nearestAcceptableY, l);
 		
-		if hoveringOver && input(mb_left, RELEASE) {
+		var isHighest=getHighestInstanceUnderMouse()==id;
+		
+		if hoveringOver && input(mb_left, RELEASE) && isHighest {
 			state=fileState.open;
 			grace=5;
 			squish=-1;
 			show_debug_message("opening file");
 		}
 		
-		if hoveringOver && input(mb_left) {
+		if hoveringOver && input(mb_left) && isHighest {
 			if holdTimer==0 grace=4;
 			holdTimer++;
 			if holdTimer>2 && (previousMouseX!=getMouseX() || previousMouseY!=getMouseY()) {
