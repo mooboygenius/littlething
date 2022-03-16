@@ -93,8 +93,8 @@
     "resourceType": "GMNineSliceData",
   },
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "shrimpify",
+    "path": "folders/Sprites/shrimpify.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprShrimpifyFrame",
