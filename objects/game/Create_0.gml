@@ -39,9 +39,6 @@ passSurf2=-1
 globalvar gameFrame;
 gameFrame=0;
 
-globalvar currentMusic;
-currentMusic=noone;
-
 audio_group_load(bgm);
 audio_group_load(sfx);
 

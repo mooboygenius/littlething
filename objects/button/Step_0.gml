@@ -32,7 +32,7 @@ switch state {
 		if getHighestInstanceUnderMouse()==id && mouseIsInArea {
 			setMouseHoveringOver();
 			hoveringOver=true;
-			if input(mb_left, RELEASE) {
+			if input(mb_left, clickType) {
 				clickFunction();
 			}
 		} else {
