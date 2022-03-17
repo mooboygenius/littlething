@@ -9,12 +9,22 @@ if currentMusic && audio_is_playing(currentMusic) {
 	
 }
 
-var sx=0,
-sy=24;
-for (var i=0; i<ds_list_size(tracks); i++) {
-	with tracks[| i] {
-		xstart=sx+sprite_xoffset;
-		ystart=sy;
+if ds_exists(tracks, ds_type_list) {
+	var size=ds_list_size(tracks),
+	start=4,
+	sx=start,
+	sy=trackScrollLerp,
+	o=24;
+	for (var i=0; i<size; i++) {
+		with tracks[| i] {
+			xstart=sx;
+			ystart=sy;
+		}
+		sy+=o;
 	}
-	sy+=24;
+
+	var in=(mouse_wheel_up()-mouse_wheel_down());
+	in*=o;
+	trackScroll=clamp(trackScroll+in, (-size+3.7)*o, start);
+	trackScrollLerp=lerp(trackScrollLerp, trackScroll, .5);
 }

@@ -13,3 +13,5 @@ clickFunction=function() {
 	holding=true;
 	audio_pause_sound(currentMusic);
 }
+
+gotoX=xstart;

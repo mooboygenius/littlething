@@ -1,3 +1,3 @@
 if live_call() return live_result;
-playMusic(bgmShrimpOS);
+playMusicFromIndex(0);
 timer=0;

@@ -1,5 +1,6 @@
 if live_call() return live_result;
 event_inherited();
+myIndex=-1;
 surf=-1;
 sprite=noone;
 
@@ -15,6 +16,9 @@ generateSprite=function() {
 	artistX=24,
 	artistY=12,
 	artistC=make_color_rgb(163, 167, 194);
+	if isPlaying {
+		nameC=make_color_rgb(99, 171, 63);
+	}
 	draw_set_font(fntShrimpcordUsername);
 	var nameWidth=string_width(name);
 	draw_set_font(fntSmaller);
@@ -36,8 +40,12 @@ generateSprite=function() {
 		surface_reset_target();
 		draw_surface(surf, x-sprite_width/2, y-sprite_height/2);
 	}
-	sprite=sprite_create_from_surface(surf, 0, 0, w, h, false, false, w div 2, h div 2);
+	sprite=sprite_create_from_surface(surf, 0, 0, w, h, false, false, 0, 0);
+	sprite_collision_mask(sprite, false, 1, 0, 0, w, h, bboxkind_rectangular, 255);
 	sprite_index=sprite;
-	image_xscale=w/sprite_get_width(sprite_index);
-	image_yscale=h/sprite_get_height(sprite_index);
+	mask_index=sprite;
+	image_xscale=1;
+	image_yscale=1;
 }
+
+generateSprite();

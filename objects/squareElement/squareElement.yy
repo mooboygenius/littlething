@@ -1,15 +1,15 @@
 {
   "spriteId": {
-    "name": "sprShrimpifyPreviousTrack",
-    "path": "sprites/sprShrimpifyPreviousTrack/sprShrimpifyPreviousTrack.yy",
+    "name": "sprSquare",
+    "path": "sprites/sprSquare/sprSquare.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "button",
-    "path": "objects/button/button.yy",
+    "name": "worldObject",
+    "path": "objects/worldObject/worldObject.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -23,17 +23,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "shrimpify",
-    "path": "folders/Objects/shrimpify.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "shrimpifyPreviousButton",
+  "name": "squareElement",
   "tags": [],
   "resourceType": "GMObject",
 }

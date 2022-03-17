@@ -179,7 +179,6 @@ if ds_exists(children, ds_type_list) {
 			x=other.x+3+xstart;
 			y=other.y+10+ystart;
 			visible=false;
-			depth=other.depth-1;
 			parentWindow=other;
 			if (xstart!=clamp(xstart, 0, other.portWidth) || ystart!=clamp(ystart, 0, other.portHeight)) && canDeactivate {
 				instance_deactivate_object(self);

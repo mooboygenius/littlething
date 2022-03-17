@@ -4,12 +4,11 @@ function playSound(sound, priority=0, loops=false) {
 
 globalvar currentMusic, currentMusicIndex;
 currentMusic=noone;
-currentMusicIndex=0;
+currentMusicIndex=-10000;
 
 function playMusic(music) {
-	if !audio_is_playing(music) {
-		currentMusic=playSound(music, 100, true);
-	}
+	audio_group_stop_all(bgm);
+	currentMusic=playSound(music, 100, true);
 	return currentMusic;
 }
 
@@ -51,5 +50,8 @@ function getSongArt(index) {
 createSong(bgmShrimpOS, "Shrimpos", "HeyOPC");
 createSong(bgmShrimpOS, "test", "test");
 createSong(bgmShrimpSong, "Jeff Rosenshrimp", "studionokoi");
+createSong(bgmShrimpOS, "placeholder", "jack");
+createSong(bgmShrimpOS, "placeholder", "ConnorGrail");
+createSong(bgmShrimpOS, "placeholder", "DefaultLabs");
 createSong();
 #endregion
