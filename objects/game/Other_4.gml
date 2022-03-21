@@ -1,4 +1,5 @@
 if live_call() return live_result;
+
 view_camera[0]=camera_create_view(0, 0, GAME_WIDTH, GAME_HEIGHT);
 view_enabled=true;
 view_set_visible(0, true);

@@ -1,4 +1,5 @@
-function playSound(sound, priority=0, loops=false) {
+function playSound(sound, priority=0, pitch=1, loops=false) {
+	audio_sound_pitch(sound, pitch);
 	return audio_play_sound(sound, priority, loops);
 }
 
@@ -8,7 +9,7 @@ currentMusicIndex=-10000;
 
 function playMusic(music) {
 	audio_group_stop_all(bgm);
-	currentMusic=playSound(music, 100, true);
+	currentMusic=playSound(music, 100, 1, true);
 	return currentMusic;
 }
 
@@ -47,9 +48,13 @@ function getSongArt(index) {
 	return songs[| index][? "art"];
 }
 
-createSong(bgmShrimpOS, "Shrimpos", "HeyOPC");
-createSong(bgmShrimpOS, "test", "test");
+createSong(bgmShrimpOS, "Shrimpos", "HeyOPC & Droid");
 createSong(bgmShrimpSong, "Jeff Rosenshrimp", "studionokoi");
+createSong(bgmBrandySong, "Shrimp Hacker", "BrandyBuizel");
+createSong(bgmSponge, "Big Boy Rumble Tumble", "HeyOPC & Droid");
+createSong(bgmShrimpBattle1, "Shrimp Battle #1", "HeyOPC");
+createSong(bgmShrimpBattle2, "Shrimp Battle #2", "HeyOPC");
+createSong(bgmShrimpOS, "test", "test");
 createSong(bgmShrimpOS, "placeholder", "jack");
 createSong(bgmShrimpOS, "placeholder", "ConnorGrail");
 createSong(bgmShrimpOS, "placeholder", "DefaultLabs");

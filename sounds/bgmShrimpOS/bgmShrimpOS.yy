@@ -17,8 +17,8 @@
   "soundFile": "bgmShrimpOS.mp3",
   "duration": 133.172256,
   "parent": {
-    "name": "Sounds",
-    "path": "folders/Sounds.yy",
+    "name": "music",
+    "path": "folders/Sounds/music.yy",
   },
   "resourceVersion": "1.0",
   "name": "bgmShrimpOS",
