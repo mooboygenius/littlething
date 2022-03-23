@@ -28,7 +28,7 @@
   ],
   "properties": [
     {"varType":5,"value":"instrument","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"instrumentObject","tags":[],"resourceType":"GMObjectProperty",},
-    {"varType":5,"value":"sfxBaby","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"sound","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":2,"value":"sfxCat","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"name","tags":[],"resourceType":"GMObjectProperty",},
   ],
   "overriddenProperties": [],
   "parent": {

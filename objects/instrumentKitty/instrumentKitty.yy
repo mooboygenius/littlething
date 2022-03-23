@@ -26,7 +26,7 @@
   "eventList": [],
   "properties": [],
   "overriddenProperties": [
-    {"propertyId":{"name":"sound","path":"objects/instrument/instrument.yy",},"objectId":{"name":"instrument","path":"objects/instrument/instrument.yy",},"value":"sfxKitty","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"name","path":"objects/instrument/instrument.yy",},"objectId":{"name":"instrument","path":"objects/instrument/instrument.yy",},"value":"sfxCat","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "instruments",

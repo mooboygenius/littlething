@@ -17,3 +17,13 @@ ds_list_add(children, mouseInstrument);
 
 player=instance_create_depth(-100, -100, depth+1, shrimposerPlayer);
 ds_list_add(children, player);
+
+playButton=instance_create_depth(-100, -100, depth+4, playStopButton);
+ds_list_add(children, playButton);
+
+audio_pause_sound(currentMusic);
+
+substate=0;
+
+scrollAmount=0;
+scrollAmountLerp=0;

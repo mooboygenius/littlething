@@ -27,7 +27,6 @@
   "properties": [],
   "overriddenProperties": [
     {"propertyId":{"name":"instrumentObject","path":"objects/selectIcon/selectIcon.yy",},"objectId":{"name":"selectIcon","path":"objects/selectIcon/selectIcon.yy",},"value":"instrumentCoin","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"sound","path":"objects/selectIcon/selectIcon.yy",},"objectId":{"name":"selectIcon","path":"objects/selectIcon/selectIcon.yy",},"value":"sfxBlip","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "selects",

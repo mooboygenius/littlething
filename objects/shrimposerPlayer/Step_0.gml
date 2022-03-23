@@ -8,9 +8,14 @@ if playing {
 	xstart=0;
 }
 
-if input(vk_space, PRESS) playing=!playing;
+var over=true;
+with instrument {
+	if !played {
+		over=false;
+	}
+}
+if over playing=false;
 
 drawScript=function(x, y) {
-	
-	draw_line_color(x, y, x, y+200, c_red, c_red);
+	draw_sprite_stretched(sprShrimposerPlayerBar, 0, x, 0, 1, 100);
 }

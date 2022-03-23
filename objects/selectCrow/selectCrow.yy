@@ -27,7 +27,7 @@
   "properties": [],
   "overriddenProperties": [
     {"propertyId":{"name":"instrumentObject","path":"objects/selectIcon/selectIcon.yy",},"objectId":{"name":"selectIcon","path":"objects/selectIcon/selectIcon.yy",},"value":"instrumentCrow","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"sound","path":"objects/selectIcon/selectIcon.yy",},"objectId":{"name":"selectIcon","path":"objects/selectIcon/selectIcon.yy",},"value":"sfxCrow","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"name","path":"objects/selectIcon/selectIcon.yy",},"objectId":{"name":"selectIcon","path":"objects/selectIcon/selectIcon.yy",},"value":"sfxCrow","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "selects",
