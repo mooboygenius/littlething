@@ -101,23 +101,26 @@ startX=xstart;
 startY=ystart;
 scrollX=0;
 scrollY=0;
-squish=.5;
+xScale=2;
+yScale=xScale;
 
 asset=asset_get_index(nm);
 if !audio_exists(asset) {
 	asset=sfxCatD1;
 }
-
+yOffset=-2;
 enum noteMode {normal, sharp, flat}
 switch mode {
 	case noteMode.normal:
 		drawScript=function(x, y) {
+			y+=yOffset;
 			defaultDrawScript(x, y);
 		}
 	break;
 	
 	case noteMode.sharp:
 		drawScript=function(x, y) {
+			y+=yOffset;
 			defaultDrawScript(x, y);
 			draw_sprite(sprInstSharpIcon, 0, x+sprite_xoffset, y-sprite_yoffset);
 		}
@@ -125,6 +128,7 @@ switch mode {
 	
 	case noteMode.flat:
 		drawScript=function(x, y) {
+			y+=yOffset;
 			defaultDrawScript(x, y);
 			draw_sprite(sprInstFlatIcon, 0, x+sprite_xoffset, y-sprite_yoffset);
 		}

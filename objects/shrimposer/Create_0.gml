@@ -21,9 +21,15 @@ ds_list_add(children, player);
 playButton=instance_create_depth(-100, -100, depth+4, playStopButton);
 ds_list_add(children, playButton);
 
+scrollBar=instance_create_depth(-100, -100, depth+4, shrimposerScrollBar);
+ds_list_add(children, scrollBar);
+
 audio_pause_sound(currentMusic);
 
 substate=0;
 
 scrollAmount=0;
 scrollAmountLerp=0;
+
+maximumScroll=0;
+minimumScroll=-GAME_WIDTH*4;

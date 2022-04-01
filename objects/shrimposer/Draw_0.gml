@@ -44,6 +44,11 @@ if surface_exists(finalSurf) {
 		depth=other.depth-1;
 	}
 	
+	with scrollBar {
+		ystart=sy+14;
+		xstart=52;
+	}
+	
 	if surface_exists(childrenObjectSurf) draw_surface(childrenObjectSurf, 0, 0);
 	
 	draw_set_halign(fa_left);

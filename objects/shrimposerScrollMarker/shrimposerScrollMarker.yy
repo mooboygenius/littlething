@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprSelectBaby",
-    "path": "sprites/sprSelectBaby/sprSelectBaby.yy",
+    "name": "sprShrimposerScrollBar",
+    "path": "sprites/sprShrimposerScrollBar/sprShrimposerScrollBar.yy",
   },
   "solid": false,
   "visible": true,
@@ -27,17 +27,16 @@
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
-  "properties": [
-    {"varType":5,"value":"instrument","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"instrumentObject","tags":[],"resourceType":"GMObjectProperty",},
-    {"varType":2,"value":"sfxCat","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"name","tags":[],"resourceType":"GMObjectProperty",},
+  "properties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"clickType","path":"objects/button/button.yy",},"objectId":{"name":"button","path":"objects/button/button.yy",},"value":"PRESS","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
-  "overriddenProperties": [],
   "parent": {
-    "name": "selects",
-    "path": "folders/Objects/shrimposer/selects.yy",
+    "name": "shrimposer",
+    "path": "folders/Objects/shrimposer.yy",
   },
   "resourceVersion": "1.0",
-  "name": "selectIcon",
+  "name": "shrimposerScrollMarker",
   "tags": [],
   "resourceType": "GMObject",
 }
