@@ -28,3 +28,7 @@ addBackground=function(sprite) {
 addBackground(sprDesktopBackground3);
 addBackground(sprDesktopBackground1);
 addBackground(sprDesktopBackground2);
+addBackground(sprDesktopBackground4);
+addBackground(sprDesktopBackground5);
+addBackground(sprDesktopBackground6);
+addBackground(sprDesktopBackground7);

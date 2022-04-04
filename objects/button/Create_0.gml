@@ -26,4 +26,3 @@ clickFunction=function() {
 }
 
 hoveringOver=false;
-

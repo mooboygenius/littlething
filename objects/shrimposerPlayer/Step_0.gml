@@ -3,10 +3,14 @@ if live_call() return live_result;
 event_inherited();
 
 if playing {
-	xstart++;
+	startX++;
 } else {
-	xstart=0;
+	show_debug_message(scrollX);
+	startX=-scrollX;
 }
+
+xstart=startX+scrollX;
+show_debug_message(concat("startx: ", startX, "  scrollx: ", scrollX, "  realx: ", xstart));
 
 var over=true;
 with instrument {

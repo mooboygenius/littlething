@@ -134,3 +134,5 @@ switch mode {
 		}
 	break;
 }
+
+image_speed=0;

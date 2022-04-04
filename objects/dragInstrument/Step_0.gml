@@ -80,4 +80,3 @@ if point_in_rectangle(xstart, ystart, leftBorder, topBorder, rightBorder, bottom
 
 var w=wave(-1, 1, .5)*.3;
 squish=lerp(squish, w, .5);
-angle=wave(-1, 1, 1)*10;

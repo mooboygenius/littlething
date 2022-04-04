@@ -5,7 +5,7 @@ event_inherited();
 setWindowSize(self, x, y, 200, 140);
 notes=ds_list_create();
 selections=ds_list_create();
-var array=[selectBaby, selectDog, selectCoin, selectBuzz, selectClock, selectCrow, selectBell, selectDodgeBall, selectGiggle, selectKitty, selectKnife, selectPuppy, selectPig, selectRecordScratch, selectWhistle, selectBurp];
+var array=[selectBaby, selectDog, selectCoin, selectBuzz, selectClock, selectCrow, selectBell, selectDodgeBall, selectGiggle, selectKitty, selectKnife, selectPuppy, selectPig, selectRecordScratch, selectWhistle, selectBurp, selectShrimp];
 for (var i=0; i<array_length(array); i++) {
 	var inst=instance_create_depth(-100, -100, depth+4, array[i]);
 	ds_list_add(selections, inst);

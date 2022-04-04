@@ -6,7 +6,7 @@ event_inherited();
 
 var passed=false;
 with shrimposerPlayer {
-	if xstart>=other.xstart && playing {
+	if startX>=other.startX && playing {
 		passed=true;
 	} else {
 		other.played=false;
@@ -17,7 +17,9 @@ if passed && !played {
 	squish=.2;
 	played=true;
 	scrollY=-2;
-	yOffset=-4; 
+	yOffset=-4;
+	image_speed=1;
+	image_index=1;
 	playSound(asset, 100, 1);
 }
 
