@@ -11,7 +11,7 @@ buttonDrawScript=function(x, y) {
 	if sprite_exists(buttonSprite) {
 		var dx=x,
 		dy=y+image_index;
-		draw_sprite(buttonSprite, 0, dx, dy);
+		draw_sprite(buttonSprite, image_index, dx, dy);
 	}
 }
 

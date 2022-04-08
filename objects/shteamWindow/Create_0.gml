@@ -2,4 +2,23 @@ if live_call() return live_result;
 
 event_inherited();
 
-setWindowSize(self, x, y, 200, 120);
+setWindowSize(self, x, y, 218, 120);
+
+games=ds_list_create();
+addShteamGame=function(nm="default", spr=sprDefaultShteamThumbnail, l="") {
+	/// @function addShteamGame([name], [sprite], [link])
+	var inst=instance_create_depth(-100, -100, depth-10, shteamThumbnail);
+	with inst {
+		sprite_index=spr;
+		name=nm;
+		link=l;
+		generateSprite();
+	}
+	ds_list_add(children, inst);
+	ds_list_add(games, inst);
+}
+
+addShteamGame("Dead Estate", sprDeadEstateThumbnail, "https://store.steampowered.com/app/1484720/Dead_Estate/");
+addShteamGame();
+addShteamGame();
+addShteamGame();

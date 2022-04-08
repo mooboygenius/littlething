@@ -8,7 +8,6 @@ with searchBar {
 	image_yscale=1;
 	xstart=other.portWidth div 2;
 	ystart=80;
-	visible=true;
 }
 
 with searchButton {

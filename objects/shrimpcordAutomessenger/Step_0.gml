@@ -417,6 +417,42 @@ if timer<0 {
 				);
 			}
 		}
+			
+		// WHO
+		else if inStringHas("who")==1 || inStringHas("do you know who") {
+			if chance(quirky) {
+				ret+=choose("U"+string_repeat("h", irandom_range(2, 6)), "Er"+string_repeat("m", irandom_range(2, 6)))+" ";
+			} else {
+				ret+=choose("I think ", "", "Probably ");
+			}
+			ret+=choose(
+				"you",
+				"me",
+				"Shtrom Fulp",
+				"Luis",
+				"PsychoGoldShrimp",
+				"Goji",
+				"CRABL",
+				"Jack",
+				"CrabbyAce",
+				"Ayekrabrik",
+				"MKShrimpo",
+				"ShrimpOPC",
+				"Shkrall",
+				"Prawntaffy",
+				"Prawnsciuttoman",
+				"PrawnnoyingDroid",
+				"LobsterThickness",
+				"SHRIMPZZA",
+				"HekShrimpity",
+				"studionokray",
+				"Crabomyre",
+				"ShrimpDude",
+				"Craylinex",
+				"Shrimpro",
+				"Shellox"
+			);
+		}
 	#endregion
 	}
 
