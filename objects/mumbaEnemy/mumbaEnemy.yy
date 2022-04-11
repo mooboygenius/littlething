@@ -1,15 +1,15 @@
 {
   "spriteId": {
-    "name": "sprTool",
-    "path": "sprites/sprTool/sprTool.yy",
+    "name": "sprMumbaStopWalk",
+    "path": "sprites/sprMumbaStopWalk/sprMumbaStopWalk.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "worldObject",
-    "path": "objects/worldObject/worldObject.yy",
+    "name": "mumbaLivingObject",
+    "path": "objects/mumbaLivingObject/mumbaLivingObject.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -26,15 +26,16 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "ui",
-    "path": "folders/Objects/mumba/states/ui.yy",
+    "name": "states",
+    "path": "folders/Objects/mumba/states.yy",
   },
   "resourceVersion": "1.0",
-  "name": "mumbaUIController",
+  "name": "mumbaEnemy",
   "tags": [],
   "resourceType": "GMObject",
 }

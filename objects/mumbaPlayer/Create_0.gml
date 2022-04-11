@@ -9,3 +9,14 @@ with myUI {
 	visible=false;
 }
 setCameraFocus(self);
+
+die=function() {
+	
+}
+
+getHurt=function(amt) {
+	grace=amt*30;
+}
+
+walkingTime=0;
+jumpingTime=0;

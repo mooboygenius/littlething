@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprTool",
-    "path": "sprites/sprTool/sprTool.yy",
+    "name": "sprMumbaUIDust",
+    "path": "sprites/sprMumbaUIDust/sprMumbaUIDust.yy",
   },
   "solid": false,
   "visible": true,
@@ -24,8 +24,8 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -34,7 +34,7 @@
     "path": "folders/Objects/mumba/states/ui.yy",
   },
   "resourceVersion": "1.0",
-  "name": "mumbaUIController",
+  "name": "mumbaUIDust",
   "tags": [],
   "resourceType": "GMObject",
 }

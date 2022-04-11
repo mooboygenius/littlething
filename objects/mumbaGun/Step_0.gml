@@ -1,4 +1,5 @@
 if live_call() return live_result;
+justFired=false;
 
 event_inherited();
 
@@ -25,6 +26,7 @@ if canFire && input(mumbaInputFire) && fireTimer<=0 {
 	bx=x+xo*xScale,
 	by=y;
 	x+=-sign(xScale)*8;
+	justFired=true;
 	repeat(bulletNumber) {
 		with owner {
 			horizontalKnockback=-other.bulletSpeed*sign(other.xScale)*.1;

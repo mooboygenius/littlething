@@ -30,14 +30,15 @@ with cameraFocus {
 	switch object_index {
 		case mumbaPlayer:
 			other.cameraTargetX-=48*sign(xScale);
+			other.cameraTargetY+=16;
 		break;
 	}
 }
 cameraSpeed=.05;
-cameraTargetX+=portWidth/2;
-cameraTargetY+=portHeight/1.5;
-cameraX=lerp(cameraX, cameraTargetX, cameraSpeed)+irandom_range(-cameraShake, cameraShake)+lengthdir_x(cameraKick, cameraKickDirection);
-cameraY=lerp(cameraY, cameraTargetY, cameraSpeed)+irandom_range(-cameraShake, cameraShake)+lengthdir_y(cameraKick, cameraKickDirection);
+var ctx=clamp(cameraTargetX+portWidth div 2, cameraRightLimit+min(GAME_WIDTH, portWidth), cameraLeftLimit),
+cty=clamp(cameraTargetY+portHeight div 2, cameraBottomLimit+min(GAME_HEIGHT, portHeight), cameraTopLimit);
+cameraX=lerp(cameraX, ctx, cameraSpeed)+irandom_range(-cameraShake, cameraShake)+lengthdir_x(cameraKick, cameraKickDirection);
+cameraY=lerp(cameraY, cty, cameraSpeed)+irandom_range(-cameraShake, cameraShake)+lengthdir_y(cameraKick, cameraKickDirection);
 cameraShake=max(cameraShake-.1, 0);
 cameraKick=max(cameraKick-.33, 0);
 drawXOffset=cameraX;

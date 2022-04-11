@@ -17,3 +17,11 @@ for (var i=0; i<ds_list_size(children); i++) {
 with background {
 	other.depth=depth-1;
 }
+
+var w=tileSurfaceWidth, h=tileSurfaceHeight;
+with parentWindow {
+	cameraLeftLimit=0;
+	cameraTopLimit=0;
+	cameraRightLimit=-w;
+	cameraBottomLimit=-h;
+}

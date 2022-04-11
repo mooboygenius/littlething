@@ -2,11 +2,16 @@ if live_call() return live_result;
 
 event_inherited();
 
+getHurt=function(amt) {
+	/// @function getHurt(amount)
+	grace=amt*10;
+}
+
 hurt=function(in, amt) {
 	/// @function hurt(instance, amount)
 	with in {
 		hp-=amt;
-		grace=amt*10;
+		getHurt(amt);
 	}
 }
 

@@ -31,17 +31,29 @@ drawScript=function(x, y) {
 			var gunSpr=noone,
 			gunSquish=0,
 			gunAngle=0,
-			gunFire=0;
+			gunFire=0,
+			fired=false;
 			with weaponReference {
 				gunSpr=uiSprite;
 				gunSquish=squish;
 				gunAngle=abs(angle*2);
 				if grace setSwapAmountShader(c_white, c_white, 1, 1);
+				if justFired fired=true;
 				gunFire=min(0, fireTimer/fireRate*-8)
 			}
 			var gunX=playerX+20+sprite_get_xoffset(gunSpr)+gunFire, gunY=playerY+wave(-1, 1, 1, .2)*!playerSpeed+wave(-2, 2, .75, .1)*playerSpeed, gunXScale=1+gunSquish, gunYScale=1-gunSquish;
 			draw_sprite_ext(gunSpr, 0, gunX, gunY, gunXScale, gunYScale, gunAngle, c_white, 1);
 			shader_reset();
+			if fired {
+				var dusty=instance_create_depth(0, 0, depth-10, mumbaUIDust);
+				with dusty {
+					drawX=gunX+sprite_width;
+					drawY=gunY-sprite_yoffset;
+				}
+				with parentWindow {
+					ds_list_add(children, dusty);
+				}
+			}
 		}
 		#endregion
 		

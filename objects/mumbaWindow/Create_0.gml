@@ -1,5 +1,7 @@
 if live_call() return live_result;
 
+sprite_index=sprFilledWindowFrame;
+
 event_inherited();
 
 setWindowSize(self, 0, 0, 200, 160);
@@ -23,6 +25,10 @@ cameraShake=0;
 cameraKick=0;
 cameraKickDirection=0;
 cameraFocus=noone;
+cameraLeftLimit=-9999;
+cameraRightLimit=9999;
+cameraTopLimit=-9999;
+cameraBottomLimit=9999;
 
 particleSystem=part_system_create();
 part_system_depth(particleSystem, 0);

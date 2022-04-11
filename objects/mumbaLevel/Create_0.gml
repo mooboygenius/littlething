@@ -6,19 +6,27 @@ separationHeight=sprite_get_height(sprMumbaWall);
 tileSet=tlsMumbaGrass;
 
 levelMap=[
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 3, 0, 0, 0, 2, 0, 3, 0, 3, 0, 1, 1, 1],
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1],
-[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
 ];
 
 event_inherited();
 
 children=ds_list_create();
-
-player=instance_create_depth(0, 0, -100, mumbaWorldObject);
-ds_list_add(children, player);
 
 background=instance_create_depth(0, 0, 0, mumbaBackground);
 ds_list_add(children, background);
@@ -40,10 +48,13 @@ generateMap=function() {
 				case 1: inst=instance_create_depth(tx, ty, -10, mumbaWall) break;
 				
 				// player
-				case 2: inst=instance_create_depth(tx, ty, -20, mumbaPlayer) break;
+				case 2:
+					player=instance_create_depth(tx, ty, -20, mumbaPlayer);
+					inst=player;
+				break;
 				
 				// enemies
-				case 3: inst=instance_create_depth(tx, ty, -20, mumbaLivingObject) break;
+				case 3: inst=instance_create_depth(tx, ty, -20, mumbaEnemy) break;
 			}
 			
 			if instance_exists(inst) {
@@ -55,12 +66,17 @@ generateMap=function() {
 
 generateMap();
 
+#region generate tile surface
 tileMapHeight=array_length(levelMap);
 tileMapWidth=array_length(levelMap[0]);
 tileSize=16;
 tileSurfaceWidth=tileMapWidth*tileSize;
 tileSurfaceHeight=tileMapHeight*tileSize;
 tileSurface=surface_create(tileSurfaceWidth, tileSurfaceHeight);
+repeat(6) {
+	var coin=instance_create_depth(irandom(tileSurfaceWidth), 0, 0, mumbaCoin);
+	ds_list_add(children, coin);
+}
 
 surface_set_target(tileSurface);
 draw_clear_alpha(0, 0);
@@ -202,6 +218,7 @@ for (var yy=0; yy<array_length(levelMap); yy++) {
 	}
 }
 surface_reset_target();
+#endregion
 
 drawScript=function(x, y) {
 	if surface_exists(tileSurface) draw_surface(tileSurface, x, y);

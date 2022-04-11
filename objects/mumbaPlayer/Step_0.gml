@@ -6,12 +6,46 @@ event_inherited();
 if canControl {
 	var hin=input(mumbaInputRight)-input(mumbaInputLeft),
 	spd=2.66*hin;
+	if hin!=0 && abs(horizontalSpeed)<.3 {
+		squish=-.2;
+	}
 	horizontalSpeed=lerp(horizontalSpeed, spd, weight*2);
+	
+	if place_meeting(x, y+1, mumbaWall) {
+		if abs(horizontalSpeed)>.5 {
+			walkingTime++;
+			if walkingTime%10==0 {
+				createMumbaParticle(x-(sprite_xoffset-4)*sign(xScale), y+sprite_yoffset, mumbaDustParticle);
+			}
+		} else {
+			walkingTime=0;
+		}
+		if jumpingTime>10 {
+			for (var i=-1; i<=1; i++) {
+				if i!=0 {
+					createMumbaParticle(x+sprite_xoffset*i, y+sprite_yoffset, mumbaDustParticle);
+				}
+			}
+		}
+		jumpingTime=0;
+	} else {
+		jumpingTime++;
+		var t=15;
+		if verticalSpeed>0 t=8;
+		if jumpingTime%t==0 {
+			createMumbaParticle(x, y+sprite_yoffset, mumbaDustParticle);
+		}
+	}
 	
 	var vin=input(mumbaInputJump);
 	if vin && place_meeting(x, y+1, mumbaWall) {
 		verticalSpeed=-4;
 		squish=-.25;
+		for (var i=-1; i<=1; i++) {
+			if i!=0 {
+				createMumbaParticle(x+sprite_xoffset*i, y+sprite_yoffset, mumbaDustParticle);
+			}
+		}
 	}
 	
 	if !vin && verticalSpeed<0 {
@@ -57,6 +91,17 @@ with myUI {
 	playerReference=other;
 	weaponReference=other.myGunInstance;
 }
+
+#region ui face sprite
+if grace>0 {
+	uiSprite=sprMumbaUISad;
+} else if killCoolDown>0 {
+	uiSprite=sprMumbaUIPeter;
+} else {
+	uiSprite=sprMumbaUINormal;
+}
+#endregion
+
 #endregion
 
 #region sprites
@@ -90,3 +135,5 @@ if !place_meeting(x, y+1, mumbaWall) {
 #endregion
 
 setCameraFocus(self);
+
+killCoolDown--;
