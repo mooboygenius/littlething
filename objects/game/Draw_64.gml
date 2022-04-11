@@ -7,12 +7,12 @@ if surface_exists(passSurf1) {
 		sc=WINDOW_SCALE;
 	}
 
-	if crtOn shader_set(shCRT);
-	shader_set_uniform_f(shader_get_uniform(shCRT, "textureSize"), WINDOW_WIDTH, WINDOW_HEIGHT);
-	shader_set_uniform_f(shader_get_uniform(shCRT, "lineDistance"), WINDOW_SCALE*2, WINDOW_SCALE);
-	shader_set_uniform_f(shader_get_uniform(shCRT, "intensity"), .3+wave(0, .02, 5));
+	//if crtOn shader_set(shCRT);
+	//shader_set_uniform_f(shader_get_uniform(shCRT, "textureSize"), WINDOW_WIDTH, WINDOW_HEIGHT);
+	//shader_set_uniform_f(shader_get_uniform(shCRT, "lineDistance"), WINDOW_SCALE*2, WINDOW_SCALE);
+	//shader_set_uniform_f(shader_get_uniform(shCRT, "intensity"), .3+wave(0, .02, 5));
 	draw_surface_ext(application_surface, 0, 0, sc, sc, 0, c_white, 1);
-	shader_reset();
+	//shader_reset();
 	surface_reset_target();
 	
 	draw_surface(passSurf1, 0, 0);

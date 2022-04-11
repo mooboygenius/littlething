@@ -7,7 +7,7 @@ switch substate {
 	break;
 	
 	case 1:
-		if input(mb_left, PRESS) && !getHighestInstanceUnderMouse()!=id {
+		if input(mb_left, PRESS) && !HIGHEST_INSTANCE_UNDER_MOUSE!=id {
 			substate=0;
 		}
 		text=getStringInput(text, false);

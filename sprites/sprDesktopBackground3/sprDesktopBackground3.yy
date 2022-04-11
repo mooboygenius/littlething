@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"109302ab-c873-4e47-bfbe-884c654a8ff6","path":"sprites/sprDesktopBackground3/sprDesktopBackground3.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"109302ab-c873-4e47-bfbe-884c654a8ff6","path":"sprites/sprDesktopBackground3/sprDesktopBackground3.yy",},"LayerId":{"name":"23818446-9bbe-4597-ba4a-3e6fa45f80d9","path":"sprites/sprDesktopBackground3/sprDesktopBackground3.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sprDesktopBackground3","path":"sprites/sprDesktopBackground3/sprDesktopBackground3.yy",},"resourceVersion":"1.0","name":"109302ab-c873-4e47-bfbe-884c654a8ff6","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"4257c71f-738e-4272-9deb-2800f389099e","path":"sprites/sprDesktopBackground3/sprDesktopBackground3.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"4257c71f-738e-4272-9deb-2800f389099e","path":"sprites/sprDesktopBackground3/sprDesktopBackground3.yy",},"LayerId":{"name":"23818446-9bbe-4597-ba4a-3e6fa45f80d9","path":"sprites/sprDesktopBackground3/sprDesktopBackground3.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sprDesktopBackground3","path":"sprites/sprDesktopBackground3/sprDesktopBackground3.yy",},"resourceVersion":"1.0","name":"4257c71f-738e-4272-9deb-2800f389099e","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sprDesktopBackground3","path":"sprites/sprDesktopBackground3/sprDesktopBackground3.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"00fb9b2d-c817-41f9-b3f4-df9b2dbbc5b2","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"109302ab-c873-4e47-bfbe-884c654a8ff6","path":"sprites/sprDesktopBackground3/sprDesktopBackground3.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"c0cadbd6-3bcd-4497-a114-432033e6ae08","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4257c71f-738e-4272-9deb-2800f389099e","path":"sprites/sprDesktopBackground3/sprDesktopBackground3.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,

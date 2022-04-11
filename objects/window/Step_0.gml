@@ -35,14 +35,14 @@ switch state {
 	break;
 	
 	case windowStates.idle:
-		if !lockPosition && getMouseInRectangle(dragLeft, dragTop, dragRight, dragBottom) && getHighestInstanceUnderMouse()==id && input(mb_left, PRESS) state=windowStates.moving;
+		if !lockPosition && getMouseInRectangle(dragLeft, dragTop, dragRight, dragBottom) && HIGHEST_INSTANCE_UNDER_MOUSE==id && input(mb_left, PRESS) state=windowStates.moving;
 		
 		for (var i=0; i<array_length(border); i++) {
 			var a=[0, 0, 0, 0];
 			for (var z=0; z<array_length(border[i][1]); z++) {
 				a[z]=border[i][1][z];
 			}
-			if getMouseInRectangle(a[0], a[1], a[2], a[3]) && getHighestInstanceUnderMouse()==id && !lockSize {
+			if getMouseInRectangle(a[0], a[1], a[2], a[3]) && HIGHEST_INSTANCE_UNDER_MOUSE==id && !lockSize {
 				if i==borders.right || i==borders.left with cursor pullHorizontal=true;
 				if i==borders.top || i==borders.bottom with cursor pullVertical=true;
 				if input(mb_left, PRESS) {
@@ -172,6 +172,7 @@ border[borders.bottom][1]=[bl, bb-w, br, bb+w];
 portWidth=floor(windowWidth-6);
 portHeight=floor(windowHeight-13);
 
+/*
 if ds_exists(children, ds_type_list) {
 	for (var i=0; i<ds_list_size(children); i++) {
 		instance_activate_object(children[| i]);
@@ -190,8 +191,10 @@ if ds_exists(children, ds_type_list) {
 		}
 	}
 }
+*/
+handleChildren();
 
-if getHighestInstanceUnderMouse()==id && input(mb_left, PRESS) {
+if HIGHEST_INSTANCE_UNDER_MOUSE==id && input(mb_left, PRESS) {
 	var d=depth;
 	with window {
 		if depth<d d=depth;

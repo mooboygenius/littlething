@@ -16,7 +16,7 @@ if surface_exists(drawSurf) {
 	top=portY,
 	right=left+portWidth-barWidth,
 	bottom=top+portHeight;
-	if point_in_rectangle(drawX, drawY, left, top, right, bottom) && getHighestInstanceUnderMouse()==id {
+	if point_in_rectangle(drawX, drawY, left, top, right, bottom) && HIGHEST_INSTANCE_UNDER_MOUSE==id {
 		inDrawingArea=true;
 		with cursor drawing=true;
 		var x1=drawX-portX-barWidth,

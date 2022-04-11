@@ -16,7 +16,7 @@ switch state {
 		x=lerp(x, nearestAcceptableX, l);
 		y=lerp(y, nearestAcceptableY, l);
 		
-		var isHighest=getHighestInstanceUnderMouse()==id;
+		var isHighest=HIGHEST_INSTANCE_UNDER_MOUSE==id;
 		
 		if hoveringOver && input(mb_left, RELEASE) && isHighest {
 			state=fileState.open;

@@ -19,6 +19,8 @@ addShteamGame=function(nm="default", spr=sprDefaultShteamThumbnail, l="") {
 }
 
 addShteamGame("Dead Estate", sprDeadEstateThumbnail, "https://store.steampowered.com/app/1484720/Dead_Estate/");
-addShteamGame();
-addShteamGame();
-addShteamGame();
+addShteamGame("Shoot Trip Die", sprShootTripDieThumbnail, "https://store.steampowered.com/app/1773060/Shoot_Trip_Die/");
+addShteamGame("MAD SISTER'S....", sprMadSistersThumbnail, "https://www.newgrounds.com/portal/view/778644");
+addShteamGame("Ugby Mumba 3", sprUgbyMumba3Thumbnail, "https://www.newgrounds.com/portal/view/778725");
+addShteamGame("Shal's Game", sprShalsGameThumbnail, "https://www.newgrounds.com/portal/view/830496");
+addShteamGame("EARTHDIEDSCRE....", sprEarthDiedScreamingThumbnail, "");

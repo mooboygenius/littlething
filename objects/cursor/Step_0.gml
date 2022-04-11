@@ -21,7 +21,7 @@ if input(mb_right, PRESS) {
 		grace=max(grace, 5);
 		state=menuState.close;
 	}
-	var inst=getHighestInstanceUnderMouse(),
+	var inst=HIGHEST_INSTANCE_UNDER_MOUSE,
 	a=-1,
 	p=noone;
 	with inst {

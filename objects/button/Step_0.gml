@@ -29,7 +29,7 @@ if parentWindow!=noone && instance_exists(parentWindow) && !visible {
 switch state {
 	case 0:
 		if switchImageIndexWhenHovering image_index=hoveringOver;
-		if getHighestInstanceUnderMouse()==id && mouseIsInArea {
+		if HIGHEST_INSTANCE_UNDER_MOUSE==id && mouseIsInArea {
 			setMouseHoveringOver();
 			hoveringOver=true;
 			if input(mb_left, clickType) {

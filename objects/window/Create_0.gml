@@ -73,3 +73,25 @@ drawScript=function(x, y) {
 drawShadowScript=function(x, y) {
 	drawScript(x, y);
 }
+
+handleChildren=function() {
+	/// @function handleChildren()
+	if ds_exists(children, ds_type_list) {
+		for (var i=0; i<ds_list_size(children); i++) {
+			instance_activate_object(children[| i]);
+			with children[| i] {
+				x=other.x+3+xstart;
+				y=other.y+10+ystart;
+				visible=false;
+				parentWindow=other;
+				if (xstart!=clamp(xstart, 0, other.portWidth) || ystart!=clamp(ystart, 0, other.portHeight)) && canDeactivate {
+					instance_deactivate_object(self);
+				}
+			}
+			if !instance_exists(children[| i]) {
+				show_debug_message(concat("cleared #", i, " from children objects list, instance was deleted"));
+				ds_list_delete(children, i);
+			}
+		}
+	}
+}

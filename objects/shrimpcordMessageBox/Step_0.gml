@@ -6,13 +6,13 @@ enum messageState {idle, typing, sending}
 
 switch state {
 	case messageState.idle:
-		if getHighestInstanceUnderMouse()==id && input(mb_left, PRESS) {
+		if HIGHEST_INSTANCE_UNDER_MOUSE==id && input(mb_left, PRESS) {
 			state=messageState.typing;
 		}
 	break;
 	
 	case messageState.typing:
-		if (getHighestInstanceUnderMouse()!=id && input(mb_left, PRESS)) || getActiveWindow()!=parentWindow {
+		if (HIGHEST_INSTANCE_UNDER_MOUSE!=id && input(mb_left, PRESS)) || getActiveWindow()!=parentWindow {
 			state=messageState.idle;
 		}
 		if keyboard_check_pressed(vk_anykey) && getActiveWindow()==parentWindow {

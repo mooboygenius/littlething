@@ -1,6 +1,6 @@
 {
   "ConfigValues": {
-    "dev": {"option_operagx_game_name":"littlething","option_operagx_interpolate_pixels":"false",},
+    "dev": {"option_operagx_game_name":"littlething","option_operagx_interpolate_pixels":"false","option_operagx_display_cursor":"false",},
   },
   "option_operagx_version": "1.0.0.0",
   "option_operagx_next_version": "1.0.0.0",

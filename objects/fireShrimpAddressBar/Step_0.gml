@@ -41,7 +41,7 @@ clickFunction=function() {
 	}
 }
 
-if input(mb_left, PRESS) && getHighestInstanceUnderMouse()!=id {
+if input(mb_left, PRESS) && HIGHEST_INSTANCE_UNDER_MOUSE!=id {
 	if substate==urlStates.typing {
 		substate=urlStates.idle;
 	}

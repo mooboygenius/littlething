@@ -45,11 +45,19 @@ function input(key, type=HOLD) {
 }
 
 function getMouseX() {
-	return mouse_x;
+	var mx=mouse_x;
+	if os_browser!=browser_not_a_browser {
+		mx/=WINDOW_SCALE;
+	}
+	return mx;
 }
 
 function getMouseY() {
-	return mouse_y;
+	var my=mouse_y;
+	if os_browser!=browser_not_a_browser {
+		my/=WINDOW_SCALE;
+	}
+	return my;
 }
 
 function setMouseHoveringOver() {
@@ -62,14 +70,29 @@ function getHighestInstanceAtPosition(x, y) {
 	list=ds_list_create(),
 	instances=instance_position_list(x, y, worldObject, list, false);
 	for (var i=0; i<instances; i++) {
+		//show_debug_message(concat(i));
 		with list[| i] {
 			if depth<d && object_index!=cursor {
 				d=depth;
 				lowest=list[| i];
+				//show_debug_message(concat("depth: ", d, ",  i: ", lowest));
 			}
 		}
 	}
+	
+	/*show_debug_message(concat(
+		"-------------\n",
+		"lowest depth: ",
+		d,
+		",  instance: ",
+		lowest,
+		"   (total instances: ",
+		instances,
+		")"
+	));*/
+	
 	ds_list_destroy(list);
+	
 	return lowest;
 }
 
