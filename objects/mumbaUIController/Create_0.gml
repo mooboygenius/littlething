@@ -5,3 +5,4 @@ event_inherited();
 playerReference=noone;
 weaponReference=noone;
 bounceY=0;
+skulls=ds_list_create();

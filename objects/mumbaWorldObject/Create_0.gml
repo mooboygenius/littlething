@@ -4,7 +4,9 @@ event_inherited();
 
 getHurt=function(amt) {
 	/// @function getHurt(amount)
-	grace=amt*10;
+	if object_is_ancestor(object_index, mumbaLivingObject) {
+		grace=amt*10;
+	}
 }
 
 hurt=function(in, amt) {
@@ -12,6 +14,21 @@ hurt=function(in, amt) {
 	with in {
 		hp-=amt;
 		getHurt(amt);
+	}
+}
+
+doScreenWrap=function() {
+	/// @function doScreenWrap()
+	var w=0;
+	with mumbaLevel {
+		w=tileSurfaceWidth;
+	}
+	if w>0 {
+		if x<0 {
+			x=w;
+		} else if x>w {
+			x=0;
+		}
 	}
 }
 
@@ -46,6 +63,10 @@ useMumbaPhysics=function() {
 		verticalKnockback=lerp(verticalKnockback, 0, weight);
 		y+=v;
 	}
+	
+	if wrapAroundScreen {
+		doScreenWrap();
+	}
 }
 
 setCameraFocus=function(object) {
@@ -75,4 +96,21 @@ createMumbaParticle=function(x, y, particle) {
 	with parentWindow {
 		part_particles_create(particleSystem, x, y, particle, 1);
 	}
+}
+
+createMumbaTextEffect=function(x, y, str, c=c_white, oc=BLACK_COLOR, l=120, hor=0, ver=0, w=0, cc=false, fnt=fntSystem) {
+	/// @function createMumbaTextEffect(x, y, string, [color], [outlineColor], [life], [horizontalSpeed], [verticalSpeed], [weight], [canCollide], [font])
+	var te=instance_create_depth(x, y, -100, mumbaTextEffect);
+	with te {
+		generateText(str, c, oc, fnt);
+		life=l;
+		horizontalSpeed=hor;
+		verticalSpeed=ver;
+		weight=w;
+		canCollide=cc;
+	}
+	with parentWindow {
+		ds_list_add(children, te);
+	}
+	return te;
 }

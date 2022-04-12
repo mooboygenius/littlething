@@ -15,6 +15,10 @@ with owner {
 	other.x=lerp(other.x, tx, l);
 	other.y=lerp(other.y, ty, l);
 	canFire=canMove && canControl;
+	if point_distance(x, y, other.x, other.y)>48 {
+		other.x=x;
+		other.y=y;
+	}
 }
 
 fireTimer--;
@@ -55,6 +59,18 @@ if canFire && input(mumbaInputFire) && fireTimer<=0 {
 				ds_list_add(children, bullet);
 			}
 		}
+		var casing=instance_create_depth(x, y, depth-1, mumbaBulletCasing);
+		with casing {
+			angle=irandom(360);
+			grace=irandom_range(2, 5);
+			var m=.33;
+			horizontalSpeed=other.bulletSpeed*m*-other.xScale*random_range(.5, 1.2);
+			verticalSpeed=-other.bulletSpeed*m*random_range(.5, 1.2);
+		}
+		with parentWindow {
+			ds_list_add(children, casing);
+		}
 	}
 }
+
 angle=lerp(angle, 0, .2);

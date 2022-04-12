@@ -34,7 +34,7 @@ with cameraFocus {
 		break;
 	}
 }
-cameraSpeed=.05;
+cameraSpeed=.2;
 var ctx=clamp(cameraTargetX+portWidth div 2, cameraRightLimit+min(GAME_WIDTH, portWidth), cameraLeftLimit),
 cty=clamp(cameraTargetY+portHeight div 2, cameraBottomLimit+min(GAME_HEIGHT, portHeight), cameraTopLimit);
 cameraX=lerp(cameraX, ctx, cameraSpeed)+irandom_range(-cameraShake, cameraShake)+lengthdir_x(cameraKick, cameraKickDirection);

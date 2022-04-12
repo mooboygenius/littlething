@@ -30,8 +30,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "states",
-    "path": "folders/Objects/mumba/states.yy",
+    "name": "in-game stuff",
+    "path": "folders/Objects/mumba/in-game stuff.yy",
   },
   "resourceVersion": "1.0",
   "name": "mumbaLevel",

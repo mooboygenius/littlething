@@ -29,10 +29,12 @@
     {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"wrapAroundScreen","path":"objects/mumbaWorldObject/mumbaWorldObject.yy",},"objectId":{"name":"mumbaWorldObject","path":"objects/mumbaWorldObject/mumbaWorldObject.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
-    "name": "states",
-    "path": "folders/Objects/mumba/states.yy",
+    "name": "enemies",
+    "path": "folders/Objects/mumba/in-game stuff/enemies.yy",
   },
   "resourceVersion": "1.0",
   "name": "mumbaEnemy",

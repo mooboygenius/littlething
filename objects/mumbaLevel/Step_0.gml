@@ -20,8 +20,8 @@ with background {
 
 var w=tileSurfaceWidth, h=tileSurfaceHeight;
 with parentWindow {
-	cameraLeftLimit=0;
+	cameraLeftLimit=-16;
 	cameraTopLimit=0;
-	cameraRightLimit=-w;
+	cameraRightLimit=-w+16;
 	cameraBottomLimit=-h;
 }

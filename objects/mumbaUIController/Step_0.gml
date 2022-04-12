@@ -53,6 +53,18 @@ drawScript=function(x, y) {
 				with parentWindow {
 					ds_list_add(children, dusty);
 				}
+				
+				var casing=instance_create_depth(0, 0, depth-20, mumbaUIBulletCasing);
+				with casing {
+					drawX=gunX;
+					drawY=gunY;
+					horizontalSpeed=-2*random_range(.5, 1.2);
+					verticalSpeed=-3.5*random_range(.5, 1.2);
+					weight=random_range(.2, .3);
+				}
+				with parentWindow {
+					ds_list_add(children, casing);
+				}
 			}
 		}
 		#endregion
@@ -107,3 +119,47 @@ drawScript=function(x, y) {
 depth=-9999;
 
 bounceY=lerp(bounceY, 0, .2);
+
+if gameFrame%5==0 && ds_list_size(skulls)<instance_number(mumbaEnemy) {
+	var this=instance_create_depth(0, 0, 0, mumbaUISkull)
+	ds_list_add(skulls, this);
+	with parentWindow {
+		if !ds_list_find_index(children, this) ds_list_add(children, this);
+	}
+}
+
+var xo=0;
+for (var i=0; i<ds_list_size(skulls); i++) {
+	var this=skulls[| i];
+	var width=0, height=0;
+	with parentWindow {
+		if !ds_list_find_index(children, this) ds_list_add(children, this);
+		width=portWidth;
+		height=portHeight;
+	}
+	with this {
+		var tx=width-20-xo, ty=height-16+wave(-2, 2, 1, i/4);
+		if point_distance(drawX, drawY, tx, ty)>32 {
+			drawX=tx;
+			drawY=ty;
+		}
+		drawX=lerp(drawX, tx, .2);
+		drawY=lerp(drawY, ty, .2);
+		depth=other.depth-i;
+	}
+	xo+=12;
+}
+
+if ds_list_size(skulls)>instance_number(mumbaEnemy) {
+	var in=ds_list_size(skulls)-1;
+	with skulls[| in] {
+		grace=irandom_range(5, 10);
+		verticalSpeed=-2;
+		state=mumbaSkullState.leave;
+		squish=random_range(-.5, .5);
+		rotateDir=random_range(-10, 10);
+		sprite_index=sprMumbaUISkull;
+		image_index=irandom(image_number);
+	}
+	ds_list_delete(skulls, in);
+}

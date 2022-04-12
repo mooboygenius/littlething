@@ -44,8 +44,8 @@
     {"propertyId":{"name":"canMove","path":"objects/mumbaWorldObject/mumbaWorldObject.yy",},"objectId":{"name":"mumbaWorldObject","path":"objects/mumbaWorldObject/mumbaWorldObject.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "states",
-    "path": "folders/Objects/mumba/states.yy",
+    "name": "weapons",
+    "path": "folders/Objects/mumba/in-game stuff/weapons.yy",
   },
   "resourceVersion": "1.0",
   "name": "mumbaGun",

@@ -34,10 +34,11 @@
   "overriddenProperties": [
     {"propertyId":{"name":"passThrough","path":"objects/mumbaLivingObject/mumbaLivingObject.yy",},"objectId":{"name":"mumbaLivingObject","path":"objects/mumbaLivingObject/mumbaLivingObject.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"hp","path":"objects/mumbaLivingObject/mumbaLivingObject.yy",},"objectId":{"name":"mumbaLivingObject","path":"objects/mumbaLivingObject/mumbaLivingObject.yy",},"value":"1","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"wrapAroundScreen","path":"objects/mumbaWorldObject/mumbaWorldObject.yy",},"objectId":{"name":"mumbaWorldObject","path":"objects/mumbaWorldObject/mumbaWorldObject.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "states",
-    "path": "folders/Objects/mumba/states.yy",
+    "name": "effects",
+    "path": "folders/Objects/mumba/in-game stuff/effects.yy",
   },
   "resourceVersion": "1.0",
   "name": "mumbaCoin",
