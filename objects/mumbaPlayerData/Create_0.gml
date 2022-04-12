@@ -8,3 +8,5 @@ gunInventory=ds_list_create();
 ds_list_add(gunInventory, mumbaGun);
 
 currentGun=0;
+
+money=0;

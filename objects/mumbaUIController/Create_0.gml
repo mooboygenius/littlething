@@ -4,3 +4,4 @@ event_inherited();
 
 playerReference=noone;
 weaponReference=noone;
+bounceY=0;

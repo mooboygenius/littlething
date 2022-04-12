@@ -1,6 +1,15 @@
 if live_call() return live_result;
 
+var xsc=xScale;
+
 event_inherited();
+
+if input(mumbaInputFire) {
+	turnTowardsMovementDirection=false;
+	xScale=lerp(xScale, sign(xsc), .5);
+} else {
+	turnTowardsMovementDirection=true;
+}
 
 #region movement
 if canControl {
@@ -93,12 +102,27 @@ with myUI {
 }
 
 #region ui face sprite
+var spr=uiSprite;
 if grace>0 {
 	uiSprite=sprMumbaUISad;
 } else if killCoolDown>0 {
-	uiSprite=sprMumbaUIPeter;
+	if uiSprite!=sprMumbaUIKill && uiSprite!=sprMumbaUIPeter && uiSprite!=sprMumbaUICat && uiSprite!=sprMumbaUIConfused {
+		if chance(.1) {
+			uiSprite=choose(sprMumbaUIPeter, sprMumbaUICat, sprMumbaUIConfused);
+		} else {
+			uiSprite=sprMumbaUIKill
+		}
+	}
+} else if coinCoolDown>0 {
+	uiSprite=sprMumbaUIGetMoney;
 } else {
 	uiSprite=sprMumbaUINormal;
+}
+if uiSprite!=spr {
+	with myUI {
+		grace=2;
+		bounceY=-8;
+	}
 }
 #endregion
 
@@ -137,3 +161,4 @@ if !place_meeting(x, y+1, mumbaWall) {
 setCameraFocus(self);
 
 killCoolDown--;
+coinCoolDown--;

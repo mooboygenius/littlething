@@ -14,7 +14,7 @@ levelMap=[
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-[0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 3, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
 [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -33,7 +33,9 @@ ds_list_add(children, background);
 
 generateMap=function() {
 	/// @function generateMap()
+	var height=array_length(levelMap)-1;
 	for (var yy=0; yy<array_length(levelMap); yy++) {
+		var width=array_length(levelMap[yy])-1;
 		for (var xx=0; xx<array_length(levelMap[yy]); xx++) {
 			var a=levelMap[yy][xx],
 			inst=noone,
@@ -45,7 +47,15 @@ generateMap=function() {
 				case 0: /* nothing */ break;
 				
 				// wall
-				case 1: inst=instance_create_depth(tx, ty, -10, mumbaWall) break;
+				case 1:
+					var left=xx>0 && levelMap[yy][xx-1]==1,
+					up=yy>0 && levelMap[yy-1][xx]==1,
+					right=xx<width && levelMap[yy][xx+1]==1,
+					down=yy<height && levelMap[yy+1][xx]==1;
+					if !(left && up && right && down) {
+						inst=instance_create_depth(tx, ty, -10, mumbaWall);
+					}
+				break;
 				
 				// player
 				case 2:

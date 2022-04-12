@@ -14,14 +14,14 @@ drawScript=function(x, y) {
 			playerSquish=squish;
 			playerSpeed=min(1, abs(horizontalSpeed));
 			playerKnockback=-abs(horizontalKnockback)*4;
+			if grace || other.grace setSwapAmountShader(c_white, c_white, 1, 1);
 		}
 		var width=0, height=0;
 		with parentWindow {
 			width=portWidth;
 			height=portHeight;
-			if grace setSwapAmountShader(c_white, c_white, 1, 1);
 		}
-		var playerX=32+playerKnockback, playerY=height-20, playerYWave=playerY+wave(0, 2, 1)*!playerSpeed+wave(0, 3, .5)*playerSpeed, playerXScale=1+playerSquish, playerYScale=1-playerSquish, playerAngle=wave(-1, 5, 1)*playerSpeed;
+		var playerX=36+playerKnockback, playerY=height-20+bounceY, playerYWave=playerY+wave(0, 2, 1)*!playerSpeed+wave(0, 3, .5)*playerSpeed, playerXScale=1+playerSquish, playerYScale=1-playerSquish, playerAngle=wave(-1, 5, 1)*playerSpeed;
 		draw_sprite_ext(playerSpr, 0, playerX, playerYWave, playerXScale, playerYScale, playerAngle, c_white, 1);
 		shader_reset();
 		#endregion
@@ -85,7 +85,25 @@ drawScript=function(x, y) {
 			healthX+=12;
 		}
 		#endregion
+		
+		#region draw coins
+		var coinImage=gameFrame/4, coinX=playerX-25, coinY=playerY+8+wave(-2, 1, 1, .2), coinXScale=1, coinYScale=1, coinAngle=0;
+		draw_sprite_ext(sprMumbaUICoin, coinImage, coinX, coinY, coinXScale, coinYScale, coinAngle, c_white, 1);
+		draw_set_font(fntBoot);
+		draw_set_halign(fa_left);
+		draw_set_valign(fa_center);
+		var ctx=coinX+wave(3, 5, 1),
+		cty=coinY+4,
+		txt="x";
+		with mumbaPlayerData {
+			txt+=string(money);
+		}
+		drawTextOutlinedBasic(ctx, cty, txt)
+		
+		#endregion
 	}
 }
 
 depth=-9999;
+
+bounceY=lerp(bounceY, 0, .2);

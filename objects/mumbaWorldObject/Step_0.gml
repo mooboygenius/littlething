@@ -7,6 +7,6 @@ useMumbaPhysics();
 xstart=x;
 ystart=y;
 
-if horizontalSpeed!=0 {
+if horizontalSpeed!=0 && turnTowardsMovementDirection {
 	xScale=lerp(xScale, sign(horizontalSpeed), .25);
 }
