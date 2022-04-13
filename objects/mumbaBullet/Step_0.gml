@@ -1,5 +1,7 @@
 if live_call() return live_result;
 
+hitEnemy=false;
+
 event_inherited();
 
 xScale=1;
@@ -9,6 +11,7 @@ if coolOff<=0 {
 	instances=instance_place_list(x, y, mumbaLivingObject, list, false);
 	for (var i=0; i<instances; i++) {
 		if list[| i].object_index!=mumbaPlayer {
+			hitEnemy=true;
 			hurt(list[| i], damage);
 			if list[| i].maximumHp>1 {
 				var d=90+random_range(-1, 1)*30,

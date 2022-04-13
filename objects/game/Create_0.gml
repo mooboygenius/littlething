@@ -51,10 +51,12 @@ ds_map_add(realWebsites, "www.shrimple.shrimp", shrimple);
 globalvar masterVolume;
 masterVolume=loadSetting("masterVolume", 1);
 
-globalvar mumbaInputLeft, mumbaInputRight, mumbaInputJump, mumbaInputFire;
+globalvar mumbaInputLeft, mumbaInputRight, mumbaInputJump, mumbaInputFire, mumbaInputWeaponUp, mumbaInputWeaponDown;
 mumbaInputLeft=loadSetting("mumbaInputLeft", vk_left);
 mumbaInputRight=loadSetting("mumbaInputRight", vk_right);
 mumbaInputJump=loadSetting("mumbaInputJump", ord("Z"));
 mumbaInputFire=loadSetting("mumbaInputFire", ord("X"));
+mumbaInputWeaponUp=loadSetting("mumbaInputWeaponUp", vk_up);
+mumbaInputWeaponDown=loadSetting("mumbaInputWeaponDown", vk_down);
 
 #macro HIGHEST_INSTANCE_UNDER_MOUSE getHighestInstanceUnderMouse()

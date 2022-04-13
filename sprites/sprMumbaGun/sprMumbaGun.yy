@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "mumba",
-    "path": "folders/Sprites/mumba.yy",
+    "name": "weapons",
+    "path": "folders/Sprites/mumba/weapons.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprMumbaGun",

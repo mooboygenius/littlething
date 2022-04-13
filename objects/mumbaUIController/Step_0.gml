@@ -32,7 +32,10 @@ drawScript=function(x, y) {
 			gunSquish=0,
 			gunAngle=0,
 			gunFire=0,
-			fired=false;
+			fired=false,
+			cs=noone,
+			gxo=0,
+			gyo=0;
 			with weaponReference {
 				gunSpr=uiSprite;
 				gunSquish=squish;
@@ -40,6 +43,11 @@ drawScript=function(x, y) {
 				if grace setSwapAmountShader(c_white, c_white, 1, 1);
 				if justFired fired=true;
 				gunFire=min(0, fireTimer/fireRate*-8)
+				cs=uiCasingSprite;
+			}
+			if sprite_exists(gunSpr) {
+				gxo=sprite_get_xoffset(gunSpr);
+				gyo=sprite_get_yoffset(gunSpr);
 			}
 			var gunX=playerX+20+sprite_get_xoffset(gunSpr)+gunFire, gunY=playerY+wave(-1, 1, 1, .2)*!playerSpeed+wave(-2, 2, .75, .1)*playerSpeed, gunXScale=1+gunSquish, gunYScale=1-gunSquish;
 			draw_sprite_ext(gunSpr, 0, gunX, gunY, gunXScale, gunYScale, gunAngle, c_white, 1);
@@ -47,23 +55,26 @@ drawScript=function(x, y) {
 			if fired {
 				var dusty=instance_create_depth(0, 0, depth-10, mumbaUIDust);
 				with dusty {
-					drawX=gunX+sprite_width;
-					drawY=gunY-sprite_yoffset;
+					drawX=gunX+gxo;
+					drawY=gunY-gyo;
 				}
 				with parentWindow {
 					ds_list_add(children, dusty);
 				}
 				
-				var casing=instance_create_depth(0, 0, depth-20, mumbaUIBulletCasing);
-				with casing {
-					drawX=gunX;
-					drawY=gunY;
-					horizontalSpeed=-2*random_range(.5, 1.2);
-					verticalSpeed=-3.5*random_range(.5, 1.2);
-					weight=random_range(.2, .3);
-				}
-				with parentWindow {
-					ds_list_add(children, casing);
+				if sprite_exists(cs) {
+					var casing=instance_create_depth(0, 0, depth-20, mumbaUIBulletCasing);
+					with casing {
+						sprite_index=cs;
+						drawX=gunX;
+						drawY=gunY;
+						horizontalSpeed=-2*random_range(.5, 1.2);
+						verticalSpeed=-3.5*random_range(.5, 1.2);
+						weight=random_range(.2, .3);
+					}
+					with parentWindow {
+						ds_list_add(children, casing);
+					}
 				}
 			}
 		}

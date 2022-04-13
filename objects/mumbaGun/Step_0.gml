@@ -1,4 +1,5 @@
 if live_call() return live_result;
+newBullet=noone;
 justFired=false;
 
 event_inherited();
@@ -35,11 +36,11 @@ if canFire && input(mumbaInputFire) && fireTimer<=0 {
 		with owner {
 			horizontalKnockback=-other.bulletSpeed*sign(other.xScale)*.1;
 		}
-		var bullet=instance_create_depth(bx, by, depth-1, bulletObject);
+		newBullet=instance_create_depth(bx, by, depth-1, bulletObject);
 		var dam=bulletDamageMultiplier,
 		dir=0;
 		createMumbaParticle(bx, by-4, mumbaDustParticle);
-		with bullet {
+		with newBullet {
 			var a=90-sign(other.xScale)*90+random_range(-other.inaccuracy, other.inaccuracy),
 			spd=other.bulletSpeed*random_range(.95, 1.05);
 			angle=a;
@@ -55,20 +56,24 @@ if canFire && input(mumbaInputFire) && fireTimer<=0 {
 		setCameraShake(dam);
 		setCameraKick(dam, dir);
 		with parentWindow {
-			if ds_list_find_index(children, bullet)<0 {
-				ds_list_add(children, bullet);
+			if ds_list_find_index(children, other.newBullet)<0 {
+				ds_list_add(children, other.newBullet);
 			}
 		}
-		var casing=instance_create_depth(x, y, depth-1, mumbaBulletCasing);
-		with casing {
-			angle=irandom(360);
-			grace=irandom_range(2, 5);
-			var m=.33;
-			horizontalSpeed=other.bulletSpeed*m*-other.xScale*random_range(.5, 1.2);
-			verticalSpeed=-other.bulletSpeed*m*random_range(.5, 1.2);
-		}
-		with parentWindow {
-			ds_list_add(children, casing);
+		if sprite_exists(uiCasingSprite) {
+			var casing=instance_create_depth(x, y, depth-1, mumbaBulletCasing);
+			with casing {
+				sprite_index=other.casingSprite;
+				angle=irandom(360);
+				grace=irandom_range(2, 5);
+				var m=.33;
+				horizontalSpeed=other.bulletSpeed*m*-other.xScale*random_range(.5, 1.2);
+				verticalSpeed=-other.bulletSpeed*m*random_range(.5, 1.2);
+			}
+		
+			with parentWindow {
+				ds_list_add(children, casing);
+			}
 		}
 	}
 }

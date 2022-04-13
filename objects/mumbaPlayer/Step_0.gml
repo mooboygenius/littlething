@@ -4,12 +4,14 @@ var xsc=xScale;
 
 event_inherited();
 
+#region strafe
 if input(mumbaInputFire) {
 	turnTowardsMovementDirection=false;
 	xScale=lerp(xScale, sign(xsc), .5);
 } else {
 	turnTowardsMovementDirection=true;
 }
+#endregion
 
 #region movement
 if canControl {
@@ -68,9 +70,21 @@ playerData=noone;
 with parentWindow {
 	other.playerData=playerData;
 }
+
+var swap=false;
 with playerData {
 	//show_debug_message(concat("successfully accessing player data #", id, " from player object"));
+	var in=input(mumbaInputWeaponDown, PRESS)-input(mumbaInputWeaponUp, PRESS);
+	if in!=0 {
+		currentGun+=in;
+		var s=ds_list_size(gunInventory)-1;
+		if currentGun<0 currentGun=s else if currentGun>s currentGun=0;
+		swap=true;
+	}
 	other.myGunObject=gunInventory[| currentGun];
+}
+if swap {
+	instance_destroy(myGunInstance);
 }
 
 var gunInstanceExists=instance_exists(myGunInstance);
@@ -80,6 +94,9 @@ if (myGunObject && !gunInstanceExists) || (myGunObject && gunInstanceExists && m
 	with myGunInstance {
 		owner=other;
 		depth=other.depth-1;
+		grace=3;
+		squish=-.3;
+		angle=-20;
 	}
 	with parentWindow {
 		if ds_list_find_index(children, other.myGunInstance)<0 {

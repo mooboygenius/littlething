@@ -31,7 +31,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "ui",
-    "path": "folders/Objects/mumba/in-game stuff/effects/ui.yy",
+    "path": "folders/Objects/mumba/in-game stuff/ui.yy",
   },
   "resourceVersion": "1.0",
   "name": "mumbaUISkull",
