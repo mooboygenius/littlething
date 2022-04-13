@@ -9,12 +9,12 @@ centerWindow(self);
 
 globalvar mumbaRooms;
 mumbaRooms=ds_list_create();
-/*
-level=instance_create_depth(0, 0, depth-irandom(10), mumbaLevel);
-ds_list_add(children, level);*/
 
-title=instance_create_depth(0, 0, 0, mumbaTitleController);
-ds_list_add(children, title);
+level=instance_create_depth(0, 0, depth-irandom(10), mumbaLevel);
+ds_list_add(children, level);
+
+/*title=instance_create_depth(0, 0, 0, mumbaTitleController);
+ds_list_add(children, title);*/
 
 playerData=instance_create_depth(0, 0, 0, mumbaPlayerData);
 ds_list_add(children, playerData);

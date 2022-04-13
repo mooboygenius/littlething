@@ -18,7 +18,7 @@ if canControl {
 	var hin=input(mumbaInputRight)-input(mumbaInputLeft),
 	spd=2.66*hin;
 	if hin!=0 && abs(horizontalSpeed)<.3 {
-		squish=-.2;
+		squish=-.05;
 	}
 	horizontalSpeed=lerp(horizontalSpeed, spd, weight*2);
 	

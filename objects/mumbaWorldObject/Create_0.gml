@@ -1,5 +1,7 @@
 if live_call() return live_result;
 
+mask_index=sprite_index;
+
 event_inherited();
 
 getHurt=function(amt) {
