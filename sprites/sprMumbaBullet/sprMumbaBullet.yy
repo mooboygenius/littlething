@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "mumba",
-    "path": "folders/Sprites/mumba.yy",
+    "name": "projectiles",
+    "path": "folders/Sprites/mumba/weapons/projectiles.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprMumbaBullet",

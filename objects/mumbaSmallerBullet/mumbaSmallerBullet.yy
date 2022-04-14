@@ -30,8 +30,8 @@
     {"propertyId":{"name":"life","path":"objects/mumbaBullet/mumbaBullet.yy",},"objectId":{"name":"mumbaBullet","path":"objects/mumbaBullet/mumbaBullet.yy",},"value":"12","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "effects",
-    "path": "folders/Objects/mumba/in-game stuff/effects.yy",
+    "name": "projectiles",
+    "path": "folders/Objects/mumba/in-game stuff/weapons/projectiles.yy",
   },
   "resourceVersion": "1.0",
   "name": "mumbaSmallerBullet",

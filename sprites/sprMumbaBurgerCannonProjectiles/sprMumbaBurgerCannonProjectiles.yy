@@ -77,8 +77,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "weapons",
-    "path": "folders/Sprites/mumba/weapons.yy",
+    "name": "projectiles",
+    "path": "folders/Sprites/mumba/weapons/projectiles.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprMumbaBurgerCannonProjectiles",

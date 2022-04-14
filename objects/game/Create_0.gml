@@ -59,4 +59,7 @@ mumbaInputFire=loadSetting("mumbaInputFire", ord("X"));
 mumbaInputWeaponUp=loadSetting("mumbaInputWeaponUp", vk_up);
 mumbaInputWeaponDown=loadSetting("mumbaInputWeaponDown", vk_down);
 
+globalvar mumbaShopFont;
+mumbaShopFont=font_add_sprite_ext(sprMumbaShopFont, "abcdefghijklmnopqrstuvwxyz1234567890", true, 1);
+
 #macro HIGHEST_INSTANCE_UNDER_MOUSE getHighestInstanceUnderMouse()

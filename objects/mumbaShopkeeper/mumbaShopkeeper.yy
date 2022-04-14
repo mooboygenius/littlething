@@ -1,15 +1,15 @@
 {
   "spriteId": {
-    "name": "sprTool",
-    "path": "sprites/sprTool/sprTool.yy",
+    "name": "sprMumbaPlaceholderShopGuy",
+    "path": "sprites/sprMumbaPlaceholderShopGuy/sprMumbaPlaceholderShopGuy.yy",
   },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "worldObject",
-    "path": "objects/worldObject/worldObject.yy",
+    "name": "mumbaShopObject",
+    "path": "objects/mumbaShopObject/mumbaShopObject.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -23,15 +23,17 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "title screen",
-    "path": "folders/Objects/mumba/title screen.yy",
+    "name": "shop",
+    "path": "folders/Objects/mumba/in-game stuff/shop.yy",
   },
   "resourceVersion": "1.0",
-  "name": "mumbaTitleScreenController",
+  "name": "mumbaShopkeeper",
   "tags": [],
   "resourceType": "GMObject",
 }

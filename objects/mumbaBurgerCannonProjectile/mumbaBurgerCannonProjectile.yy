@@ -30,13 +30,12 @@
   "properties": [],
   "overriddenProperties": [
     {"propertyId":{"name":"damage","path":"objects/mumbaBullet/mumbaBullet.yy",},"objectId":{"name":"mumbaBullet","path":"objects/mumbaBullet/mumbaBullet.yy",},"value":"2","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"penetrates","path":"objects/mumbaBullet/mumbaBullet.yy",},"objectId":{"name":"mumbaBullet","path":"objects/mumbaBullet/mumbaBullet.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"life","path":"objects/mumbaBullet/mumbaBullet.yy",},"objectId":{"name":"mumbaBullet","path":"objects/mumbaBullet/mumbaBullet.yy",},"value":"60","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"weight","path":"objects/mumbaWorldObject/mumbaWorldObject.yy",},"objectId":{"name":"mumbaWorldObject","path":"objects/mumbaWorldObject/mumbaWorldObject.yy",},"value":"0.01","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"penetrates","path":"objects/mumbaBullet/mumbaBullet.yy",},"objectId":{"name":"mumbaBullet","path":"objects/mumbaBullet/mumbaBullet.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"life","path":"objects/mumbaBullet/mumbaBullet.yy",},"objectId":{"name":"mumbaBullet","path":"objects/mumbaBullet/mumbaBullet.yy",},"value":"40","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "effects",
-    "path": "folders/Objects/mumba/in-game stuff/effects.yy",
+    "name": "projectiles",
+    "path": "folders/Objects/mumba/in-game stuff/weapons/projectiles.yy",
   },
   "resourceVersion": "1.0",
   "name": "mumbaBurgerCannonProjectile",

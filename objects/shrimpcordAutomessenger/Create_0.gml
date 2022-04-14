@@ -2,7 +2,7 @@ if live_call() return live_result;
 
 inString=string_lower(string_lettersdigits(inString));
 
-swears=["pinoy", "shal", "pussy", "minge", "bollocks", "flipping", "chode", "bozo", "ass", "bastard", "bitch", "cock", "cunt", "fuck", "shit", "piss", "prick", "whore", "dick", "nigga", "nigger", "faggot"]
+swears=["pinoy", "shal", "pussy", "minge", "bollocks", "flipping", "chode", "bozo", "ass", "bastard", "bitch", "cock", "cunt", "fuck", "shit", "piss", "prick", "whore", "dick", "nigga", "nigger", "faggot"];
 greetings=["hey", "hi", "hello", "greetings", "hola", "ni hao", "nihao", "bonjour", "kamusta", "oy", "oi", "who up"];
 
 enum sentenceTypes {statement, question, exclamation}

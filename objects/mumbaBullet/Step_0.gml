@@ -31,7 +31,7 @@ if coolOff<=0 {
 				verticalKnockback=other.verticalSpeed*m;
 			}
 			if penetrates || list[| i].passThrough {
-				coolOff=10;
+				coolOff=5;
 			} else {
 				life=-1;
 			}

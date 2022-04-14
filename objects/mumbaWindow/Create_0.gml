@@ -16,6 +16,9 @@ ds_list_add(children, level);
 /*title=instance_create_depth(0, 0, 0, mumbaTitleController);
 ds_list_add(children, title);*/
 
+/*shop=instance_create_depth(0, 0, 0, mumbaShopController);
+ds_list_add(children, shop);*/
+
 playerData=instance_create_depth(0, 0, 0, mumbaPlayerData);
 ds_list_add(children, playerData);
 

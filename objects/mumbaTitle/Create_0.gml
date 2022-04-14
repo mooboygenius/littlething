@@ -8,3 +8,7 @@ drawY=0;
 drawScript=function(x, y) {
 	defaultDrawScript(drawX, drawY);
 }
+
+timer=0;
+
+state=0;
