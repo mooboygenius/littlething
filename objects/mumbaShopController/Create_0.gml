@@ -19,6 +19,17 @@ with mumber {
 	
 }
 
+generateShopList=function() {
+	/// @function generateShopList([str1], [str2], [str3]...)
+	for (var i=0; i<argument_count; i++) {
+		if ds_map_exists(mumbaItems, argument[i]) {
+			
+		} else {
+			show_debug_message(concat(argument[i], " is not a real item"));
+		}
+	}
+}
+
 menuItems=ds_list_create();
 repeat(5) { 
 	thingy=instance_create_depth(0, 0, 0, mumbaShopItem);

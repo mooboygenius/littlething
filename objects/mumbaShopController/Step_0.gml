@@ -29,7 +29,10 @@ var ty=60;
 for (var i=0; i<ds_list_size(menuItems); i++) {
 	with menuItems[| i] {
 		var tx=width-sprite_xoffset-10;
-		if other.currentSelection==i tx-=16;
+		if other.currentSelection==i {
+			active=true;
+			tx-=16;
+		}
 		targetX=tx;
 		targetY=ty;
 		ty+=sprite_height;
