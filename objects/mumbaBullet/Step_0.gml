@@ -10,7 +10,7 @@ if coolOff<=0 {
 	var list=ds_list_create(),
 	instances=instance_place_list(x, y, mumbaLivingObject, list, false);
 	for (var i=0; i<instances; i++) {
-		if list[| i].object_index!=mumbaPlayer {
+		if list[| i].object_index!=mumbaPlayer && !list[| i].invulnerable {
 			hitEnemy=true;
 			hurt(list[| i], damage);
 			if list[| i].maximumHp>1 {
@@ -41,6 +41,6 @@ if coolOff<=0 {
 
 coolOff--;
 
-if place_meeting(x, y, mumbaWall) || life<0 {
+if (place_meeting(x, y, mumbaWall) && destroyOnImpact) || life<0 {
 	instance_destroy();
 }

@@ -22,4 +22,7 @@ if (life%60==0 && life>t) || (life%5==0 && life<=t) {
 if life<=0 {
 	instance_destroy();
 }
-if place_meeting(x, y, mumbaPlayer) hp=0;
+if place_meeting(x, y, mumbaPlayer) && !invulnerable hp=0;
+
+canGrab++;
+if canGrab<0 invulnerable=true else invulnerable=false;

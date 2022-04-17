@@ -12,4 +12,35 @@ purchaseScript=function() {
 active=false;
 
 defaultColor=$B8A44F;
-price=irandom_range(1, 10)*10+choose(0, 5);
+
+itemXScale=1;
+
+textYOffset=0;
+
+buyText="";
+cantBuyText="";
+outOfStockText="";
+
+buyWeapon=function() {
+	/// @function buyWeapon(name)
+	var obj=getMumbaItemObject(longName);
+	with mumbaShopController {
+		boughtSomething=true;
+	}
+	with mumbaPlayerData {
+		if obj { 
+			ds_list_add(gunInventory, obj);
+		}
+	}
+}
+
+leaveShop=function() {
+	/// @function leaveShop()
+	with mumbaShopController {
+		leaving=true;
+	}
+}
+
+buyScript=function() {
+	/// @function buyScript()
+}

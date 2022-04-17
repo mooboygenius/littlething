@@ -2,6 +2,8 @@ if live_call() return live_result;
 
 event_inherited();
 
+invShowUI=1-showUI;
+
 drawScript=function(x, y) {
 	if instance_exists(playerReference) {
 		#region draw player
@@ -21,7 +23,7 @@ drawScript=function(x, y) {
 			width=portWidth;
 			height=portHeight;
 		}
-		var playerX=36+playerKnockback, playerY=height-20+bounceY, playerYWave=playerY+wave(0, 2, 1)*!playerSpeed+wave(0, 3, .5)*playerSpeed, playerXScale=1+playerSquish, playerYScale=1-playerSquish, playerAngle=wave(-1, 5, 1)*playerSpeed;
+		var playerX=36+playerKnockback, playerY=height-20+bounceY+invShowUI*100, playerYWave=playerY+wave(0, 2, 1)*!playerSpeed+wave(0, 3, .5)*playerSpeed, playerXScale=1+playerSquish, playerYScale=1-playerSquish, playerAngle=wave(-1, 5, 1)*playerSpeed;
 		draw_sprite_ext(playerSpr, 0, playerX, playerYWave, playerXScale, playerYScale, playerAngle, c_white, 1);
 		shader_reset();
 		#endregion
@@ -149,7 +151,7 @@ for (var i=0; i<ds_list_size(skulls); i++) {
 		height=portHeight;
 	}
 	with this {
-		var tx=width-20-xo, ty=height-16+wave(-2, 2, 1, i/4);
+		var tx=width-20-xo, ty=height-16+other.invShowUI*100+wave(-2, 2, 1, i/4);
 		if point_distance(drawX, drawY, tx, ty)>32 {
 			drawX=tx;
 			drawY=ty;

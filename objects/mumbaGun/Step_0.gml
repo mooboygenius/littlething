@@ -25,6 +25,7 @@ with owner {
 fireTimer--;
 
 if canFire && input(mumbaInputFire) && fireTimer<=0 {
+	timesFired++;
 	fireTimer=fireRate;
 	var sprite=object_get_sprite(bulletObject),
 	xo=sprite_get_xoffset(sprite),
@@ -32,16 +33,23 @@ if canFire && input(mumbaInputFire) && fireTimer<=0 {
 	by=y;
 	x+=-sign(xScale)*8;
 	justFired=true;
+	var n=0;
 	repeat(bulletNumber) {
 		with owner {
 			horizontalKnockback=-other.bulletSpeed*sign(other.xScale)*.1;
 		}
 		newBullet=instance_create_depth(bx, by, depth-1, bulletObject);
+		
 		var dam=bulletDamageMultiplier,
-		dir=0;
+		dir=0,
+		addA=0;
+		if bulletNumber>1 {
+			addA=lerp(-multiShotSpread, multiShotSpread, n/(bulletNumber-1));
+		}
 		createMumbaParticle(bx, by-4, mumbaDustParticle);
+		
 		with newBullet {
-			var a=90-sign(other.xScale)*90+random_range(-other.inaccuracy, other.inaccuracy),
+			var a=90-sign(other.xScale)*90+addA+random_range(-other.inaccuracy, other.inaccuracy),
 			spd=other.bulletSpeed*random_range(.95, 1.05);
 			angle=a;
 			horizontalSpeed=lengthdir_x(spd, a);
@@ -49,17 +57,22 @@ if canFire && input(mumbaInputFire) && fireTimer<=0 {
 			dir=a+180;
 			grace=2*dam+random_range(-1, 2);
 			squish=-.5;
+			dam*=damage;
 		}
+		
 		squish=-.25;
 		grace=2*dam;
 		angle=30*sign(xScale);
-		setCameraShake(dam);
-		setCameraKick(dam, dir);
+		var shake=min(2, dam*.2);
+		setCameraShake(shake);
+		setCameraKick(shake, dir);
+		
 		with parentWindow {
 			if ds_list_find_index(children, other.newBullet)<0 {
 				ds_list_add(children, other.newBullet);
 			}
 		}
+		
 		if sprite_exists(uiCasingSprite) {
 			var casing=instance_create_depth(x, y, depth-1, mumbaBulletCasing);
 			with casing {
@@ -75,6 +88,8 @@ if canFire && input(mumbaInputFire) && fireTimer<=0 {
 				ds_list_add(children, casing);
 			}
 		}
+		
+		n++;
 	}
 }
 

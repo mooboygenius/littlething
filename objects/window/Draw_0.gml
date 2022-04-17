@@ -28,7 +28,7 @@ if surface_exists(finalSurf) {
 			surfToDraw=storeFinalSurf;
 		} else {
 			if surface_get_width(storeFinalSurf)!=portWidth || surface_get_height(storeFinalSurf)!=portHeight {
-					surface_resize(storeFinalSurf, portWidth, portHeight);
+				surface_resize(storeFinalSurf, portWidth, portHeight);
 			}
 			surface_copy(storeFinalSurf, 0, 0, finalSurf);
 		}

@@ -33,7 +33,7 @@
   ],
   "parent": {
     "name": "404",
-    "path": "folders/Objects/shrimp browser/404.yy",
+    "path": "folders/shrimp browser/404.yy",
   },
   "resourceVersion": "1.0",
   "name": "shrimpNotFound",

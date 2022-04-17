@@ -66,41 +66,43 @@ if canControl {
 #endregion
 
 #region handle weapon
-playerData=noone;
-with parentWindow {
-	other.playerData=playerData;
-}
-
-var swap=false;
-with playerData {
-	//show_debug_message(concat("successfully accessing player data #", id, " from player object"));
-	var in=input(mumbaInputWeaponDown, PRESS)-input(mumbaInputWeaponUp, PRESS);
-	if in!=0 {
-		currentGun+=in;
-		var s=ds_list_size(gunInventory)-1;
-		if currentGun<0 currentGun=s else if currentGun>s currentGun=0;
-		swap=true;
-	}
-	other.myGunObject=gunInventory[| currentGun];
-}
-if swap {
-	instance_destroy(myGunInstance);
-}
-
-var gunInstanceExists=instance_exists(myGunInstance);
-if (myGunObject && !gunInstanceExists) || (myGunObject && gunInstanceExists && myGunObject!=myGunInstance.object_index) {
-	show_debug_message(concat("my new gun: ", object_get_name(myGunObject)));
-	myGunInstance=instance_create_depth(x, y, depth, myGunObject);
-	with myGunInstance {
-		owner=other;
-		depth=other.depth-1;
-		grace=3;
-		squish=-.3;
-		angle=-20;
-	}
+if canControl {
+	playerData=noone;
 	with parentWindow {
-		if ds_list_find_index(children, other.myGunInstance)<0 {
-			ds_list_add(children, other.myGunInstance);
+		other.playerData=playerData;
+	}
+
+	var swap=false;
+	with playerData {
+		//show_debug_message(concat("successfully accessing player data #", id, " from player object"));
+		var in=input(mumbaInputWeaponDown, PRESS)-input(mumbaInputWeaponUp, PRESS);
+		if in!=0 {
+			currentGun+=in;
+			var s=ds_list_size(gunInventory)-1;
+			if currentGun<0 currentGun=s else if currentGun>s currentGun=0;
+			swap=true;
+		}
+		other.myGunObject=gunInventory[| currentGun];
+	}
+	if swap {
+		instance_destroy(myGunInstance);
+	}
+
+	var gunInstanceExists=instance_exists(myGunInstance);
+	if (myGunObject && !gunInstanceExists) || (myGunObject && gunInstanceExists && myGunObject!=myGunInstance.object_index) {
+		show_debug_message(concat("my new gun: ", object_get_name(myGunObject)));
+		myGunInstance=instance_create_depth(x, y, depth, myGunObject);
+		with myGunInstance {
+			owner=other;
+			depth=other.depth-1;
+			grace=3;
+			squish=-.3;
+			angle=-20;
+		}
+		with parentWindow {
+			if ds_list_find_index(children, other.myGunInstance)<0 {
+				ds_list_add(children, other.myGunInstance);
+			}
 		}
 	}
 }
@@ -113,7 +115,12 @@ with parentWindow {
 	}
 }
 
+showUILerp=lerp(showUILerp, showUI, .2);
+
+if DEV_MODE && input(vk_f2, PRESS) showUI=!showUI;
+
 with myUI {
+	showUI=other.showUILerp;
 	playerReference=other;
 	weaponReference=other.myGunInstance;
 }
@@ -148,7 +155,6 @@ if uiSprite!=spr {
 #region sprites
 if !place_meeting(x, y+1, mumbaWall) {
 	if verticalSpeed>0 {
-		show_debug_message(current_time);
 		if sprite_index==sprMumbaJump {
 			show_debug_message("huh");
 			setSprite(self, sprMumbaSwitchToFall);

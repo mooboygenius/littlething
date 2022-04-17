@@ -35,7 +35,7 @@
   ],
   "parent": {
     "name": "shrimple",
-    "path": "folders/Objects/shrimp browser/shrimple.yy",
+    "path": "folders/shrimp browser/shrimple.yy",
   },
   "resourceVersion": "1.0",
   "name": "shrimple",

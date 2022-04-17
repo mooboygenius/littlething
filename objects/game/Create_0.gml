@@ -60,25 +60,6 @@ mumbaInputWeaponUp=loadSetting("mumbaInputWeaponUp", vk_up);
 mumbaInputWeaponDown=loadSetting("mumbaInputWeaponDown", vk_down);
 
 globalvar mumbaShopFont;
-mumbaShopFont=font_add_sprite_ext(sprMumbaShopFont, "abcdefghijklmnopqrstuvwxyz1234567890O*", true, 1);
-
-globalvar mumbaItems;
-mumbaItems=ds_map_create();
-createMumbaItem=function(nm, ass, desc, skdesc, smallspr, bigspr, price) {
-	/// @function createMumbaItem(name, associatedObject, description, shopKeeperDescription, smallSprite, bigSprite, price)
-	ds_map_add(mumbaItems, nm, ds_map_create());
-	var map=mumbaItems[? nm];
-	ds_map_add(map, "name", nm);
-	ds_map_add(map, "object", ass);
-	ds_map_add(map, "description", desc);
-	ds_map_add(map, "shopKeeperDescription", skdesc);
-	ds_map_add(map, "smallSprite", smallspr);
-	ds_map_add(map, "bigSprite", bigspr);
-}
-createMumbaItem("Gun", mumbaGun, "Mumba's iconic gun!", "Looks sexy.", sprMumbaGun, sprMumbaGunUI, 0);
-createMumbaItem("Coconut Shotgun", mumbaCoconutShotgun, "Fires bouncy coconuts!", "Ooh -- the Coconut Shotgun! Do you like it?", sprMumbaCoconutShotgun, sprMumbaCoconutShotgunUI, 20);
-createMumbaItem("Tiki Gun", mumbaTikiGun, "High fire rate!", "The world-famous Tiki Gun! I carved it myself, you know.", sprMumbaTikiGun, sprMumbaTikiGunUI, 20);
-createMumbaItem("Burger Cannon", mumbaBurgerCannon, "Shoots heavy burger projectiles!", "Ugh... Do you REALLY want THAT?...", sprMumbaBurgerCannon, sprMumbaBurgerCannonUI, 30);
-createMumbaItem("Fry Bow", mumbaFryCrossbow, "Fires penetrating fry arrows!", "Are you gonna something -- like -- edible?...", sprMumbaFryCrossbow, sprMumbaFryCrossbowUI, 30);
+mumbaShopFont=font_add_sprite_ext(sprMumbaShopFont, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890$*.!?-,'", true, 1);
 
 #macro HIGHEST_INSTANCE_UNDER_MOUSE getHighestInstanceUnderMouse()

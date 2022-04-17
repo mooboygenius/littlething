@@ -4,16 +4,18 @@ var previousDepth=-9999,
 previous=noone,
 inst=noone;
 
-for (var i=0; i<ds_list_size(children); i++) {
-	var d=0,
-	prevDepth=0;
-	if i>0 {
-		with children[| i] d=depth;
-		with children[| i-1] prevDepth=depth;
-		if d>prevDepth {
-			var previousInst=children[| i-1];
-			ds_list_set(children, i-1, children[| i]);
-			ds_list_set(children, i, previousInst);
+repeat(10) {
+	for (var i=0; i<ds_list_size(children); i++) {
+		var d=0,
+		prevDepth=0;
+		if i>0 {
+			with children[| i] d=depth;
+			with children[| i-1] prevDepth=depth;
+			if d>prevDepth {
+				var previousInst=children[| i-1];
+				ds_list_set(children, i-1, children[| i]);
+				ds_list_set(children, i, previousInst);
+			}
 		}
 	}
 }

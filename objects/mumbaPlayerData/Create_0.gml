@@ -5,6 +5,12 @@ event_inherited();
 drawScript=function(x, y) {}
 
 gunInventory=ds_list_create();
+ds_list_add(gunInventory, mumbaBoomerang);
+ds_list_add(gunInventory, mumbaFlower);
+ds_list_add(gunInventory, mumbaHolyBow);
+ds_list_add(gunInventory, mumbaMagicHarp);
+ds_list_add(gunInventory, mumbaPitchfork);
+ds_list_add(gunInventory, mumbaFlameThrower);
 ds_list_add(gunInventory, mumbaFryCrossbow);
 ds_list_add(gunInventory, mumbaBurgerCannon);
 ds_list_add(gunInventory, mumbaCoconutShotgun);
