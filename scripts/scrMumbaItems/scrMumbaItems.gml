@@ -69,3 +69,5 @@ createMumbaItem("Holy Bow", mumbaHolyBow, "Fires three arrows at once!", "Be car
 createMumbaItem("Magic Harp", mumbaMagicHarp, "Shoots music notes in all directions!", "Good luck playing this without any fingers.", sprMumbaMagicHarp, sprMumbaMagicHarpUI, 50);
 createMumbaItem("Flower", mumbaFlower, "Fires a barrage of low-damage seeds!", "", sprMumbaFlower, sprMumbaFlowerUI, 20);
 createMumbaItem("Boomerang", mumbaBoomerang, "What goes around comes around!", "", sprMumbaBoomerang, sprMumbaBoomerangUI, 20);
+createMumbaItem("Ice Axe", mumbaIceAxe, "Swings at enemies with a heavy force!", "Oh... You want t-that old t-thing?...", sprMumbaIceAxe, sprMumbaIceAxeUI, 30);
+createMumbaItem("Snowman's Head", mumbaSnowman, "Vomits snowballs everywhere!", "H-He's cute once you g-get past the puking...", sprMumbaSnowman, sprMumbaSnowmanUI, 30, "S.Man Head");

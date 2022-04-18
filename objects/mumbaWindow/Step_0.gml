@@ -4,7 +4,7 @@ var previousDepth=-9999,
 previous=noone,
 inst=noone;
 
-repeat(10) {
+repeat(20) {
 	for (var i=0; i<ds_list_size(children); i++) {
 		var d=0,
 		prevDepth=0;
@@ -16,6 +16,16 @@ repeat(10) {
 				ds_list_set(children, i-1, children[| i]);
 				ds_list_set(children, i, previousInst);
 			}
+		}
+	}
+}
+
+if input(vk_f3, PRESS) && DEV_MODE {
+	show_debug_message("instances from lowest to highest rendering:");
+	for (var i=0; i<ds_list_size(children); i++) {
+		var inst=children[| i];
+		with inst {
+			show_debug_message(concat("[", i, "] ", object_get_name(object_index), " ", id));
 		}
 	}
 }

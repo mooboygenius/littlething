@@ -4,7 +4,6 @@ hitEnemy=false;
 
 event_inherited();
 
-xScale=1;
 life--;
 if coolOff<=0 {
 	var list=ds_list_create(),
