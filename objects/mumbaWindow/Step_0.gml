@@ -38,19 +38,37 @@ for (var i=0; i<ds_list_size(children); i++) {
 with cameraFocus {
 	other.cameraTargetX=-x;
 	other.cameraTargetY=-y;
-	
 	switch object_index {
 		case mumbaPlayer:
 			other.cameraTargetX-=48*sign(xScale);
 			other.cameraTargetY+=16;
 		break;
+		
+		case mumbaLSMumba:
+			other.cameraTargetY+=16;
+		break;
 	}
 }
+
+/*show_debug_message(concat(
+	"cameraX: ", cameraX,
+	"\ncameraY: ", cameraY,
+	"\ncameraTargetX: ", cameraTargetX,
+	"\ncameraTargetY: ", cameraTargetY,
+	"\nleftLimit: ", cameraLeftLimit,
+	"\nrightLimit: ", cameraRightLimit,
+	"\ntopLimit: ", cameraTopLimit,
+	"\nbottomLimit: ", cameraBottomLimit,
+));
+*/
 cameraSpeed=.2;
 var ctx=clamp(cameraTargetX+portWidth div 2, cameraRightLimit+min(GAME_WIDTH, portWidth), cameraLeftLimit),
+
 cty=clamp(cameraTargetY+portHeight div 2, cameraBottomLimit+min(GAME_HEIGHT, portHeight), cameraTopLimit);
+
 cameraX=lerp(cameraX, ctx, cameraSpeed)+irandom_range(-cameraShake, cameraShake)+lengthdir_x(cameraKick, cameraKickDirection);
 cameraY=lerp(cameraY, cty, cameraSpeed)+irandom_range(-cameraShake, cameraShake)+lengthdir_y(cameraKick, cameraKickDirection);
+
 cameraShake=max(cameraShake-.1, 0);
 cameraKick=max(cameraKick-.33, 0);
 drawXOffset=cameraX;

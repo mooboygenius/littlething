@@ -67,7 +67,9 @@ createMumbaItem("Flamethrower", mumbaFlameThrower, "Blasts clouds of fire at ene
 createMumbaItem("Devil's Pitchfork", mumbaPitchfork, "Quickly stabs at a close range!", "Woah! Talk about SHARP, man!", sprMumbaPitchfork, sprMumbaPitchforkUI, 40, "Devil P.Fork");
 createMumbaItem("Holy Bow", mumbaHolyBow, "Fires three arrows at once!", "Be careful where you point that thing, little dude.", sprMumbaHolyBow, sprMumbaHolyBowUI, 50);
 createMumbaItem("Magic Harp", mumbaMagicHarp, "Shoots music notes in all directions!", "Good luck playing this without any fingers.", sprMumbaMagicHarp, sprMumbaMagicHarpUI, 50);
-createMumbaItem("Flower", mumbaFlower, "Fires a barrage of low-damage seeds!", "", sprMumbaFlower, sprMumbaFlowerUI, 20);
-createMumbaItem("Boomerang", mumbaBoomerang, "What goes around comes around!", "", sprMumbaBoomerang, sprMumbaBoomerangUI, 20);
-createMumbaItem("Ice Axe", mumbaIceAxe, "Swings at enemies with a heavy force!", "Oh... You want t-that old t-thing?...", sprMumbaIceAxe, sprMumbaIceAxeUI, 30);
-createMumbaItem("Snowman's Head", mumbaSnowman, "Vomits snowballs everywhere!", "H-He's cute once you g-get past the puking...", sprMumbaSnowman, sprMumbaSnowmanUI, 30, "S.Man Head");
+createMumbaItem("Flower", mumbaFlower, "Fires a barrage of low-damage seeds!", "", sprMumbaFlower, sprMumbaFlowerUI, 30);
+createMumbaItem("Boomerang", mumbaBoomerang, "What goes around comes around!", "", sprMumbaBoomerang, sprMumbaBoomerangUI, 30);
+createMumbaItem("Ice Axe", mumbaIceAxe, "Swings at enemies with a heavy force!", "Oh... You want t-that old t-thing?...", sprMumbaIceAxe, sprMumbaIceAxeUI, 40);
+createMumbaItem("Snowman's Head", mumbaSnowman, "Vomits snowballs everywhere!", "H-He's cute once you g-get past the puking...", sprMumbaSnowman, sprMumbaSnowmanUI, 40, "S.Man Head");
+createMumbaItem("Peter the Ant", mumbaPeter, "Peter the Ant!", "Cute, right?!", sprMumbaPeter, sprMumbaPeterUI, 50, "Peter");
+createMumbaItem("The Fungus", mumbaMushroom, "A fungus among us.", "Eat it, it's really good!", sprMumbaMushroom, sprMumbaMushroomUI, 50, "Fungus");

@@ -10,8 +10,8 @@ centerWindow(self);
 globalvar mumbaRooms;
 mumbaRooms=ds_list_create();
 
-//level=instance_create_depth(0, 0, depth-irandom(10), mumbaShopEnter);
-//ds_list_add(children, level);
+level=instance_create_depth(0, 0, depth-irandom(10), mumbaTestLevel);
+ds_list_add(children, level);
 
 //title=instance_create_depth(0, 0, 0, mumbaTitleController);
 //ds_list_add(children, title);
@@ -19,8 +19,8 @@ mumbaRooms=ds_list_create();
 //shop=instance_create_depth(0, 0, 0, mumbaShopController);
 //ds_list_insert(children, 0, shop);
 
-levelSelect=instance_create_depth(0, 0, 0, mumbaLevelSelectController);
-ds_list_add(children, levelSelect);
+//levelSelect=instance_create_depth(0, 0, 0, mumbaLevelSelectController);
+//ds_list_add(children, levelSelect);
 
 playerData=instance_create_depth(0, 0, 0, mumbaPlayerData);
 ds_list_insert(children, 0, playerData);
@@ -34,10 +34,10 @@ cameraShake=0;
 cameraKick=0;
 cameraKickDirection=0;
 cameraFocus=noone;
-cameraLeftLimit=-9999;
-cameraRightLimit=9999;
-cameraTopLimit=-9999;
-cameraBottomLimit=9999;
+cameraLeftLimit=9999;
+cameraRightLimit=-9999;
+cameraTopLimit=9999;
+cameraBottomLimit=-9999;
 
 particleSystem=part_system_create();
 part_system_depth(particleSystem, 0);

@@ -15,7 +15,7 @@
   "VTile": false,
   "For3D": false,
   "width": 52,
-  "height": 53,
+  "height": 33,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -55,7 +55,7 @@
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
     "xorigin": 26,
-    "yorigin": 26,
+    "yorigin": 16,
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"sprMumbaSnowmanUI","path":"sprites/sprMumbaSnowmanUI/sprMumbaSnowmanUI.yy",},
