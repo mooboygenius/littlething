@@ -17,11 +17,7 @@ switch state {
 		}
 		yScale=xScale;
 		drawX=width div 2;
-		drawY=lerp(drawY, height div 2+wave(-2, 2, 1), .2);
+		drawY=lerp(drawY, targetY+wave(-2, 2, 1), .2);
 		angle=round(wave(-1, 1, .5)*2);
 	break;
-}
-
-drawScript=function(x, y) {
-	defaultDrawScript(drawX, drawY);
 }

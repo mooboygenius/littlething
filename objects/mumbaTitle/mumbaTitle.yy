@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "mumbaWorldObject",
-    "path": "objects/mumbaWorldObject/mumbaWorldObject.yy",
+    "name": "mumbaTitleObject",
+    "path": "objects/mumbaTitleObject/mumbaTitleObject.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

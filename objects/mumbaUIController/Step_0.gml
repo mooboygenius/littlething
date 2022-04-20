@@ -123,8 +123,7 @@ drawScript=function(x, y) {
 		with mumbaPlayerData {
 			txt+=string(money);
 		}
-		drawTextOutlinedBasic(ctx, cty, txt)
-		
+		drawTextOutlinedGeneral(ctx, cty, txt, 12, 9999, c_white, BLACK_COLOR, 1, 1, 0, 1);
 		#endregion
 	}
 }

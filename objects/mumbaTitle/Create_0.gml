@@ -4,10 +4,7 @@ event_inherited();
 
 drawX=0;
 drawY=0;
-
-drawScript=function(x, y) {
-	defaultDrawScript(drawX, drawY);
-}
+targetY=0;
 
 timer=0;
 

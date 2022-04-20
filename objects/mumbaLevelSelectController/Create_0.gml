@@ -37,6 +37,7 @@ for (var i=0; i<array_length(levels); i++) {
 		levels[i][z][mumbaLevelData.mapObject]=instance_create_depth(0, 0, depth-50, mumbaLSLevelCoin);
 		var d=noone;
 		with levels[i][z][mumbaLevelData.mapObject] {
+			name=other.levels[i][z][mumbaLevelData.name];
 			decorSprite=other.levels[i][z][mumbaLevelData.sprite];
 			var spr=decorSprite;
 			d=decor;

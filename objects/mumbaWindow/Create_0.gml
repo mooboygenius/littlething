@@ -10,11 +10,11 @@ centerWindow(self);
 globalvar mumbaRooms;
 mumbaRooms=ds_list_create();
 
-level=instance_create_depth(0, 0, depth-irandom(10), mumbaTestLevel);
-ds_list_add(children, level);
+//level=instance_create_depth(0, 0, depth-irandom(10), mumbaTestLevel);
+//ds_list_add(children, level);
 
-//title=instance_create_depth(0, 0, 0, mumbaTitleController);
-//ds_list_add(children, title);
+title=instance_create_depth(0, 0, 0, mumbaTitleController);
+ds_list_add(children, title);
 
 //shop=instance_create_depth(0, 0, 0, mumbaShopController);
 //ds_list_insert(children, 0, shop);
@@ -50,6 +50,20 @@ part_type_orientation(mumbaDustParticle, 0, 360, 5, 0, false);
 part_type_size(mumbaDustParticle, 1.2, 1.33, -.03, 0);
 part_type_direction(mumbaDustParticle, 90, 90, 0, 10);
 part_type_speed(mumbaDustParticle, .5, .6, -.01, 0);
+
+globalvar mumbaExplosionParticle;
+mumbaExplosionParticle=part_type_create();
+part_type_sprite(mumbaExplosionParticle, sprMumbaExplosion, true, false, true);
+part_type_size(mumbaExplosionParticle, .9, 1.3, -.1, .01);
+part_type_life(mumbaExplosionParticle, 10, 15);
+
+globalvar mumbaMagicParticle;
+mumbaMagicParticle=part_type_create();
+part_type_sprite(mumbaMagicParticle, sprMumbaMagicParticle, false, false, true);
+part_type_life(mumbaMagicParticle, 10, 20);
+part_type_size(mumbaMagicParticle, 1, 1, -.02, 0);
+part_type_orientation(mumbaMagicParticle, 0, 360, 4, 0, false);
+part_type_color_hsv(mumbaMagicParticle, 0, 255, 255, 255, 255, 255);
 
 handleChildren=function() {
 	/// @function handleChildren()

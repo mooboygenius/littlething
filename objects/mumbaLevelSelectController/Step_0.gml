@@ -25,36 +25,42 @@ with mumba {
 var hin=input(mumbaInputRight, PRESS)-input(mumbaInputLeft, PRESS),
 vin=input(mumbaInputWeaponDown, PRESS)-input(mumbaInputWeaponUp, PRESS),
 canMove=false;
-with mumba if state==0 canMove=true;
-if hin!=0 || vin!=0 && canMove {
+with mumba {
+	if state==0 && horizontalSpeed==0 && verticalSpeed==0 {
+		canMove=true;
+	}
+}
+
+if (hin!=0 || vin!=0) && canMove {
 	
-	if hin>0 {
-		currentLevelA++;
-		currentLevelB++;
-	} else if hin<0 && currentLevelA>0 {
-		currentLevelA--;
-		currentLevelB--;
-	} else if vin>0 {
-		if currentLevelA<=0 {
-			currentLevelA++;
-		} else {
-			currentLevelA--;
-		}
-		currentLevelB++;
-	} else if vin<0 {
-		currentLevelA++;
-		currentLevelB--;
+	var move=true;
+	if abs(hin)>0 && sign(hin)!=sign(mumba.xScale) {
+		mumba.squish=-.2;
+		mumba.targetXScale*=-1;
+		move=false;
 	}
 	
+	
+	var xa=0;
+	with mumba xa=sign(targetXScale);
+	var prevA=currentLevelA;
+	if move currentLevelA+=xa;
 	currentLevelA=clamp(currentLevelA, 0, array_length(levels)-1);
+	if prevA!=currentLevelA currentLevelB+=vin;
 	currentLevelB=clamp(currentLevelB, 0, array_length(levels[currentLevelA])-1);
 	
 	
 	var gx=0,
 	gy=0;
+	
+	with mumbaLSLevelCoin {
+		active=false;
+	}
+	
 	with levels[currentLevelA][currentLevelB][mumbaLevelData.mapObject] {
 		gx=x;
 		gy=y;
+		active=true;
 	}
 
 	with mumba {

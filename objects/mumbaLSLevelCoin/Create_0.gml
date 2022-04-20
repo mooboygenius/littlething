@@ -10,3 +10,5 @@ with decor {
 nextCoins=[];
 
 dots=ds_list_create();
+
+coolName=noone;

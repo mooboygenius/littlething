@@ -6,6 +6,7 @@ var minDistance=4;
 switch state {
 	case 0:
 		if point_distance(x, y, gotoX, gotoY)>4 {
+			squish=.2;
 			//show_debug_message(concat("distance: ", point_distance(x, y, gotoX, gotoY)));
 			state=1;
 			sprite_index=sprMumbaWalk;
@@ -17,12 +18,9 @@ switch state {
 		spd=4;
 		horizontalSpeed=lengthdir_x(spd, d);
 		verticalSpeed=lengthdir_y(spd, d);
-		if horizontalSpeed<0 xScale=-1 else xScale=1;
 		timer++;
 		var dist=point_distance(x, y, gotoX, gotoY);
-		show_debug_message(concat("distance: ", dist));
 		if dist<=6 || timer>60 {
-			show_debug_message(concat("blaa"));
 			timer=0;
 			horizontalSpeed=0;
 			verticalSpeed=0;
@@ -30,7 +28,11 @@ switch state {
 			y=gotoY;
 			sprite_index=sprMumba;
 			state=0;
-			xScale=1;
+			squish=-.2;
 		}
 	break;
 }
+
+xScale=lerp(xScale, targetXScale, .3);
+
+depth-=20;

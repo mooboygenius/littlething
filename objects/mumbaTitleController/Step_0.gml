@@ -3,14 +3,109 @@ if live_call() return live_result;
 event_inherited();
 
 var w=0, h=0;
-with parentWindow {
-	//show_debug_message("huhhh");
-	if !ds_list_find_index(children, other.title) {
-		ds_list_add(children, other.title);
-	}
-	w=portWidth;
-	h=portHeight;
+
+switch state {
+	case 0:
+		with parentWindow {
+			if instance_exists(other.title) && ds_list_find_index(children, other.title)<0 {
+				ds_list_add(children, other.title);
+			}
+			w=portWidth;
+			h=portHeight;
+		}
+		
+		centerX=w div 2;
+		centerY=h div 2;
+		timer++;
+		if timer>60 {
+			pressPrompt=instance_create_depth(centerX, centerY, depth-100, mumbaTitleStartPrompt);
+			with pressPrompt {
+				drawX=other.centerX;
+				drawY=other.centerY;
+			}
+			with parentWindow {
+				ds_list_add(children, other.pressPrompt);
+			}
+			timer=0;
+			state=1;
+		}
+	
+	case 1:
+		imageScale=lerp(imageScale, wave(1, 1.05, 16), .1);
+	
+		with title {
+			targetY=other.centerY+wave(-1, 1, 2)*8;
+			depth=-400;
+		}
+	
+		with pressPrompt {
+			depth=-500;
+			drawX=other.centerX;
+			drawY=other.centerY+56;
+		}
+		
+		if keyboard_check_pressed(vk_anykey) {
+			state=2;
+			imageScale+=.05;
+			with pressPrompt {
+				instance_destroy();
+			}
+		}
+	break;
+	break;
+	
+	case 2:
+		imageScale=lerp(imageScale, 1, .01);
+		var xs=1,
+		t=.8;
+		with title {
+			state=-1;
+			xScale=lerp(xScale, t, .1);
+			yScale=xScale;
+			xs=xScale;
+		}
+		if xs<(t+.05) {
+			state=3;
+		}
+	break;
+	
+	case 3:
+		imageScale=lerp(imageScale, 1, .01);
+		var go=false;
+		with title {
+			var l=.2,
+			xg=10;
+			drawY=lerp(drawY, -350, l);
+			xScale=lerp(xScale, xg, l);
+			yScale=xScale;
+			if xScale>=xg-.5 {
+				go=true;
+			}
+		}
+		if go {
+			with title {
+				instance_destroy();
+			}
+			state=4;
+		}
+	break;
+	
+	case 4:
+		imageScale=lerp(imageScale, 1, .01);
+		timer++;
+		if timer>30 {
+			timer=0;
+			state=5;
+		}
+	break;
+	
+	case 5:
+		centerX=lerp(centerX, 0, .1);
+		centerY=lerp(centerY, GAME_HEIGHT div 2+wave(-1, 1, 2)*4, .1);
+	break;
 }
+
+show_debug_message(state);
 
 drawScript=function(x, y) {
 	var w=1, h=1;
@@ -42,11 +137,11 @@ drawScript=function(x, y) {
 		draw_clear_alpha(0, 0);
 		surface_reset_target();
 	
-		var tx1=w div 2,
-		ty1=h div 2,
-		a=360 div 12,
+		var tx1=centerX,
+		ty1=centerY,
+		a=360 div 10,
 		a2=a-3,
-		l=200,
+		l=400,
 		d=2,
 		s=0,
 		gf=gameFrame*.7;
@@ -58,7 +153,7 @@ drawScript=function(x, y) {
 				surface_set_target(surf2);
 			}
 			var ma=(i-gf);
-			show_debug_message(i);
+			//show_debug_message(i);
 			var mtx1=tx1+lengthdir_x(d, ma),
 			mty1=ty1+lengthdir_y(d, ma),
 			tx2=mtx1+lengthdir_x(l, ma),
@@ -71,15 +166,15 @@ drawScript=function(x, y) {
 		}
 		
 		gpu_set_colorwriteenable(true, true, true, false);
-		setWaveShader(w, h, .1, .1, gameFrame*2);
 		surface_set_target(surf1);
-		draw_sprite(sprMumbaTitleBackground1, 0, 0, 0);
+		var ix=sprite_get_xoffset(sprMumbaTitleBackground1)+1,
+		iy=sprite_get_yoffset(sprMumbaTitleBackground1);
+		draw_sprite_ext(sprMumbaTitleBackground1, 0, ix, iy, imageScale, imageScale, 0, c_white, 1);
 		surface_reset_target();
 		
 		surface_set_target(surf2);
-		draw_sprite(sprMumbaTitleBackground2, 0, 0, 0);
+		draw_sprite_ext(sprMumbaTitleBackground2, 0, ix, iy, imageScale, imageScale, 0, c_white, 1);
 		surface_reset_target();
-		shader_reset();
 		gpu_set_colorwriteenable(true, true, true, true);
 		
 		draw_surface(surf1, 0, 0);

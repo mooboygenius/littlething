@@ -45,7 +45,7 @@ with cameraFocus {
 		break;
 		
 		case mumbaLSMumba:
-			other.cameraTargetY+=16;
+			other.cameraTargetY+=32;
 		break;
 	}
 }
