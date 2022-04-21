@@ -11,11 +11,9 @@ for (var i=0; i<ds_list_size(children); i++) {
 				show_debug_message(concat(ds_list_size(children), " added object to parent window: ", o, "  ", ds_list_find_index(children, o)));
 			}
 		}
+	} else {
+		ds_list_delete(children, i);
 	}
-}
-
-with background {
-	other.depth=depth-1;
 }
 
 var w=tileSurfaceWidth, h=tileSurfaceHeight;

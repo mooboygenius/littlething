@@ -96,6 +96,14 @@ switch state {
 		if timer>30 {
 			timer=0;
 			state=5;
+			littleMumba=instance_create_depth(0, 0, -200, mumbaTitleMumba);
+			with littleMumba {
+				xScale=3
+				yScale=xScale;
+				drawX=GAME_WIDTH+sprite_xoffset*xScale;
+				drawY=GAME_HEIGHT div 2;
+				owner=other;
+			}
 		}
 	break;
 	

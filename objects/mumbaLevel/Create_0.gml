@@ -47,9 +47,6 @@ children=ds_list_create();
 
 levelInstances=ds_list_create();
 
-background=instance_create_depth(0, 0, 0, mumbaBackground);
-ds_list_insert(children, 0, background);
-
 generateMap=function() {
 	/// @function generateMap()
 	if ds_exists(levelInstances, ds_type_list) {

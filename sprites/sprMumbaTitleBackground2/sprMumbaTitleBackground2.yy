@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "mumba",
-    "path": "folders/Sprites/mumba.yy",
+    "name": "title screen",
+    "path": "folders/Sprites/mumba/title screen.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprMumbaTitleBackground2",

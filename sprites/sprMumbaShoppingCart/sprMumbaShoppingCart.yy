@@ -81,8 +81,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "mumba",
-    "path": "folders/Sprites/mumba.yy",
+    "name": "shops",
+    "path": "folders/Sprites/mumba/shops.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprMumbaShoppingCart",

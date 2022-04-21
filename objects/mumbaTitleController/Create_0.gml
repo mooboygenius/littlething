@@ -17,3 +17,4 @@ centerY=0;
 centerX=0;
 state=0;
 timer=0;
+littleMumba=noone;

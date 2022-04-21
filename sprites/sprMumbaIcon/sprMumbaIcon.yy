@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "mumba",
+    "path": "folders/Sprites/mumba.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprMumbaIcon",
