@@ -17,4 +17,17 @@ if hp<=0 {
 			ds_list_add(children, inst);
 		}
 	}
+	setCameraShake(3);
+	var corpse=instance_create_depth(x, y, depth+10, mumbaCorpse);
+	with corpse {
+		sprite_index=other.corpseSprite;
+		mask_index=sprite_index;
+		grace=8;
+		squish=.2;
+		horizontalSpeed=other.horizontalKnockback*2;
+		verticalSpeed=-abs(horizontalSpeed)*random_range(.9, 1.1);
+	}
+	with parentWindow {
+		ds_list_add(children, corpse);
+	}
 }

@@ -4,5 +4,5 @@ event_inherited();
 
 owner=noone;
 state=0;
-turnSpeed=50;
+turnSpeed=30;
 squish=1;

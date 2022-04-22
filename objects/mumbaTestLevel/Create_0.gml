@@ -2,8 +2,6 @@ if live_call() return live_result;
 
 event_inherited();
 
-
-
 generateLevelMapArray([
 "",
 "",
@@ -13,13 +11,38 @@ generateLevelMapArray([
 "002",
 "",
 "",
+"0000001",
+"000001100000!000000!000000!",
+"0000111000000000000000000000000010000001",
+"1111111111111111111111111111111111111111111111",
+"111111111111111111111111111111111111111",
+"111111111111111111111111111111111111",
+"1111111111111111111111111111111111",
+"1111111111111111111111111111111111",
+]);
+
+generateMap();
+
+generateLevelMapArray([
 "",
 "",
 "",
-"1111111111111111111111111111111111",
-"1111111111111111111111111111111111",
-"1111111111111111111111111111111111",
-])
+"",
+"",
+"",
+"",
+"",
+"000000001110000111111100001111",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+"0",
+]);
+
+tileSet=tlsMumbaBeachPlanks;
 
 generateMap();
 
@@ -41,3 +64,29 @@ repeat(irandom_range(4, 6)) {
 	}
 	ds_list_add(children, cloud);
 }
+
+/*back1=instance_create_depth(0, 0, 0, mumbaBackground);
+back2=instance_create_depth(0, 0, 0, mumbaBackground);
+back3=instance_create_depth(0, 0, 0, mumbaBackground);
+back4=instance_create_depth(0, 0, 0, mumbaBackground);
+with back1 {
+	cameraXMultiplier=0;
+	loops=true;
+	sprite_index=sprMumbaCitySky;
+}
+with back2 {
+	cameraXMultiplier=.2;
+	loops=true;
+	sprite_index=sprMumbaCity1;
+}
+with back3 {
+	cameraXMultiplier=.4;
+	loops=true;
+	sprite_index=sprMumbaCity2;
+}
+with back4 {
+	cameraXMultiplier=.6;
+	loops=true;
+	sprite_index=sprMumbaCity3;
+}
+ds_list_add(children, back1, back2, back3, back4);

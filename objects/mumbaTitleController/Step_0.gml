@@ -4,12 +4,22 @@ event_inherited();
 
 var w=0, h=0;
 
+for (var i=0; i<ds_list_size(children); i++) {
+	if instance_exists(children[| i]) {
+		with parentWindow {
+			if ds_list_find_index(children, other.children[| i])<0 {
+				ds_list_insert(children, 0, other.children[| i]);
+			}
+		}
+	} else {
+		show_debug_message(concat("removing #", i, " from mumba title controller children list"));
+		ds_list_delete(children, i);
+	}
+}
+
 switch state {
 	case 0:
 		with parentWindow {
-			if instance_exists(other.title) && ds_list_find_index(children, other.title)<0 {
-				ds_list_add(children, other.title);
-			}
 			w=portWidth;
 			h=portHeight;
 		}
@@ -18,14 +28,13 @@ switch state {
 		centerY=h div 2;
 		timer++;
 		if timer>60 {
+			show_debug_message("aaaaa");
 			pressPrompt=instance_create_depth(centerX, centerY, depth-100, mumbaTitleStartPrompt);
 			with pressPrompt {
 				drawX=other.centerX;
 				drawY=other.centerY;
 			}
-			with parentWindow {
-				ds_list_add(children, other.pressPrompt);
-			}
+			ds_list_add(children, pressPrompt);
 			timer=0;
 			state=1;
 		}
@@ -104,24 +113,42 @@ switch state {
 				drawY=GAME_HEIGHT div 2;
 				owner=other;
 			}
+			ds_list_add(children, littleMumba);
 		}
 	break;
 	
+	case 6:
+		
 	case 5:
 		centerX=lerp(centerX, 0, .1);
 		centerY=lerp(centerY, GAME_HEIGHT div 2+wave(-1, 1, 2)*4, .1);
+		if state==5 {
+			var go=false;
+			with littleMumba {
+				if state>=3 {
+					go=true;
+				}
+			}
+			if go {
+				state=6;
+				var inst=instance_create_depth(0, 0, 0, mumbaTitleGeneralMenu);
+				with inst {
+					targetX=GAME_WIDTH-30;
+					targetY=1/3*GAME_HEIGHT;
+					drawX=GAME_WIDTH+100;
+					drawY=targetY;
+					menuHorizontalAlignment=menuHAlign.right;
+				}
+				ds_list_add(children, inst);
+			}
+		}
+	break;
 	break;
 }
-
-show_debug_message(state);
 
 drawScript=function(x, y) {
 	var w=1, h=1;
 	with parentWindow {
-		//show_debug_message("huhhh");
-		if !ds_list_find_index(children, other.title) {
-			ds_list_add(children, other.title);
-		}
 		w=portWidth;
 		h=portHeight;
 	}

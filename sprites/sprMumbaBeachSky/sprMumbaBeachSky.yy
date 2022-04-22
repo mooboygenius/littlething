@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "backgrounds",
-    "path": "folders/Sprites/mumba/backgrounds.yy",
+    "name": "beach",
+    "path": "folders/Sprites/mumba/backgrounds/beach.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprMumbaBeachSky",

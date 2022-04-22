@@ -1,7 +1,12 @@
 if live_call() return live_result;
 
+tileSurface=-1;
+tileSurfaceWidth=0;
+tileSurfaceHeight=0;
+
 separationWidth=sprite_get_width(sprMumbaWall);
 separationHeight=sprite_get_height(sprMumbaWall);
+currentTiles=0;
 
 generateLevelMapArray=function(arr) {
 	/// @function generateLevelMapArray(arrayOfStrings)
@@ -9,35 +14,35 @@ generateLevelMapArray=function(arr) {
 	yy=0;
 	for (var i=0; i<array_length(arr); i++) {
 		var txt=arr[i];
-		levelMap[yy]=[];
+		levelMap[currentTiles][yy]=[];
 		for (var z=1; z<=string_length(txt); z++) {
 			var char=string_char_at(txt, z);
-			if string_length(string_digits(char))>0 {
-				levelMap[yy][xx]=real(char);
+			if string_length(char)>0 {
+				levelMap[currentTiles][yy][xx]=char;
 				xx++;
 			}
 		}
 		xx=0;
-		show_debug_message(concat("parsed array ", yy));
+		//show_debug_message(concat("parsed array ", yy));
 		yy++;
 	}
 	
 	// get longest array
 	var l=0;
-	for (var i=0; i<array_length(levelMap); i++) {
+	for (var i=0; i<array_length(levelMap[currentTiles]); i++) {
 		var pl=l;
-		l=max(l, array_length(levelMap[i]));
-		if pl!=l show_debug_message(concat("new longest array is ", l));
+		l=max(l, array_length(levelMap[currentTiles][i]));
+		//if pl!=l show_debug_message(concat("new longest array is ", l));
 	}
 	
-	show_debug_message(concat("longest array is ", l));
+	//show_debug_message(concat("longest array is ", l));
 	
 	// size up all arrays to be that long
-	for (var i=0; i<array_length(levelMap); i++) {
-		while (array_length(levelMap[i])<l) {
-			levelMap[i][array_length(levelMap[i])]=0;
+	for (var i=0; i<array_length(levelMap[currentTiles]); i++) {
+		while (array_length(levelMap[currentTiles][i])<l) {
+			levelMap[currentTiles][i][array_length(levelMap[currentTiles][i])]=0;
 		}
-		show_debug_message(concat("resized array ", i, " to ", array_length(levelMap[i])));
+		//show_debug_message(concat("resized array ", i, " to ", array_length(levelMap[currentTiles][i])));
 	}
 }
 
@@ -49,47 +54,33 @@ levelInstances=ds_list_create();
 
 generateMap=function() {
 	/// @function generateMap()
-	if ds_exists(levelInstances, ds_type_list) {
-		for (var i=0; i<ds_list_size(levelInstances); i++) {
-			with levelInstances[| i] instance_destroy();
-		}
-		ds_list_destroy(levelInstances);
-		levelInstances=ds_list_create();
-	}
 	
-	
-	var height=array_length(levelMap)-1;
-	for (var yy=0; yy<array_length(levelMap); yy++) {
-		var width=array_length(levelMap[yy])-1;
-		for (var xx=0; xx<array_length(levelMap[yy]); xx++) {
-			var a=levelMap[yy][xx],
+	var height=array_length(levelMap[currentTiles])-1;
+	for (var yy=0; yy<array_length(levelMap[currentTiles]); yy++) {
+		var width=array_length(levelMap[currentTiles][yy])-1;
+		for (var xx=0; xx<array_length(levelMap[currentTiles][yy]); xx++) {
+			var a=levelMap[currentTiles][yy][xx],
 			inst=noone,
 			tx=xx*separationWidth,
 			ty=yy*separationHeight;
+			//show_debug_message(concat(xx, ", ", yy, ": ", a));
 			
-			switch a {
-				// nothing
-				case 0: break;
-				
-				// wall
-				case 1:
-					var left=xx>0 && levelMap[yy][xx-1]==1,
-					up=yy>0 && levelMap[yy-1][xx]==1,
-					right=xx<width && levelMap[yy][xx+1]==1,
-					down=yy<height && levelMap[yy+1][xx]==1;
-					if !(left && up && right && down) {
-						inst=instance_create_depth(tx, ty, -10, mumbaWall);
-					}
-				break;
-				
-				// player
-				case 2:
-					player=instance_create_depth(tx, ty, -20, mumbaPlayer);
-					inst=player;
-				break;
-				
-				// enemies
-				case 3: inst=instance_create_depth(tx, ty, -20, mumbaEnemy) break;
+			if a=="@" {
+				show_debug_message("CRAB HOUR");
+				inst=instance_create_depth(tx, ty, -10, mumbaCrab);
+			} else if a=="!" {
+				inst=instance_create_depth(tx, ty, -10, mumbaSquirrel);
+			} else if a=="1" {
+				var left=xx>0 && levelMap[currentTiles][yy][xx-1]==1,
+				up=yy>0 && levelMap[currentTiles][yy-1][xx]==1,
+				right=xx<width && levelMap[currentTiles][yy][xx+1]==1,
+				down=yy<height && levelMap[currentTiles][yy+1][xx]==1;
+				if !(left && up && right && down) {
+					inst=instance_create_depth(tx, ty, -10, mumbaWall);
+				}
+			} else if a=="2" {
+				player=instance_create_depth(tx, ty, -20, mumbaPlayer);
+				inst=player;
 			}
 			
 			if instance_exists(inst) {
@@ -99,36 +90,37 @@ generateMap=function() {
 		}
 	}
 	
-	tileMapHeight=array_length(levelMap);
-	tileMapWidth=array_length(levelMap[0]);
+	tileMapHeight=array_length(levelMap[currentTiles]);
+	tileMapWidth=array_length(levelMap[currentTiles][0]);
 	tileSize=16;
-	tileSurfaceWidth=tileMapWidth*tileSize;
-	tileSurfaceHeight=tileMapHeight*tileSize;
-	if surface_exists(tileSurface) {
-		surface_set_target(tileSurface);
-		draw_clear_alpha(0, 0);
-		surface_reset_target();
-		surface_free(tileSurface);
+	tileSurfaceWidth=max(tileSurfaceWidth, tileMapWidth*tileSize);
+	tileSurfaceHeight=max(tileSurfaceHeight, tileMapHeight*tileSize);
+	show_debug_message(concat("width: ", tileMapWidth, " * ", tileSize, " = ", tileSurfaceWidth, "\nheight: ", tileMapHeight, " * ", tileSize, " = ", tileSurfaceHeight));
+	
+	if !surface_exists(tileSurface) {
+		tileSurface=surface_create(1600, 800);
+		show_debug_message("made new tilesurface");
 	}
-	tileSurface=surface_create(tileSurfaceWidth, tileSurfaceHeight);
 
 	surface_set_target(tileSurface);
-	draw_clear_alpha(0, 0);
-	var height=array_length(levelMap)-1;
-	for (var yy=0; yy<array_length(levelMap); yy++) {
-		var width=array_length(levelMap[yy])-1;
-		for (var xx=0; xx<array_length(levelMap[yy]); xx++) {
-			if levelMap[yy][xx]==1 {
+	
+	var height=array_length(levelMap[currentTiles])-1;
+	for (var yy=0; yy<array_length(levelMap[currentTiles]); yy++) {
+		var width=array_length(levelMap[currentTiles][yy])-1;
+		
+		for (var xx=0; xx<array_length(levelMap[currentTiles][yy]); xx++) {
+			if levelMap[currentTiles][yy][xx]==1 {
 				var in=14,
-				left=xx>0 && levelMap[yy][xx-1]==1,
-				up=yy>0 && levelMap[yy-1][xx]==1,
-				right=xx<width && levelMap[yy][xx+1]==1,
-				down=yy<height && levelMap[yy+1][xx]==1,
-				leftUp=xx>0 && yy>0 && levelMap[yy-1][xx-1]==1,
-				rightUp=xx<width && yy>0 && levelMap[yy-1][xx+1]==1,
-				leftDown=xx>0 && yy<height && levelMap[yy+1][xx-1]==1,
-				rightDown=xx<width && yy<height && levelMap[yy+1][xx+1]==1;
-			
+				left=xx>0 && levelMap[currentTiles][yy][xx-1]==1,
+				up=yy>0 && levelMap[currentTiles][yy-1][xx]==1,
+				right=xx<width && levelMap[currentTiles][yy][xx+1]==1,
+				down=yy<height && levelMap[currentTiles][yy+1][xx]==1,
+				leftUp=xx>0 && yy>0 && levelMap[currentTiles][yy-1][xx-1]==1,
+				rightUp=xx<width && yy>0 && levelMap[currentTiles][yy-1][xx+1]==1,
+				leftDown=xx>0 && yy<height && levelMap[currentTiles][yy+1][xx-1]==1,
+				rightDown=xx<width && yy<height && levelMap[currentTiles][yy+1][xx+1]==1;
+				
+				#region hell on earth
 				if !left && !up && right && down {
 					if rightDown {
 						in=1;
@@ -246,12 +238,15 @@ generateMap=function() {
 						in=39;
 					}
 				}
-			
+				#endregion
+				
 				draw_tile(tileSet, in, 0, xx*tileSize, yy*tileSize);
 			}
 		}
 	}
 	surface_reset_target();
+	
+	currentTiles++;
 }
 
 generateLevelMapArray(["0"]);
@@ -259,7 +254,11 @@ generateLevelMapArray(["0"]);
 generateMap();
 
 drawScript=function(x, y) {
-	if surface_exists(tileSurface) draw_surface(tileSurface, x, y);
+	if surface_exists(tileSurface) {
+		draw_surface(tileSurface, x, y);
+	} else {
+		
+	}
 }
 	
 depth=-1000;
