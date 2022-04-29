@@ -16,7 +16,7 @@ if input(mumbaInputFire) {
 #region movement
 if canControl {
 	var hin=input(mumbaInputRight)-input(mumbaInputLeft),
-	spd=2.66*hin;
+	spd=2.8*hin;
 	if hin!=0 && abs(horizontalSpeed)<.3 {
 		squish=-.05;
 	}
@@ -48,9 +48,9 @@ if canControl {
 		}
 	}
 	
-	var vin=input(mumbaInputJump);
+	var vin=input(mumbaInputJump, PRESS);
 	if vin && place_meeting(x, y+1, mumbaWall) {
-		verticalSpeed=-4;
+		verticalSpeed=-5.5;
 		squish=-.25;
 		for (var i=-1; i<=1; i++) {
 			if i!=0 {
@@ -59,7 +59,7 @@ if canControl {
 		}
 	}
 	
-	if !vin && verticalSpeed<0 {
+	if !input(mumbaInputJump) && verticalSpeed<0 {
 		verticalSpeed*=.6;
 	}
 }
@@ -101,7 +101,7 @@ if canControl {
 		}
 		with parentWindow {
 			if ds_list_find_index(children, other.myGunInstance)<0 {
-				ds_list_add(children, other.myGunInstance);
+				ds_list_insert(children, 0, other.myGunInstance);
 			}
 		}
 	}
@@ -127,7 +127,9 @@ with myUI {
 
 #region ui face sprite
 var spr=uiSprite;
-if grace>0 {
+if dead {
+	uiSprite=sprMumbaUISad;
+} else if grace>-30 {
 	uiSprite=sprMumbaUISad;
 } else if killCoolDown>0 {
 	if uiSprite!=sprMumbaUIKill && uiSprite!=sprMumbaUIPeter && uiSprite!=sprMumbaUICat && uiSprite!=sprMumbaUIConfused {
@@ -153,7 +155,11 @@ if uiSprite!=spr {
 #endregion
 
 #region sprites
-if !place_meeting(x, y+1, mumbaWall) {
+if dead {
+	if sprite_index!=sprMumbaDeath && sprite_index!=sprMumbaDead {
+		setSprite(self, sprMumbaDeath);
+	}
+} else if !place_meeting(x, y+1, mumbaWall) {
 	if verticalSpeed>0 {
 		if sprite_index==sprMumbaJump {
 			show_debug_message("huh");
@@ -180,6 +186,21 @@ if !place_meeting(x, y+1, mumbaWall) {
 	}
 }
 #endregion
+
+if hp<=0 {
+	if !dead {
+		dead=true;
+		canControl=false;
+		horizontalSpeed=0;
+		instance_destroy(myGunInstance);
+		squish=.2;
+		setCameraShake(4);
+		var inst=instance_create_depth(0, 0, -1000, mumbaGameOver);
+		with parentWindow {
+			ds_list_add(children, inst);
+		}
+	}
+}
 
 setCameraFocus(self);
 

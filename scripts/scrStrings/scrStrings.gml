@@ -51,3 +51,13 @@ function getStringInput(text, allowLinebreaks=true, backSpeed=2, backMinimum=20)
 	}
 	return text;
 }
+
+function getStringFromInput(in) {
+	switch in {
+		default:
+			return "SPACE";
+		break;
+	}
+	
+	return "";
+}

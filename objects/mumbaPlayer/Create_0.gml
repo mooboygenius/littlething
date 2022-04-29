@@ -15,8 +15,15 @@ die=function() {
 }
 
 getHurt=function(amt) {
-	grace=amt*30;
+	if grace<-30 {
+		setCameraShake(2);
+		hp-=amt;
+		grace=amt*30;
+	}
 }
 
 walkingTime=0;
 jumpingTime=0;
+dead=false;
+
+show_debug_message(concat("new mumba dropped ", instance_number(mumbaPlayer)));

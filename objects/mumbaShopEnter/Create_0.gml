@@ -112,12 +112,18 @@ generateLevelMapArray([
 generateMap();
 
 building=instance_create_depth(0, 0, 0, shopBuilding);
+with building {
+	sprite_index=other.buildingSprite;
+}
 backBuilding=noone;
 var obj=shopBuildingFront;
 with building {
 	obj=frontSection;
 }
 frontBuilding=instance_create_depth(0, 0, 0, obj);
+with frontBuilding {
+	sprite_index=other.buildingSpriteFront;
+}
 ds_list_add(children, building);
 ds_list_add(levelInstances, building);
 ds_list_add(children, frontBuilding);
@@ -127,7 +133,7 @@ myPlayer=noone;
 for (var i=0; i<ds_list_size(levelInstances); i++) {
 	if levelInstances[| i].object_index==mumbaPlayer {
 		myPlayer=levelInstances[| i];
-		show_debug_message("found player!");
+		repeat(20) show_debug_message("found player!");
 	}
 }
 

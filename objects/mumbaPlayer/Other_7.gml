@@ -24,4 +24,8 @@ switch sprite_index {
 			setSprite(self, sprMumba);
 		}
 	break;
+	
+	case sprMumbaDeath:
+		setSprite(self, sprMumbaDead);
+	break;
 }

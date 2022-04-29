@@ -4,7 +4,7 @@
     "path": "sprites/sprTool/sprTool.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
@@ -32,8 +32,8 @@
     {"propertyId":{"name":"tileSet","path":"objects/mumbaLevel/mumbaLevel.yy",},"objectId":{"name":"mumbaLevel","path":"objects/mumbaLevel/mumbaLevel.yy",},"value":"tlsMumbaSand","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "in-game stuff",
-    "path": "folders/Objects/mumba/in-game stuff.yy",
+    "name": "levels",
+    "path": "folders/Objects/mumba/in-game stuff/levels.yy",
   },
   "resourceVersion": "1.0",
   "name": "mumbaTestLevel",

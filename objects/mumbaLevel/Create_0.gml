@@ -65,11 +65,20 @@ generateMap=function() {
 			ty=yy*separationHeight;
 			//show_debug_message(concat(xx, ", ", yy, ": ", a));
 			
-			if a=="@" {
-				show_debug_message("CRAB HOUR");
+			if a=="S" {
+				inst=instance_create_depth(tx, ty, -10, mumbaEnemySpawnPoint);
+			} else if a=="R" {
+				inst=instance_create_depth(tx, ty, -10, mumbaEnemyReturn);
+			} else if a=="@" {
 				inst=instance_create_depth(tx, ty, -10, mumbaCrab);
+			} else if a=="^" {
+				inst=instance_create_depth(tx, ty, -10, mumbaTurtle);
+			} else if a=="8" {
+				inst=instance_create_depth(tx, ty, -10, mumbaSnowman);
 			} else if a=="!" {
 				inst=instance_create_depth(tx, ty, -10, mumbaSquirrel);
+			} else if a=="&" {
+				inst=instance_create_depth(tx, ty, -10, mumbaRat);
 			} else if a=="1" {
 				var left=xx>0 && levelMap[currentTiles][yy][xx-1]==1,
 				up=yy>0 && levelMap[currentTiles][yy-1][xx]==1,
@@ -79,8 +88,14 @@ generateMap=function() {
 					inst=instance_create_depth(tx, ty, -10, mumbaWall);
 				}
 			} else if a=="2" {
-				player=instance_create_depth(tx, ty, -20, mumbaPlayer);
-				inst=player;
+				if !instance_exists(mumbaPlayer) {
+					player=instance_create_depth(tx, ty, -20, mumbaPlayer);
+					inst=player;
+				} else {
+					show_debug_message(concat("A MUMBA ALREADY EXISTS????", instance_number(mumbaPlayer)));
+				}
+			} else if a=="$" {
+				inst=instance_create_depth(tx, ty, -10, mumbaCoinSpawner);
 			}
 			
 			if instance_exists(inst) {
@@ -109,16 +124,16 @@ generateMap=function() {
 		var width=array_length(levelMap[currentTiles][yy])-1;
 		
 		for (var xx=0; xx<array_length(levelMap[currentTiles][yy]); xx++) {
-			if levelMap[currentTiles][yy][xx]==1 {
+			if levelMap[currentTiles][yy][xx]==1 || levelMap[currentTiles][yy][xx]==9 {
 				var in=14,
-				left=xx>0 && levelMap[currentTiles][yy][xx-1]==1,
-				up=yy>0 && levelMap[currentTiles][yy-1][xx]==1,
-				right=xx<width && levelMap[currentTiles][yy][xx+1]==1,
-				down=yy<height && levelMap[currentTiles][yy+1][xx]==1,
-				leftUp=xx>0 && yy>0 && levelMap[currentTiles][yy-1][xx-1]==1,
-				rightUp=xx<width && yy>0 && levelMap[currentTiles][yy-1][xx+1]==1,
-				leftDown=xx>0 && yy<height && levelMap[currentTiles][yy+1][xx-1]==1,
-				rightDown=xx<width && yy<height && levelMap[currentTiles][yy+1][xx+1]==1;
+				left=xx>0 && (levelMap[currentTiles][yy][xx-1]==1 || levelMap[currentTiles][yy][xx-1]==9),
+				up=yy>0 && (levelMap[currentTiles][yy-1][xx]==1 || levelMap[currentTiles][yy-1][xx]==9),
+				right=xx<width && (levelMap[currentTiles][yy][xx+1]==1 || levelMap[currentTiles][yy][xx+1]==9),
+				down=yy<height && (levelMap[currentTiles][yy+1][xx]==1 || levelMap[currentTiles][yy+1][xx]==9),
+				leftUp=xx>0 && yy>0 && (levelMap[currentTiles][yy-1][xx-1]==1 || levelMap[currentTiles][yy-1][xx-1]==9),
+				rightUp=xx<width && yy>0 && (levelMap[currentTiles][yy-1][xx+1]==1 || levelMap[currentTiles][yy-1][xx+1]==9),
+				leftDown=xx>0 && yy<height && (levelMap[currentTiles][yy+1][xx-1]==1 || levelMap[currentTiles][yy+1][xx-1]==9),
+				rightDown=xx<width && yy<height && (levelMap[currentTiles][yy+1][xx+1]==1 || levelMap[currentTiles][yy+1][xx+1]==9);
 				
 				#region hell on earth
 				if !left && !up && right && down {
@@ -262,3 +277,15 @@ drawScript=function(x, y) {
 }
 	
 depth=-1000;
+
+generateClouds=function(t, o) {
+	/// @function generateClouds(time, object)
+	if gameFrame%t==0 {
+		var cloud=instance_create_depth(0, 0, 0, o);
+		with cloud {
+			drawY+=random_range(0+sprite_get_yoffset(object_get_sprite(o)), GAME_HEIGHT*.5);
+			drawX=other.tileSurfaceWidth+sprite_get_xoffset(object_get_sprite(o))+random(64);
+		}
+		ds_list_add(children, cloud);
+	}
+}

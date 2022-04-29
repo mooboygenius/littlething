@@ -89,7 +89,9 @@ switch state {
 	
 	case 3:
 		yScale=lerp(yScale, 1, .3);
+		timer++;
 		if input(vk_delete, PRESS) && DEV_MODE {
+			timer=0;
 			state=4;
 		}
 	break;
@@ -125,7 +127,14 @@ drawScript=function(x, y) {
 		w=portWidth;
 		h=portHeight;
 	}
-	var nx=w div 2, ny=h div 2-40;
+	var nx=w div 2, ny=h div 2-60;
 	setWaveShader(sprite_width*waveHorizontalMultiplier, sprite_height, waveIntensity, waveIntensity, current_time);
 	defaultDrawScript(nx, ny+wave(-1, 1, .5)*3);
+	shader_reset();
+	
+	ny+=sprite_yoffset+8;
+	if timer%60<40 && state==3 {
+		draw_set_font(fntShrimpcordUsername);
+		drawTextOutlinedGeneral(nx, ny+wave(-1, 1, .5, .1)*2, concat("Press [", getStringFromInput(mumbaInputJump), "]"), 12, 9999, $83EEFF, BLACK_COLOR);
+	}
 }

@@ -1,6 +1,7 @@
 if live_call() return live_result;
 
 mask_index=sprite_index;
+visible=false;
 
 event_inherited();
 
@@ -8,13 +9,13 @@ getHurt=function(amt) {
 	/// @function getHurt(amount)
 	if object_is_ancestor(object_index, mumbaLivingObject) {
 		grace=amt*10;
+		hp-=amt;
 	}
 }
 
 hurt=function(in, amt) {
 	/// @function hurt(instance, amount)
 	with in {
-		hp-=amt;
 		getHurt(amt);
 	}
 }
@@ -93,10 +94,11 @@ setCameraKick=function(amount, d) {
 	}
 }
 
-createMumbaParticle=function(x, y, particle) {
-	/// @function createMumbaParticle(x, y, particle)
+createMumbaParticle=function(x, y, particle, system=0) {
+	/// @function createMumbaParticle(x, y, particle, [system])
 	with parentWindow {
-		part_particles_create(particleSystem, x, y, particle, 1);
+		if system==0 system=particleSystem else if system==1 system=uiParticleSystem;
+		part_particles_create(system, x, y, particle, 1);
 	}
 }
 

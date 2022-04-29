@@ -10,8 +10,8 @@ centerWindow(self);
 globalvar mumbaRooms;
 mumbaRooms=ds_list_create();
 
-level=instance_create_depth(0, 0, depth-irandom(10), mumbaTestLevel);
-ds_list_add(children, level);
+//level=instance_create_depth(0, 0, depth-irandom(10), mumbaPlainsLevel);
+//ds_list_add(children, level);
 
 //title=instance_create_depth(0, 0, 0, mumbaTitleController);
 //ds_list_add(children, title);
@@ -21,6 +21,8 @@ ds_list_add(children, level);
 
 //levelSelect=instance_create_depth(0, 0, 0, mumbaLevelSelectController);
 //ds_list_add(children, levelSelect);
+
+ds_list_add(children, instance_create_depth(0, 0, 0, mumbaDevTool));
 
 playerData=instance_create_depth(0, 0, 0, mumbaPlayerData);
 ds_list_insert(children, 0, playerData);
@@ -42,6 +44,10 @@ cameraBottomLimit=-9999;
 particleSystem=part_system_create();
 part_system_depth(particleSystem, 0);
 part_system_automatic_draw(particleSystem, false);
+
+uiParticleSystem=part_system_create();
+part_system_depth(uiParticleSystem, 0);
+part_system_automatic_draw(uiParticleSystem, false);
 
 globalvar mumbaDustParticle;
 mumbaDustParticle=part_type_create();
@@ -65,6 +71,15 @@ part_type_size(mumbaMagicParticle, 1, 1, -.02, 0);
 part_type_orientation(mumbaMagicParticle, 0, 360, 4, 0, false);
 part_type_color_hsv(mumbaMagicParticle, 0, 255, 255, 255, 255, 255);
 
+globalvar mumbaConfettiParticle;
+mumbaConfettiParticle=part_type_create();
+part_type_sprite(mumbaConfettiParticle, sprMumbaConfetti, false, false, true);
+part_type_life(mumbaConfettiParticle, 300, 300);
+part_type_size(mumbaConfettiParticle, 1, 2, 0, 0);
+part_type_speed(mumbaConfettiParticle, 1.5, 2.5, 0, .3);
+part_type_direction(mumbaConfettiParticle, 269, 271, 0, 5);
+part_type_orientation(mumbaConfettiParticle, 0, 360, 2, 0, false);
+
 handleChildren=function() {
 	/// @function handleChildren()
 	if ds_exists(children, ds_type_list) {
@@ -74,9 +89,12 @@ handleChildren=function() {
 				parentWindow=other;
 			}
 			if !instance_exists(children[| i]) {
-				show_debug_message(concat("cleared #", i, " from children objects list, instance was deleted"));
+				//show_debug_message(concat("cleared #", i, " from children objects list, instance was deleted"));
 				ds_list_delete(children, i);
 			}
 		}
 	}
 }
+
+childrenSurfaceX=0;
+childrenSurfaceY=0;

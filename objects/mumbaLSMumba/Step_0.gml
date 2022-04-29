@@ -31,6 +31,22 @@ switch state {
 			squish=-.2;
 		}
 	break;
+	
+	case 2:
+		if zSpeed<0 {
+			setSprite(self, sprMumbaJump);
+		} else if zSpeed>0 {
+			if sprite_index==sprMumbaJump {
+				setSprite(self, sprMumbaSwitchToFall);
+			} else if sprite_index!=sprMumbaSwitchToFall {
+				setSprite(self, sprMumbaFall);
+			}
+		}
+		var l=.1;
+		verticalSpeed=lerp(verticalSpeed, 0, l);
+		horizontalSpeed=lerp(horizontalSpeed, 0, l);
+		shadowSize=lerp(shadowSize, 0, .1);
+	break;
 }
 
 xScale=lerp(xScale, targetXScale, .3);

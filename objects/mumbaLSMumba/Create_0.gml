@@ -6,3 +6,5 @@ timer=0;
 state=0;
 
 setCameraFocus(self);
+
+z=-22;

@@ -8,3 +8,7 @@ bounceY=0;
 skulls=ds_list_create();
 
 invShowUI=0;
+
+showEggs=0;
+
+visible=false;

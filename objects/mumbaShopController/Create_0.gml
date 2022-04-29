@@ -7,7 +7,10 @@ menuItems=ds_list_create();
 background=instance_create_depth(0, 0, 100, mumbaBackground);
 with background {
 	sprite_index=sprMumbaPlaceholderShopBackground;
+	loops=true;
 }
+
+drawScript=function() {}
 
 banner=instance_create_depth(0, 0, -100, mumbaShopItem);
 ds_list_add(menuItems, banner);
@@ -56,6 +59,7 @@ generateShopList=function() {
 				bigSprite=getMumbaItemBigSprite(n);
 				description=getMumbaItemDescription(n);
 				shopKeeperDescription=getMumbaItemShopKeeperDescription(n);
+				color=other.shopColor;
 				var object=getMumbaItemObject(n);
 				if object_is_ancestor(object, mumbaGun) {
 					buyScript=function() {
@@ -90,8 +94,6 @@ generateShopList=function() {
 	ds_list_add(menuItems, inst);
 }
 
-generateShopList("Coconut Shotgun", "Tiki Gun");
-
 setTextBubbleText(greetingText);
 
 ds_list_add(children, background, keeper, mumber, textBubble, banner, moneyDisplay, detailer);
@@ -105,3 +107,7 @@ transitionFrom=noone;
 timer=0;
 
 transition=noone;
+
+with mumbaShopItem {
+	color=other.shopColor;
+}

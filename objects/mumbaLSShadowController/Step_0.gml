@@ -4,7 +4,7 @@ event_inherited();
 
 drawScript=function(dx, dy) {
 	with mumbaLSObject {
-		var xs=(sprite_width/other.shadowWidth),
+		var xs=(sprite_width/other.shadowWidth)*shadowSize,
 		ys=xs*.3,
 		xx=x,
 		yy=y+sprite_yoffset;

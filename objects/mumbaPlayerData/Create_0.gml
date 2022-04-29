@@ -9,7 +9,7 @@ ds_list_add(gunInventory, mumbaBazooka);
 ds_list_add(gunInventory, mumbaMagicStaff);
 ds_list_add(gunInventory, mumbaMushroom);
 ds_list_add(gunInventory, mumbaPeter);
-ds_list_add(gunInventory, mumbaSnowman);
+ds_list_add(gunInventory, mumbaSnowmanHead);
 ds_list_add(gunInventory, mumbaIceAxe);
 ds_list_add(gunInventory, mumbaBoomerang);
 ds_list_add(gunInventory, mumbaFlower);
@@ -26,3 +26,6 @@ ds_list_add(gunInventory, mumbaTikiGun);
 currentGun=0;
 
 money=0;
+
+levelA=0;
+levelB=0;

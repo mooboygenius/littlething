@@ -83,6 +83,11 @@ with moneyDisplay {
 	with mumbaPlayerData m=money;
 	name=concat("  you have Ox", m);
 	image_yscale=.6;
+	textYOffset=0;
+}
+
+with mumbaShopItem {
+	color=other.shopColor;
 }
 
 with transitionFrom {
@@ -135,7 +140,7 @@ switch state {
 	break;
 	
 	case 3:
-		var inst=instance_create_depth(0, 0, 0, mumbaShopExit);
+		var inst=instance_create_depth(0, 0, 0, exitScene);
 		if boughtSomething {
 			with inst {
 				cart=instance_create_depth(goalX, goalY, -50, mumbaShoppingCart);

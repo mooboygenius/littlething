@@ -32,8 +32,8 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "shop cutscene",
-    "path": "folders/Objects/mumba/in-game stuff/shop/shop cutscene.yy",
+    "name": "outros",
+    "path": "folders/Objects/mumba/in-game stuff/shop/shop cutscene/outros.yy",
   },
   "resourceVersion": "1.0",
   "name": "mumbaShopExit",

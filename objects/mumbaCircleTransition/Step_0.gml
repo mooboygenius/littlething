@@ -33,3 +33,7 @@ circleSize+=circleChange;
 circleSize=max(circleSize, 0);
 
 depth=-9999;
+
+if destroyAtSize!=-1 {
+	if (circleChange<0 && circleSize<destroyAtSize) || (circleChange>0 && circleSize>destroyAtSize) instance_destroy();
+}

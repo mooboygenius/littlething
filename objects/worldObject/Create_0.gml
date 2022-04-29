@@ -2,8 +2,8 @@ if live_call() return live_result;
 
 defaultDrawScript=function(x, y) {
 	/// @function defaultDrawScript(x, y)
-	var dx=ceil(x),
-	dy=ceil(y),
+	var dx=floor(x),
+	dy=floor(y),
 	dxs=image_xscale*xScale,
 	dys=image_yscale*yScale,
 	dang=angle+image_angle;

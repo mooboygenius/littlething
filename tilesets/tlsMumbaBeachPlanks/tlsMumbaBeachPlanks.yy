@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprMumbaBeachPlanks",
-    "path": "sprites/sprMumbaBeachPlanks/sprMumbaBeachPlanks.yy",
+    "name": "sprMumbaBeachPlankSet",
+    "path": "sprites/sprMumbaBeachPlankSet/sprMumbaBeachPlankSet.yy",
   },
   "tileWidth": 16,
   "tileHeight": 16,

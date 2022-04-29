@@ -11,6 +11,10 @@ if place_meeting(x, y+1, mumbaWall) {
 		verticalSpeed*=-.5;
 		squish=.2;
 	}
+	life--;
+	if life<=0 {
+		instance_destroy();
+	}
 }
 
 event_inherited();

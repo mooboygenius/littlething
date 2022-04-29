@@ -68,9 +68,7 @@ if canFire && input(mumbaInputFire) && fireTimer<=0 {
 		setCameraKick(shake, dir);
 		
 		with parentWindow {
-			if ds_list_find_index(children, other.newBullet)<0 {
-				ds_list_add(children, other.newBullet);
-			}
+			ds_list_insert(children, 0, other.newBullet);
 		}
 		
 		if sprite_exists(uiCasingSprite) {
@@ -85,7 +83,7 @@ if canFire && input(mumbaInputFire) && fireTimer<=0 {
 			}
 		
 			with parentWindow {
-				ds_list_add(children, casing);
+				ds_list_insert(children, 0, casing);
 			}
 		}
 		

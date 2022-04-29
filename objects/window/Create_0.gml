@@ -89,7 +89,7 @@ handleChildren=function() {
 				}
 			}
 			if !instance_exists(children[| i]) {
-				show_debug_message(concat("cleared #", i, " from children objects list, instance was deleted"));
+				//show_debug_message(concat("cleared #", i, " from children objects list, instance was deleted"));
 				ds_list_delete(children, i);
 			}
 		}

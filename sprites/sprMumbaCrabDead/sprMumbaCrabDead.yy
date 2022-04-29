@@ -73,8 +73,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "enemies",
-    "path": "folders/Sprites/mumba/enemies.yy",
+    "name": "crab",
+    "path": "folders/Sprites/mumba/enemies/crab.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprMumbaCrabDead",

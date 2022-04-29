@@ -6,6 +6,7 @@ banner=instance_create_depth(0, 0, depth-20, mumbaLSBanner);
 bannerLower=instance_create_depth(0, 0, depth-1000, mumbaLSBanner);
 with bannerLower {
 	sprite_index=sprLevelSelectBannerUpsideDown;
+	xOffset=sprite_width/2;
 }
 mumba=instance_create_depth(0, 0, depth-500, mumbaLSMumba);
 tiles=instance_create_depth(0, 0, depth-1, mumbaLSFloor);
@@ -25,11 +26,18 @@ cityLevel=addLevel("Manic Metropolis", sprLevelSelectTower);
 grassLevel=addLevel("Perilous Plain", sprLevelSelectFlower);
 fireLevel=addLevel("Vicious Volcano", sprLevelSelectVolcano);
 snowLevel=addLevel("Tense Tundra", sprLevelSelectSnowman);
+heavenLevel=addLevel("Hazardous Heaven", sprLevelSelectHeaven);
+tunnelLevel=addLevel("Turmoil Tunnels", sprLevelSelectRock);
+bossLevel=addLevel("???", sprLevelSelectMystery);
+deadEstateLevel=addLevel("Dead Estate", sprLevelSelectDeadEstate);
 
 levels=[
 [beachLevel],
 [cityLevel, grassLevel],
-[fireLevel, snowLevel]
+[fireLevel, snowLevel],
+[heavenLevel, tunnelLevel],
+[bossLevel],
+[deadEstateLevel]
 ];
 
 for (var i=0; i<array_length(levels); i++) {
@@ -115,4 +123,8 @@ for (var i=s; i>=0; i--) {
 	}
 	
 	show_debug_message(concat("end;"));
+}
+
+with levels[currentLevelA][currentLevelB][mumbaLevelData.mapObject] {
+	active=true;
 }

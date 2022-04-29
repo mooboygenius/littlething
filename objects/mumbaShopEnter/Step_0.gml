@@ -49,3 +49,7 @@ if ds_exists(children, ds_type_list) {
 }
 
 doStateMachine();
+
+with myPlayer {
+	show_debug_message("ha");
+}

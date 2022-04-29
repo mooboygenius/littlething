@@ -40,6 +40,51 @@ doStateMachine=function() {
 		break;
 		
 		case 1:
+			with goAwayTransition {
+				if circleSize<=0 {
+					circleSize=0;
+					other.state=2;
+				}
+			}
+		break;
+		
+		case 2:
+			var select=instance_create_depth(0, 0, 0, mumbaLevelSelectController),
+			a=0,
+			b=0;
+			
+			with mumbaPlayerData {
+				a=levelA;
+				b=levelB;
+			}
+			
+			with select {
+				var gx=0, gy=0;
+				with levels[a][b][mumbaLevelData.mapObject] {
+					active=true;
+					gx=x;
+					gy=y;
+				}
+				
+				with mumba {
+					timer=0;
+					gotoX=gx;
+					gotoY=gy;
+					x=gx;
+					y=gy;
+				}
+			}
+			
+			with parentWindow {
+				ds_list_add(children, select);
+			}
+			
+			with goAwayTransition {
+				destroyAtSize=GAME_WIDTH*2;
+				circleChange=8;
+			}
+			
+			instance_destroy();
 		break;
 	}
 }

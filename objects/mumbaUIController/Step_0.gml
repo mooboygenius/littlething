@@ -3,6 +3,7 @@ if live_call() return live_result;
 event_inherited();
 
 invShowUI=1-showUI;
+showEggs=lerp(showEggs, instance_exists(mumbaEggSpawner)*showUI, .2);
 
 drawScript=function(x, y) {
 	if instance_exists(playerReference) {
@@ -125,13 +126,41 @@ drawScript=function(x, y) {
 		}
 		drawTextOutlinedGeneral(ctx, cty, txt, 12, 9999, c_white, BLACK_COLOR, 1, 1, 0, 1);
 		#endregion
+		
+		#region draw eggs
+		if showEggs>0 {
+			var eggX=GAME_WIDTH-20,
+			eggY=GAME_HEIGHT-22+(1-showEggs)*100,
+			eggW=wave(0, 1, 1);
+			draw_sprite(sprMumbaUIEgg, 0, eggX, eggY+eggW*4);
+			draw_set_font(mumbaEggFont);
+			draw_set_halign(fa_center);
+			draw_set_valign(fa_center);
+			var str="",
+			amt=0,
+			goal=0,
+			hasGoal=false;
+			with mumbaPlayer amt=eggs;
+			with mumbaRealLevel {
+				goal=eggGoal;
+				hasGoal=enableGoal;
+			}
+			if hasGoal {
+				str=concat(amt, "/", goal);
+			} else {
+				str=concat(amt, "x");
+			}
+			
+			drawTextOutlinedGeneral(eggX+8, eggY+12+eggW*3, str, 1, 999, WHITE_COLOR, BLACK_COLOR);
+		}
+		#endregion
 	}
 }
 
 depth=-9999;
 
 bounceY=lerp(bounceY, 0, .2);
-
+/*
 if gameFrame%5==0 && ds_list_size(skulls)<instance_number(mumbaEnemy) {
 	var this=instance_create_depth(0, 0, 0, mumbaUISkull)
 	ds_list_add(skulls, this);

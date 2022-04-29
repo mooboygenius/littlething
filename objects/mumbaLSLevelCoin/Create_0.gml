@@ -12,3 +12,5 @@ nextCoins=[];
 dots=ds_list_create();
 
 coolName=noone;
+
+state=0;

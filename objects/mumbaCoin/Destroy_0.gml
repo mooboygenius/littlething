@@ -3,6 +3,9 @@ if hp<=0 {
 	with mumbaPlayer {
 		coinCoolDown=30;
 	}
+	with mumbaRealLevel {
+		coinsGrabbed++;
+	}
 	with mumbaPlayerData {
 		money+=other.amount;
 	}

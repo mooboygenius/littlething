@@ -89,8 +89,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "enemies",
-    "path": "folders/Sprites/mumba/enemies.yy",
+    "name": "squirrel",
+    "path": "folders/Sprites/mumba/enemies/squirrel.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprMumbaSquirrelWalk",
