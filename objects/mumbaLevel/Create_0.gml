@@ -69,6 +69,8 @@ generateMap=function() {
 				inst=instance_create_depth(tx, ty, -10, mumbaEnemySpawnPoint);
 			} else if a=="R" {
 				inst=instance_create_depth(tx, ty, -10, mumbaEnemyReturn);
+			} else if a=="&" {
+				inst=instance_create_depth(tx, ty, -10, mumbaAngel);
 			} else if a=="@" {
 				inst=instance_create_depth(tx, ty, -10, mumbaCrab);
 			} else if a=="^" {
@@ -79,6 +81,8 @@ generateMap=function() {
 				inst=instance_create_depth(tx, ty, -10, mumbaSquirrel);
 			} else if a=="&" {
 				inst=instance_create_depth(tx, ty, -10, mumbaRat);
+			} else if a=="T" {
+				inst=instance_create_depth(tx, ty, -10, mumbaFungus);
 			} else if a=="1" {
 				var left=xx>0 && levelMap[currentTiles][yy][xx-1]==1,
 				up=yy>0 && levelMap[currentTiles][yy-1][xx]==1,
@@ -96,6 +100,10 @@ generateMap=function() {
 				}
 			} else if a=="$" {
 				inst=instance_create_depth(tx, ty, -10, mumbaCoinSpawner);
+			} else if a=="/" {
+				inst=instance_create_depth(tx, ty, other.depth-10, mumbaIceBlock);
+			} else if a=="?" {
+				inst=instance_create_depth(tx, ty, -10, mumbaFallingBlock);
 			}
 			
 			if instance_exists(inst) {

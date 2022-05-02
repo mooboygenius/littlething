@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprTool",
-    "path": "sprites/sprTool/sprTool.yy",
+    "name": "sprMumbaIcon",
+    "path": "sprites/sprMumbaIcon/sprMumbaIcon.yy",
   },
   "solid": false,
   "visible": true,

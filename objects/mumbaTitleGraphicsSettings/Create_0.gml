@@ -6,12 +6,32 @@ var fnt=fntSystem;
 
 with createMenuOption("GRAPHICS", WHITE_COLOR, BLACK_COLOR, fnt, 1, mumbaTitleSwitchOption) {
 	options=["ON", "OFF"];
+	
+	current=!mumbaGraphicsOn;
+	
 	sprite_index=generateSprite(concat(name, ": ", options[current]), col, outlineCol, font, thick);
+	
+	pressScript=function() {
+		defaultSwitchOptionScript();
+		mumbaGraphicsOn=!current;
+		updateSetting("mumbaGraphicsOn", mumbaGraphicsOn);
+		saveGame();
+	}
 }
 
 with createMenuOption("PARTICLES", WHITE_COLOR, BLACK_COLOR, fnt, 1, mumbaTitleSwitchOption) {
 	options=["ON", "OFF"];
+	
+	current=!mumbaParticlesOn;
+	
 	sprite_index=generateSprite(concat(name, ": ", options[current]), col, outlineCol, font, thick);
+	
+	pressScript=function() {
+		defaultSwitchOptionScript();
+		mumbaParticlesOn=!current;
+		updateSetting("mumbaParticlesOn", mumbaParticlesOn);
+		saveGame();
+	}
 }
 
 with createMenuOption("BACK", WHITE_COLOR, BLACK_COLOR, fnt, 1, mumbaTitlePressableOption) {

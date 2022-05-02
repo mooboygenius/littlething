@@ -7,20 +7,7 @@ event_inherited();
 setWindowSize(self, 0, 0, 200, 160);
 centerWindow(self);
 
-globalvar mumbaRooms;
-mumbaRooms=ds_list_create();
-
-//level=instance_create_depth(0, 0, depth-irandom(10), mumbaPlainsLevel);
-//ds_list_add(children, level);
-
-//title=instance_create_depth(0, 0, 0, mumbaTitleController);
-//ds_list_add(children, title);
-
-//shop=instance_create_depth(0, 0, 0, mumbaShopController);
-//ds_list_insert(children, 0, shop);
-
-//levelSelect=instance_create_depth(0, 0, 0, mumbaLevelSelectController);
-//ds_list_add(children, levelSelect);
+audio_group_stop_all(bgm);
 
 ds_list_add(children, instance_create_depth(0, 0, 0, mumbaDevTool));
 
@@ -57,6 +44,14 @@ part_type_size(mumbaDustParticle, 1.2, 1.33, -.03, 0);
 part_type_direction(mumbaDustParticle, 90, 90, 0, 10);
 part_type_speed(mumbaDustParticle, .5, .6, -.01, 0);
 
+globalvar mumbaSmokeParticle;
+mumbaSmokeParticle=part_type_create();
+part_type_sprite(mumbaSmokeParticle, sprMumbaSmoke, false, false, true);
+part_type_orientation(mumbaSmokeParticle, 0, 360, 5, 0, false);
+part_type_size(mumbaSmokeParticle, 1.2, 1.33, -.03, 0);
+part_type_direction(mumbaSmokeParticle, 90, 90, 0, 10);
+part_type_speed(mumbaSmokeParticle, .5, .6, -.01, 0);
+
 globalvar mumbaExplosionParticle;
 mumbaExplosionParticle=part_type_create();
 part_type_sprite(mumbaExplosionParticle, sprMumbaExplosion, true, false, true);
@@ -79,6 +74,33 @@ part_type_size(mumbaConfettiParticle, 1, 2, 0, 0);
 part_type_speed(mumbaConfettiParticle, 1.5, 2.5, 0, .3);
 part_type_direction(mumbaConfettiParticle, 269, 271, 0, 5);
 part_type_orientation(mumbaConfettiParticle, 0, 360, 2, 0, false);
+
+globalvar mumbaRockCrumbleParticle;
+mumbaRockCrumbleParticle=part_type_create();
+part_type_sprite(mumbaRockCrumbleParticle, sprMumbaRockCrumble, false, false, true);
+part_type_life(mumbaRockCrumbleParticle, 120, 120);
+part_type_direction(mumbaRockCrumbleParticle, 45, 135, 0, 2);
+part_type_gravity(mumbaRockCrumbleParticle, .1, 270);
+part_type_speed(mumbaRockCrumbleParticle, .5, 3, 0, .2);
+part_type_orientation(mumbaRockCrumbleParticle, 0, 360, 5, 2, false);
+
+globalvar mumbaCinderParticle;
+mumbaCinderParticle=part_type_create();
+part_type_sprite(mumbaCinderParticle, sprMumbaCinder, false, false, true);
+part_type_direction(mumbaCinderParticle, 90, 90, 0, 5);
+part_type_life(mumbaCinderParticle, 240, 300);
+part_type_orientation(mumbaCinderParticle, 0, 360, 3, false, false);
+part_type_speed(mumbaCinderParticle, .5, 1, 0, .2);
+part_type_size(mumbaCinderParticle, 1, 1.3, -.005, 0);
+
+globalvar mumbaSnowParticle;
+mumbaSnowParticle=part_type_create();
+part_type_sprite(mumbaSnowParticle, sprMumbaSnowFlake, false, false, true);
+part_type_direction(mumbaSnowParticle, 265, 265, 0, 5);
+part_type_life(mumbaSnowParticle, 720, 840);
+part_type_orientation(mumbaSnowParticle, 0, 360, 3, false, false);
+part_type_speed(mumbaSnowParticle, .5, 1, 0, .2);
+part_type_size(mumbaSnowParticle, 1, 1.3, 0, 0);
 
 handleChildren=function() {
 	/// @function handleChildren()

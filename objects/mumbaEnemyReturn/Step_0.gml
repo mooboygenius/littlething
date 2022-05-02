@@ -13,7 +13,17 @@ for (var i=0; i<enemies; i++) {
 			right=tileSurfaceWidth-m;
 		}
 		
-		if (other.x<left && x<other.x) || (other.x>right && x>other.x) {
+		if object_index==mumbaAngel {
+			if (horizontalSpeed>0 && other.x>0) || (horizontalSpeed<0 && other.x<0) {
+				anger+=.1;
+				if anger<=.5 {
+					moveSpeed*=1.15;
+					horizontalSpeed*=1.15;
+				}
+				x=spawnX;
+				y=spawnY;
+			}
+		} else if (other.x<left && x<other.x) || (other.x>right && x>other.x) {
 			if x<left {
 				horizontalSpeed=moveSpeed;
 			} else if x>right {

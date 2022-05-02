@@ -20,7 +20,9 @@ if canControl {
 	if hin!=0 && abs(horizontalSpeed)<.3 {
 		squish=-.05;
 	}
-	horizontalSpeed=lerp(horizontalSpeed, spd, weight*2);
+	var l=weight*2;
+	if place_meeting(x, y+1, mumbaIceBlock) l*=.2;
+	horizontalSpeed=lerp(horizontalSpeed, spd, l);
 	
 	if place_meeting(x, y+1, mumbaWall) {
 		if abs(horizontalSpeed)>.5 {
@@ -206,3 +208,12 @@ setCameraFocus(self);
 
 killCoolDown--;
 coinCoolDown--;
+
+var lim=9999;
+with mumbaRealLevel {
+	lim=tileSurfaceHeight+320;
+}
+if y>lim && hp>0 {
+	hp=0;
+	setCameraShake(4);
+}

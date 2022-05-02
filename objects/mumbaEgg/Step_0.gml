@@ -1,5 +1,8 @@
 if live_call() return live_result;
 
+grace--;
+squish=lerp(squish, 0, .2);
+
 xstart=x;
 ystart=y;
 
@@ -27,10 +30,6 @@ if place_meeting(x, y, mumbaPlayer) {
 	instance_destroy();
 }
 
-drawScript=function(x, y) {
-	defaultDrawScript(x, y+drawYOffset);
-}
-
 if place_meeting(x, y, mumbaBullet) {
 	grace=5;
 }
@@ -47,3 +46,5 @@ if collision_line(x, y, mx, my, mumbaWall, true, true) {
 if life<=0 {
 	instance_destroy();
 }
+
+glowScale=lerp(glowScale, wave(.8, 1.2, .5), .5);

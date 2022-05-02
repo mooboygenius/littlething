@@ -7,4 +7,5 @@ clickFunction=function() {
 	if masterVolume<0 masterVolume=1;
 	updateSetting("masterVolume", masterVolume);
 	audio_master_gain(masterVolume);
+	saveGame();
 }

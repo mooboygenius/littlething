@@ -42,6 +42,7 @@ gameFrame=0;
 
 audio_group_load(bgm);
 audio_group_load(sfx);
+audio_group_load(mumbaBGM);
 
 globalvar realWebsites;
 realWebsites=ds_map_create();
@@ -65,3 +66,11 @@ mumbaLevelFont=font_add_sprite_ext(sprMumbaLevelFont, "ABCDEFGHIJKLMNOPQRSTUVWXY
 mumbaEggFont=font_add_sprite_ext(sprMumbaEggFont, "1234567890/x", true, 1);
 
 #macro HIGHEST_INSTANCE_UNDER_MOUSE getHighestInstanceUnderMouse()
+
+audioNames=-1;
+for (var i=0; audio_exists(i); i++) {
+	audioNames[i]=string_pos("sfx", audio_get_name(i));
+}
+audioNameLength=array_length(audioNames);
+
+audioBaseGains=setAudioBaseGains();

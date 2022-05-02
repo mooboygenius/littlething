@@ -5,22 +5,81 @@ event_inherited();
 tileSet=tlsMumbaSnow;
 
 generateLevelMapArray([
-"",
-"",
-"",
-"00000000002",
-"",
-"",
-"",
-"",
-"",
-"",
-"11111111111111111111111111111111111111111",
-"11111111111111111111111111111111111111111",
-"11111111111111111111111111111111111111111",
-"11111111111111111111111111111111111111111",
-"11111111111111111111111111111111111111111",
-"11111111111111111111111111111111111111111"
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"             2                ",
+"111111111111111111111111111111",
+"111111111111111111111111111111",
+"111111111111111111111111111111",
+"111111111111111111111111111111"
+]);
+
+generateMap();
+
+tileSet=tlsMumbaSnowSteel;
+
+generateLevelMapArray([
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"S                            S",
+"                              ",
+"1111                      1111",
+"           11111111           ",
+"                              ",
+"S                            S",
+"                              ",
+"11111   111        111   11111",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              "
+]);
+
+generateMap();
+
+generateLevelMapArray([
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"                              ",
+"//                          //",
+"            //////            ",
+"                              ",
+"                              ",
+"                              ",
+"///                        ///",
+"                              ",
+"                              ",
+"                              ",
+"///////      ////      ///////",
+"                              ",
+"                              ",
+"                              "
 ]);
 
 generateMap();
@@ -29,7 +88,7 @@ back1=instance_create_depth(0, 0, 0, mumbaBackground);
 back2=instance_create_depth(0, 0, 0, mumbaBackground);
 back3=instance_create_depth(0, 0, 0, mumbaBackground);
 back4=instance_create_depth(0, 0, 0, mumbaBackground);
-var ys=-32;
+var ys=0;
 with back1 {
 	loops=true;
 	sprite_index=sprMumbaSnowSky;
@@ -54,3 +113,20 @@ with back4 {
 	drawY=ys;
 }
 ds_list_add(children, back1, back2, back3, back4);
+
+spawner=instance_create_depth(tileSurfaceWidth/2, 0, depth, mumbaEnemySpawner);
+with spawner {
+	spawnTimerMinimum=180;
+	spawnTimerMaximum=240;
+	
+	normalWaves=[
+	[mumbaSnowman],
+	[mumbaSnowman, mumbaSnowman]
+	];
+
+	hardWaves=[
+	[mumbaSnowman, mumbaSnowman, mumbaSnowman],
+	[mumbaSnowman, mumbaSnowman, mumbaSnowman, mumbaSnowman],
+	]
+}
+ds_list_add(children, spawner);

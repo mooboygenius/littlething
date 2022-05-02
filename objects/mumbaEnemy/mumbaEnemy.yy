@@ -42,8 +42,8 @@
     {"propertyId":{"name":"wrapAroundScreen","path":"objects/mumbaWorldObject/mumbaWorldObject.yy",},"objectId":{"name":"mumbaWorldObject","path":"objects/mumbaWorldObject/mumbaWorldObject.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "enemies",
-    "path": "folders/Objects/mumba/in-game stuff/enemies.yy",
+    "name": "enemies and hazards",
+    "path": "folders/Objects/mumba/in-game stuff/enemies and hazards.yy",
   },
   "resourceVersion": "1.0",
   "name": "mumbaEnemy",

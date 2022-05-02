@@ -7,8 +7,8 @@ switch sprite_index {
 	break;
 	
 	case sprMumbaSnowmanStartJump:
-		verticalSpeed=-4;
-		horizontalSpeed=sign(other.xScale)*1;
+		verticalSpeed=-2.5;
+		horizontalSpeed=sign(other.xScale)*2;
 		squish=-.2;
 		makeDust();
 		setSprite(self, sprMumbaSnowmanJump);

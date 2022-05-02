@@ -3,20 +3,22 @@ if live_call() return live_result;
 event_inherited();
 
 generateLevelMapArray([
-"",
-"",
-"",
-"",
-"",
-"002",
-"",
-"",
-"              ^  ",
-"1111111111111111111111111111111111111111111111",
-"111111111111111111111111111111111111111",
-"111111111111111111111111111111111111",
-"1111111111111111111111111111111111",
-"1111111111111111111111111111111111",
+"                        ",
+"                        ",
+"                        ",
+"S                       ",
+"                        ",
+"1111    11111111????1111",
+"                        ",
+"                        ",
+"                        ",
+"1111????11111111    1111",
+"R                      R",
+"R          2           R",
+"111111111111111111111111",
+"111111111111111111111111",
+"111111111111111111111111",
+"111111111111111111111111"
 ]);
 
 generateMap();
@@ -30,3 +32,17 @@ with back1 {
 	sprite_index=sprMumbaBeachSky;
 }
 ds_list_add(children, back1, back2, back3, back4);
+
+spawner=instance_create_depth(tileSurfaceWidth/2, 0, depth, mumbaEnemySpawner);
+with spawner {
+	normalWaves=[
+	[mumbaAngel]
+	];
+
+	hardWaves=[
+	[mumbaAngel]
+	]
+	spawnTimerMinimum=300;
+	spawnTimerMaximum=420;
+}
+ds_list_add(children, spawner);

@@ -60,3 +60,11 @@ createSong(bgmShrimpOS, "placeholder", "ConnorGrail");
 createSong(bgmShrimpOS, "placeholder", "DefaultLabs");
 createSong();
 #endregion
+
+function setAudioBaseGains() {
+	var array=-1;
+	for (var i=0; audio_exists(i); i++) {
+		array[i]=audio_sound_get_gain(i);
+	}
+	return array;
+}

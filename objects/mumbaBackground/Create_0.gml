@@ -9,7 +9,7 @@ drawScript=function(x, y) {
 		dy+=cameraY*other.cameraYMultiplier;
 	}
 	if loops {
-		draw_sprite_tiled(sprite_index, image_index, dx+sprite_xoffset, dy+sprite_yoffset);
+		draw_sprite_tiled(sprite_index, image_index, dx, dy);
 	} else {
 		defaultDrawScript(dx, dy);
 	}

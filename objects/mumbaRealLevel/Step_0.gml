@@ -7,7 +7,7 @@ switch state {
 		var e=0;
 		with mumbaPlayer {
 			e=eggs;
-			if e>0 e=other.eggGoal;
+			//if e>0 e=other.eggGoal;
 		}
 		
 		time++;

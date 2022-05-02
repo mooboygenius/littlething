@@ -9,7 +9,7 @@ defaultSwitchOptionScript=function() {
 	/// @function defaultSwitchOptionScript()
 	current++;
 	if current>=array_length(options) current=0;
-	generateSprite(concat(name, ": ", options[current]), col, outlineCol, font, thick);
+	sprite_index=generateSprite(concat(name, ": ", options[current]), col, outlineCol, font, thick);
 }
 
 pressScript=function() {

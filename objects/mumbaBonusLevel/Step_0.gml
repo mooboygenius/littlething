@@ -42,6 +42,12 @@ switch state {
 		with inst {
 			verticalSpeed=2;
 			horizontalSpeed=irandom_range(-1, 1);
+			if my>48 {
+				horizontalSpeed=random_range(2, 4);
+				if mx>48 {
+					horizontalSpeed*=-1;
+				}
+			}
 			grace=10;
 		}
 		ds_list_add(children, inst);

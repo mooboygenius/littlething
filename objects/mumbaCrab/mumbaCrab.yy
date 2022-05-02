@@ -30,8 +30,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "enemies",
-    "path": "folders/Objects/mumba/in-game stuff/enemies.yy",
+    "name": "enemies and hazards",
+    "path": "folders/Objects/mumba/in-game stuff/enemies and hazards.yy",
   },
   "resourceVersion": "1.0",
   "name": "mumbaCrab",

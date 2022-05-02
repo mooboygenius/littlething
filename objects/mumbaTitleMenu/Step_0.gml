@@ -55,7 +55,7 @@ if ds_exists(children, ds_type_list) {
 
 			var in=input(mumbaInputWeaponDown, PRESS)-input(mumbaInputWeaponUp, PRESS),
 			s=ds_list_size(children)-1;
-			if in!=0 {
+			if in!=0 && !freezeSelection {
 				current+=in;
 				if current<0 current=s;
 				if current>s current=0;

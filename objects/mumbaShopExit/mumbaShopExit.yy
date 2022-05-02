@@ -30,7 +30,9 @@
   "properties": [
     {"varType":5,"value":"noone","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"transitionFrom","tags":[],"resourceType":"GMObjectProperty",},
   ],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"buildingSpriteFront","path":"objects/mumbaShopEnter/mumbaShopEnter.yy",},"objectId":{"name":"mumbaShopEnter","path":"objects/mumbaShopEnter/mumbaShopEnter.yy",},"value":"sprHulaMartFront","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
     "name": "outros",
     "path": "folders/Objects/mumba/in-game stuff/shop/shop cutscene/outros.yy",

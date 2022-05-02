@@ -30,7 +30,9 @@
   "properties": [],
   "overriddenProperties": [
     {"propertyId":{"name":"life","path":"objects/mumbaBullet/mumbaBullet.yy",},"objectId":{"name":"mumbaBullet","path":"objects/mumbaBullet/mumbaBullet.yy",},"value":"4","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"damage","path":"objects/mumbaBullet/mumbaBullet.yy",},"objectId":{"name":"mumbaBullet","path":"objects/mumbaBullet/mumbaBullet.yy",},"value":"6","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"damage","path":"objects/mumbaBullet/mumbaBullet.yy",},"objectId":{"name":"mumbaBullet","path":"objects/mumbaBullet/mumbaBullet.yy",},"value":"8","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"penetrates","path":"objects/mumbaBullet/mumbaBullet.yy",},"objectId":{"name":"mumbaBullet","path":"objects/mumbaBullet/mumbaBullet.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"destroyOnImpact","path":"objects/mumbaBullet/mumbaBullet.yy",},"objectId":{"name":"mumbaBullet","path":"objects/mumbaBullet/mumbaBullet.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "projectiles",

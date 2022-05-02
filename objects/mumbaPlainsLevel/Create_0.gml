@@ -5,22 +5,61 @@ event_inherited();
 tileSet=tlsMumbaGrass;
 
 generateLevelMapArray([
-"",
-"",
-"",
-"00000000002",
-"",
-"",
-"",
-"",
-"",
-"",
-"11111111111111111111111111111111111111111",
-"11111111111111111111111111111111111111111",
-"11111111111111111111111111111111111111111",
-"11111111111111111111111111111111111111111",
-"11111111111111111111111111111111111111111",
-"11111111111111111111111111111111111111111"
+"                             ",
+"                             ",
+"                             ",
+"                             ",
+"                             ",
+"S                           S",
+"                             ",
+"11111111              1111111",
+"1111                     1111",
+"111                       111",
+"11                         11",
+"11     111111111111111     11",
+"11                         11",
+"11                         11",
+"1111                     1111",
+"1111                     1111",
+"1111111               1111111",
+"11                         11",
+"1                           1",
+"R             2             R",
+"R           11111           R",
+"1111111111  11111  1111111111",
+"1111111111  11111  1111111111",
+"1111111111RR11111RR1111111111"
+]);
+
+generateMap();
+
+tileSet=tlsMumbaLogs
+
+generateLevelMapArray([
+"                             ",
+"                             ",
+"                             ",
+"                             ",
+"                             ",
+"                             ",
+"                             ",
+"                             ",
+"99                        999",
+"                             ",
+"                           9 ",
+"         9999   999        9 ",
+"                           9 ",
+"                             ",
+"                             ",
+"                             ",
+"999      111     111         ",
+"                             ",
+"                             ",
+"                             ",
+"                             ",
+"             9         9999  ",
+"9999         9               ",
+"             9               "
 ]);
 
 generateMap();
@@ -66,4 +105,15 @@ repeat(irandom_range(4, 6)) {
 	ds_list_add(children, cloud);
 }
 
-ds_list_add(children, instance_create_depth(tileSurfaceWidth div 2, 124, depth-10, mumbaMovingPlatform));
+spawner=instance_create_depth(tileSurfaceWidth/2, 0, depth, mumbaEnemySpawner);
+with spawner {
+	normalWaves=[
+	[mumbaSquirrel],
+	[mumbaSquirrel, mumbaSquirrel]
+	];
+
+	hardWaves=[
+	[mumbaSquirrel, mumbaSquirrel, mumbaSquirrel]
+	]
+}
+ds_list_add(children, spawner);

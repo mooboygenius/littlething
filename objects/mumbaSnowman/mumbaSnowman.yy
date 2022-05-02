@@ -30,12 +30,12 @@
   ],
   "properties": [],
   "overriddenProperties": [
-    {"propertyId":{"name":"hp","path":"objects/mumbaLivingObject/mumbaLivingObject.yy",},"objectId":{"name":"mumbaLivingObject","path":"objects/mumbaLivingObject/mumbaLivingObject.yy",},"value":"6","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"hp","path":"objects/mumbaLivingObject/mumbaLivingObject.yy",},"objectId":{"name":"mumbaLivingObject","path":"objects/mumbaLivingObject/mumbaLivingObject.yy",},"value":"5","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"corpseSprite","path":"objects/mumbaEnemy/mumbaEnemy.yy",},"objectId":{"name":"mumbaEnemy","path":"objects/mumbaEnemy/mumbaEnemy.yy",},"value":"sprMumbaSnowmanDead","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "enemies",
-    "path": "folders/Objects/mumba/in-game stuff/enemies.yy",
+    "name": "enemies and hazards",
+    "path": "folders/Objects/mumba/in-game stuff/enemies and hazards.yy",
   },
   "resourceVersion": "1.0",
   "name": "mumbaSnowman",

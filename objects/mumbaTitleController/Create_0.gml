@@ -6,6 +6,8 @@ title=instance_create_depth(0, 0, 0, mumbaTitle);
 ds_list_add(children, title);
 pressPrompt=noone;
 
+drawScript=function() {}
+
 with title {
 	drawX=-100;
 	drawY=-100;

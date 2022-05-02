@@ -15,19 +15,19 @@ shadows=instance_create_depth(0, 0, depth-10, mumbaLSShadowController);
 children=ds_list_create();
 ds_list_add(children, banner, tiles, shadows, mumba, bannerLower);
 
-enum mumbaLevelData {name, sprite, mapObject}
-addLevel=function(name, sprite) {
-	/// @function addLevel(name, sprite)
-	return [name, sprite];
+enum mumbaLevelData {name, sprite, levelObject, mapObject}
+addLevel=function(name, sprite, levelObject=mumbaBeachLevel) {
+	/// @function addLevel(name, sprite, [levelObject])
+	return [name, sprite, levelObject];
 }
 
-beachLevel=addLevel("Beginner Beach", sprLevelSelectPalmTree);
-cityLevel=addLevel("Manic Metropolis", sprLevelSelectTower);
-grassLevel=addLevel("Perilous Plain", sprLevelSelectFlower);
-fireLevel=addLevel("Vicious Volcano", sprLevelSelectVolcano);
-snowLevel=addLevel("Tense Tundra", sprLevelSelectSnowman);
-heavenLevel=addLevel("Hazardous Heaven", sprLevelSelectHeaven);
-tunnelLevel=addLevel("Turmoil Tunnels", sprLevelSelectRock);
+beachLevel=addLevel("Beginner Beach", sprLevelSelectPalmTree, mumbaBeachLevel);
+cityLevel=addLevel("Manic Metropolis", sprLevelSelectTower, mumbaCityLevel);
+grassLevel=addLevel("Perilous Plain", sprLevelSelectFlower, mumbaPlainsLevel);
+fireLevel=addLevel("Vicious Volcano", sprLevelSelectVolcano, mumbaVolcanoLevel);
+snowLevel=addLevel("Tense Tundra", sprLevelSelectSnowman, mumbaSnowLevel);
+heavenLevel=addLevel("Hazardous Heaven", sprLevelSelectHeaven, mumbaHeavenLevel);
+tunnelLevel=addLevel("Turmoil Tunnels", sprLevelSelectRock, mumbaCaveLevel);
 bossLevel=addLevel("???", sprLevelSelectMystery);
 deadEstateLevel=addLevel("Dead Estate", sprLevelSelectDeadEstate);
 
@@ -45,6 +45,7 @@ for (var i=0; i<array_length(levels); i++) {
 		levels[i][z][mumbaLevelData.mapObject]=instance_create_depth(0, 0, depth-50, mumbaLSLevelCoin);
 		var d=noone;
 		with levels[i][z][mumbaLevelData.mapObject] {
+			levelObject=other.levels[i][z][mumbaLevelData.levelObject];
 			name=other.levels[i][z][mumbaLevelData.name];
 			decorSprite=other.levels[i][z][mumbaLevelData.sprite];
 			var spr=decorSprite;

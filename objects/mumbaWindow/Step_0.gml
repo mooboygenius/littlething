@@ -4,18 +4,17 @@ var previousDepth=-9999,
 previous=noone,
 inst=noone;
 
-repeat(20) {
-	for (var i=0; i<ds_list_size(children); i++) {
+var s=ds_list_size(children);
+repeat(5) {
+	for (var i=1; i<s; i++) {
 		var d=0,
 		prevDepth=0;
-		if i>0 {
-			with children[| i] d=depth;
-			with children[| i-1] prevDepth=depth;
-			if d>prevDepth {
-				var previousInst=children[| i-1];
-				ds_list_set(children, i-1, children[| i]);
-				ds_list_set(children, i, previousInst);
-			}
+		with children[| i] d=depth;
+		with children[| i-1] prevDepth=depth;
+		if d>prevDepth {
+			var previousInst=children[| i-1];
+			ds_list_set(children, i-1, children[| i]);
+			ds_list_set(children, i, previousInst);
 		}
 	}
 }
@@ -30,7 +29,7 @@ if input(vk_f3, PRESS) && DEV_MODE {
 	}
 }
 
-for (var i=0; i<ds_list_size(children); i++) {
+for (var i=0; i<s; i++) {
 	var d=0;
 	with children[| i] d=depth;
 }
@@ -40,8 +39,10 @@ with cameraFocus {
 	other.cameraTargetY=-y;
 	switch object_index {
 		case mumbaPlayer:
-			other.cameraTargetX-=48*sign(xScale);
-			other.cameraTargetY+=16;
+			if canControl {
+				other.cameraTargetX-=48*sign(xScale);
+				other.cameraTargetY+=16;
+			}
 		break;
 		
 		case mumbaLSMumba:
