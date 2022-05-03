@@ -123,14 +123,35 @@ switch state {
 				state=7;
 				whiteFlash=instance_create_depth(0, 0, -10000, mumbaBossWhiteFlash);
 				freakyBack=instance_create_depth(0, 0, 0, mumbaBossBackground);
-				ds_list_add(children, whiteFlash, freakyBack);
+				bigMumbaHead=instance_create_depth(tileSurfaceWidth div 2, tileSurfaceHeight div 2+48, -100, mumbaBigMumbaHead);
+				with bigMumbaHead {
+					verticalSpeed=-.3;
+				}
+				ds_list_add(children, whiteFlash, freakyBack, bigMumbaHead);
+				with mumbaEyeBall {
+					instance_destroy();
+				}
 				with back1 {
 					instance_destroy();
 				}
 				with parentWindow {
 					ds_list_add(children, other.whiteFlash);
 				}
+				with mumbaPlayer {
+					x=other.tileSurfaceWidth div 2;
+				}
 			}
 		}
+	break;
+	
+	case 7:
+		setCameraShake(2);
+		if !instance_exists(mumbaBigMumbaHead) {
+			state=8;
+			setCameraShake(8);
+		}
+	break;
+	
+	case 8:
 	break;
 }

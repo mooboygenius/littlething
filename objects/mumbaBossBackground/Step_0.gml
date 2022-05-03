@@ -62,7 +62,7 @@ drawScript=function(mx, my) {
 	shader_reset();
 	surface_reset_target();
 	
-	//shader_set(shRandomStatic);
+	shader_set(shRandomStatic);
 	shader_set_uniform_f(shader_get_uniform(shRandomStatic, "time"), gameFrame/10);
 	shader_set_uniform_f(shader_get_uniform(shRandomStatic, "intensity"), wave(.05, .1, 10));
 	draw_surface_ext(surf3, 0, 0, 1, 1, 0, c_white, 1);

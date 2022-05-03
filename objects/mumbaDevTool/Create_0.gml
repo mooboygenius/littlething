@@ -2,7 +2,7 @@ if live_call() return live_result;
 
 event_inherited();
 
-startObjects=[mumbaShopEnterPlains,		// 0
+startObjects=[mumbaTestLevel,		// 0
 mumbaShopEnterCity,						// 1
 mumbaStatsScreen,						// 2
 mumbaBeachBonusLevel,

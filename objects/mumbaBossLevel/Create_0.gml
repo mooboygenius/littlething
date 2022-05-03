@@ -30,7 +30,7 @@ with back1 {
 }
 ds_list_add(children, back1);
 
-state=0;
+state=5;
 timer=0;
 
 whiteFlash=noone;
