@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "bgmMumbaShrimpLevel.wav",
-  "duration": 171.107849,
+  "duration": 298.771179,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/mumba/music.yy",

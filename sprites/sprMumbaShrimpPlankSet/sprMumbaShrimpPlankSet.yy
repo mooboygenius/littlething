@@ -25,8 +25,8 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"9e015f01-f986-4e58-9e79-9b26ff5987a6","path":"sprites/sprMumbaShrimpPlankSet/sprMumbaShrimpPlankSet.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9e015f01-f986-4e58-9e79-9b26ff5987a6","path":"sprites/sprMumbaShrimpPlankSet/sprMumbaShrimpPlankSet.yy",},"LayerId":{"name":"06940f07-c5c9-45da-b4f0-059b51d2c2fa","path":"sprites/sprMumbaShrimpPlankSet/sprMumbaShrimpPlankSet.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"9e015f01-f986-4e58-9e79-9b26ff5987a6","path":"sprites/sprMumbaShrimpPlankSet/sprMumbaShrimpPlankSet.yy",},"LayerId":{"name":"ff98686e-c139-4959-a81d-2b5921ee6cd5","path":"sprites/sprMumbaShrimpPlankSet/sprMumbaShrimpPlankSet.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"9e015f01-f986-4e58-9e79-9b26ff5987a6","path":"sprites/sprMumbaShrimpPlankSet/sprMumbaShrimpPlankSet.yy",},"LayerId":{"name":"06940f07-c5c9-45da-b4f0-059b51d2c2fa","path":"sprites/sprMumbaShrimpPlankSet/sprMumbaShrimpPlankSet.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sprMumbaShrimpPlankSet","path":"sprites/sprMumbaShrimpPlankSet/sprMumbaShrimpPlankSet.yy",},"resourceVersion":"1.0","name":"9e015f01-f986-4e58-9e79-9b26ff5987a6","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {

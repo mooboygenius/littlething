@@ -26,7 +26,6 @@
   "frames": [
     {"compositeImage":{"FrameId":{"name":"fcc2934e-d75a-4a91-aefd-d1a3c44e5a9d","path":"sprites/sprMumbaHeavenSky/sprMumbaHeavenSky.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"fcc2934e-d75a-4a91-aefd-d1a3c44e5a9d","path":"sprites/sprMumbaHeavenSky/sprMumbaHeavenSky.yy",},"LayerId":{"name":"7d8add9e-b75a-4099-9489-03d99b5fdc00","path":"sprites/sprMumbaHeavenSky/sprMumbaHeavenSky.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"fcc2934e-d75a-4a91-aefd-d1a3c44e5a9d","path":"sprites/sprMumbaHeavenSky/sprMumbaHeavenSky.yy",},"LayerId":{"name":"1a1e7e77-922c-4544-babb-a8b036729810","path":"sprites/sprMumbaHeavenSky/sprMumbaHeavenSky.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sprMumbaHeavenSky","path":"sprites/sprMumbaHeavenSky/sprMumbaHeavenSky.yy",},"resourceVersion":"1.0","name":"fcc2934e-d75a-4a91-aefd-d1a3c44e5a9d","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {

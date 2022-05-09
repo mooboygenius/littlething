@@ -196,6 +196,8 @@ if status==mumbaLevelState.unlocked {
 					state=2;
 					timer=0;
 					with mumbaLSMumba {
+						playMumbaSound(sfxMumbaLevelSelectChoose, 100, 1);
+						playMumbaSound(sfxMumbaJump, 100, 1);
 						state=2;
 						zSpeed=-5;
 						squish=.2;

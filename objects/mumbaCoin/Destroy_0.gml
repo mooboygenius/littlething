@@ -1,5 +1,6 @@
 if live_call() return live_result;
 if hp<=0 {
+	playMumbaSound(sfxMumbaGetCoin, 100, random_range(.9, 1.1));
 	with mumbaPlayer {
 		coinCoolDown=30;
 	}

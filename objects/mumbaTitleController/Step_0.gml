@@ -56,6 +56,7 @@ switch state {
 		if keyboard_check_pressed(vk_anykey) {
 			state=2;
 			imageScale+=.05;
+			playMumbaSound(sfxMumbaMenuConfirm, 100);
 			with pressPrompt {
 				instance_destroy();
 			}

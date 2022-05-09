@@ -35,6 +35,7 @@
     {"propertyId":{"name":"fireRate","path":"objects/mumbaGun/mumbaGun.yy",},"objectId":{"name":"mumbaGun","path":"objects/mumbaGun/mumbaGun.yy",},"value":"20","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"inaccuracy","path":"objects/mumbaGun/mumbaGun.yy",},"objectId":{"name":"mumbaGun","path":"objects/mumbaGun/mumbaGun.yy",},"value":"0","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"bulletSpeed","path":"objects/mumbaGun/mumbaGun.yy",},"objectId":{"name":"mumbaGun","path":"objects/mumbaGun/mumbaGun.yy",},"value":"10","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"weaponSound","path":"objects/mumbaGun/mumbaGun.yy",},"objectId":{"name":"mumbaGun","path":"objects/mumbaGun/mumbaGun.yy",},"value":"sfxMumbaBoomerangThrow","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "weapons",

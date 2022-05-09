@@ -35,6 +35,7 @@
     {"propertyId":{"name":"bulletSpeed","path":"objects/mumbaGun/mumbaGun.yy",},"objectId":{"name":"mumbaGun","path":"objects/mumbaGun/mumbaGun.yy",},"value":"2.6","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"casingSprite","path":"objects/mumbaGun/mumbaGun.yy",},"objectId":{"name":"mumbaGun","path":"objects/mumbaGun/mumbaGun.yy",},"value":"noone","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"uiCasingSprite","path":"objects/mumbaGun/mumbaGun.yy",},"objectId":{"name":"mumbaGun","path":"objects/mumbaGun/mumbaGun.yy",},"value":"noone","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"weaponSound","path":"objects/mumbaGun/mumbaGun.yy",},"objectId":{"name":"mumbaGun","path":"objects/mumbaGun/mumbaGun.yy",},"value":"sfxMumbaCoconutShotgun","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "weapons",

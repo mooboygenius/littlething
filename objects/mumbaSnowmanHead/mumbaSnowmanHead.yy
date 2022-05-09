@@ -37,6 +37,7 @@
     {"propertyId":{"name":"casingSprite","path":"objects/mumbaGun/mumbaGun.yy",},"objectId":{"name":"mumbaGun","path":"objects/mumbaGun/mumbaGun.yy",},"value":"noone","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"uiSprite","path":"objects/mumbaGun/mumbaGun.yy",},"objectId":{"name":"mumbaGun","path":"objects/mumbaGun/mumbaGun.yy",},"value":"sprMumbaSnowmanUI","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"uiCasingSprite","path":"objects/mumbaGun/mumbaGun.yy",},"objectId":{"name":"mumbaGun","path":"objects/mumbaGun/mumbaGun.yy",},"value":"noone","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"weaponSound","path":"objects/mumbaGun/mumbaGun.yy",},"objectId":{"name":"mumbaGun","path":"objects/mumbaGun/mumbaGun.yy",},"value":"sfxMumbaSnowmanVomit","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "weapons",

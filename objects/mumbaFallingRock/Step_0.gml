@@ -25,6 +25,7 @@ if place_meeting(x, y+1, mumbaWall) || place_meeting(x, y, mumbaPlayer) || place
 		d=random(360);
 		createMumbaParticle(x+lengthdir_x(l, d), y+lengthdir_y(l, d), mumbaRockCrumbleParticle);
 	}
+	playMumbaSound(sfxMumbaExplosion, 100, random_range(1.2, 1.3));
 	instance_destroy();
 }
 

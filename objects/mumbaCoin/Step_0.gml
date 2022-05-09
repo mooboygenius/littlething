@@ -1,6 +1,7 @@
 if live_call() return live_result;
 
 if place_meeting(x, y+verticalSpeed, mumbaWall) && verticalSpeed>1 {
+	playMumbaSound(sfxMumbaLand, 5, random_range(1.4, 1.5));
 	verticalSpeed*=-.7;
 	if verticalSpeed<-1 grace=2;
 }

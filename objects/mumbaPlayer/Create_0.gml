@@ -20,6 +20,7 @@ die=function() {
 
 getHurt=function(amt) {
 	if grace<-30 && canHurt<0 {
+		playMumbaSound(choose(sfxMumbaEnemyHurt1, sfxMumbaEnemyHurt2, sfxMumbaEnemyHurt3), 100, random_range(1.3, 1.5));
 		setCameraShake(2);
 		hp-=amt;
 		grace=amt*30;

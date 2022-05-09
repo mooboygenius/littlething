@@ -1,6 +1,6 @@
 {
   "ConfigValues": {
-    "dev": {"audioGroupId":"{\"name\":\"bgm\",\"path\":\"audiogroups/bgm\"}",},
+    "dev": {"audioGroupId":"{\"name\":\"mumbaBGM\",\"path\":\"audiogroups/mumbaBGM\"}",},
   },
   "conversionMode": 0,
   "compression": 0,
@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "bgmMumbaDeadEstateLevel.wav",
-  "duration": 171.084641,
+  "duration": 171.107849,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/mumba/music.yy",

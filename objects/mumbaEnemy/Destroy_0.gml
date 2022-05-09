@@ -1,6 +1,8 @@
 if live_call() return live_result;
 
 if hp<=0 {
+	playMumbaSound(choose(sfxMumbaEnemyDeath1, sfxMumbaEnemyDeath2, sfxMumbaEnemyDeath3), 10, random_range(.8, 1.1));
+	
 	with mumbaRealLevel {
 		enemiesKilled++;
 	}

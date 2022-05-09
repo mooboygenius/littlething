@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "bgmMumbaBoss.wav",
-  "duration": 298.771179,
+  "duration": 173.00029,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/mumba/music.yy",

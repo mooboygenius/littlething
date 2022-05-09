@@ -27,6 +27,7 @@ switch state {
 		verticalSpeed=lerp(verticalSpeed, lengthdir_y(spd, a), l);
 		if place_meeting(x, y, mumbaPlayer) {
 			life=0;
+			playMumbaSound(sfxMumbaBoomerangCatch, 100, random_range(.9, 1.1));
 		}
 	break;
 }

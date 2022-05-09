@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "bgmMumbaSnowLevel.wav",
-  "duration": 192.005814,
+  "duration": 164.130249,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/mumba/music.yy",

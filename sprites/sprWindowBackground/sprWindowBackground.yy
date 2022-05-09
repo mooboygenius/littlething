@@ -25,8 +25,8 @@
   "gridY": 8,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"8b67461d-b755-4c5f-87f5-486f05f6e074","path":"sprites/sprWindowBackground/sprWindowBackground.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"8b67461d-b755-4c5f-87f5-486f05f6e074","path":"sprites/sprWindowBackground/sprWindowBackground.yy",},"LayerId":{"name":"e0389e75-016f-4cd4-9c73-9b905b5e11c3","path":"sprites/sprWindowBackground/sprWindowBackground.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"8b67461d-b755-4c5f-87f5-486f05f6e074","path":"sprites/sprWindowBackground/sprWindowBackground.yy",},"LayerId":{"name":"aa6acdff-7ed7-4bbf-aa60-c83666f72d0b","path":"sprites/sprWindowBackground/sprWindowBackground.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"8b67461d-b755-4c5f-87f5-486f05f6e074","path":"sprites/sprWindowBackground/sprWindowBackground.yy",},"LayerId":{"name":"e0389e75-016f-4cd4-9c73-9b905b5e11c3","path":"sprites/sprWindowBackground/sprWindowBackground.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sprWindowBackground","path":"sprites/sprWindowBackground/sprWindowBackground.yy",},"resourceVersion":"1.0","name":"8b67461d-b755-4c5f-87f5-486f05f6e074","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {

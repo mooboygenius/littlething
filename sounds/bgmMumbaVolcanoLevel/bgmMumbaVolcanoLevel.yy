@@ -15,7 +15,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "bgmMumbaVolcanoLevel.wav",
-  "duration": 164.130249,
+  "duration": 90.10504,
   "parent": {
     "name": "music",
     "path": "folders/Sounds/mumba/music.yy",

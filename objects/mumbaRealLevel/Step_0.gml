@@ -34,6 +34,7 @@ switch state {
 				unlockMedal(timeMedalName);
 				updateData(concat(winLevelName, "TimeTrial"), true);
 			}
+			playMumbaSound(sfxMumbaLevelWin, 100, 1);
 			won=true;
 			state=1;
 			setCameraShake(4);

@@ -25,8 +25,8 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"7e28dfec-2b5e-46e2-83cd-03a3cecc344b","path":"sprites/sprNoteRollLabel/sprNoteRollLabel.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"7e28dfec-2b5e-46e2-83cd-03a3cecc344b","path":"sprites/sprNoteRollLabel/sprNoteRollLabel.yy",},"LayerId":{"name":"e14ed161-d403-44ec-8981-41864dd93cb9","path":"sprites/sprNoteRollLabel/sprNoteRollLabel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"7e28dfec-2b5e-46e2-83cd-03a3cecc344b","path":"sprites/sprNoteRollLabel/sprNoteRollLabel.yy",},"LayerId":{"name":"5e4c041e-23f5-4335-af66-daa03c07ba63","path":"sprites/sprNoteRollLabel/sprNoteRollLabel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"7e28dfec-2b5e-46e2-83cd-03a3cecc344b","path":"sprites/sprNoteRollLabel/sprNoteRollLabel.yy",},"LayerId":{"name":"e14ed161-d403-44ec-8981-41864dd93cb9","path":"sprites/sprNoteRollLabel/sprNoteRollLabel.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sprNoteRollLabel","path":"sprites/sprNoteRollLabel/sprNoteRollLabel.yy",},"resourceVersion":"1.0","name":"7e28dfec-2b5e-46e2-83cd-03a3cecc344b","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {

@@ -28,6 +28,11 @@ size=ds_list_size(menuItems)-1,
 previousSelection=currentSelection;
 
 if in!=0 && !leaving {
+	if in>0 {
+		playMumbaSound(sfxMumbaMenuDown);
+	} else {
+		playMumbaSound(sfxMumbaMenuUp);
+	}
 	with keeper {
 		sprite_index=other.normalSprite;
 	}

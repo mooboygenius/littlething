@@ -18,6 +18,7 @@ switch state {
 }
 
 if input(mumbaInputFire, PRESS) || input(mumbaInputJump, PRESS) {
+	playMumbaSound(sfxMumbaLevelRestart, 100, 1);
 	var obj=mumbaBeachLevel;
 	with mumbaLevel {
 		obj=object_index;

@@ -18,6 +18,7 @@ if active {
 				keeper.sprite_index=cantBuySprite;
 				keeper.squish=.1;
 			}
+			playSound(sfxMumbaShopCantBuyItem);
 			squish=-.1;
 			show_debug_message("can't buy -- out of stock");
 		} else if m>=price {
@@ -40,6 +41,8 @@ if active {
 			if !stock {
 				color=outOfStockColor;
 			}
+			
+			playSound(sfxMumbaShopBuyItem);
 				
 			buyScript();
 				
@@ -51,6 +54,7 @@ if active {
 				keeper.sprite_index=cantBuySprite;
 				keeper.squish=.1;
 			}
+			playSound(sfxMumbaShopCantBuyItem);
 			squish=-.1;
 			show_debug_message("not enough money");
 		}

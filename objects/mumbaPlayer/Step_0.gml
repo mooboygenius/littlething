@@ -52,6 +52,7 @@ if canControl {
 	
 	var vin=input(mumbaInputJump, PRESS);
 	if vin && place_meeting(x, y+1, mumbaWall) {
+		playMumbaSound(sfxMumbaJump, 100, random_range(.9, 1.1));
 		verticalSpeed=-5.5;
 		squish=-.25;
 		for (var i=-1; i<=1; i++) {
@@ -212,6 +213,7 @@ if dead {
 	}
 } else {
 	if sprite_index=sprMumbaFall {
+		playMumbaSound(sfxMumbaLand, 100, random_range(.9, 1.1));
 		setSprite(self, sprMumbaLand);
 	} else if sprite_index!=sprMumbaLand {
 		if abs(horizontalSpeed)>.5 {
@@ -227,6 +229,7 @@ if dead {
 
 if hp<=0 {
 	if !dead {
+		playMumbaSound(sfxMumbaGameOver, 100, 1);
 		dead=true;
 		canControl=false;
 		horizontalSpeed=0;

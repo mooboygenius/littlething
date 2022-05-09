@@ -33,6 +33,7 @@ if canFire && input(mumbaInputFire) && fireTimer<=0 {
 	by=y;
 	x+=-sign(xScale)*8;
 	justFired=true;
+	playMumbaSound(weaponSound, 10, random_range(weaponSoundMinimumPitch, weaponSoundMaximumPitch));
 	var n=0;
 	repeat(bulletNumber) {
 		with owner {

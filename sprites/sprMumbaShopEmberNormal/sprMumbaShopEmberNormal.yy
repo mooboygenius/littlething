@@ -25,7 +25,6 @@
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"dae26fed-6d5c-4b02-a8b5-6cbb9a324643","path":"sprites/sprMumbaShopEmberNormal/sprMumbaShopEmberNormal.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"dae26fed-6d5c-4b02-a8b5-6cbb9a324643","path":"sprites/sprMumbaShopEmberNormal/sprMumbaShopEmberNormal.yy",},"LayerId":{"name":"1fcf346a-c309-431a-9189-ac512d3efef0","path":"sprites/sprMumbaShopEmberNormal/sprMumbaShopEmberNormal.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"dae26fed-6d5c-4b02-a8b5-6cbb9a324643","path":"sprites/sprMumbaShopEmberNormal/sprMumbaShopEmberNormal.yy",},"LayerId":{"name":"19e76e2b-53aa-4255-b383-9c63015bad44","path":"sprites/sprMumbaShopEmberNormal/sprMumbaShopEmberNormal.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sprMumbaShopEmberNormal","path":"sprites/sprMumbaShopEmberNormal/sprMumbaShopEmberNormal.yy",},"resourceVersion":"1.0","name":"dae26fed-6d5c-4b02-a8b5-6cbb9a324643","tags":[],"resourceType":"GMSpriteFrame",},
   ],

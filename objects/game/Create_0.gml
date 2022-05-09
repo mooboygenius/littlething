@@ -43,6 +43,7 @@ gameFrame=0;
 audio_group_load(bgm);
 audio_group_load(sfx);
 audio_group_load(mumbaBGM);
+audio_group_load(mumbaSFX);
 
 globalvar realWebsites;
 realWebsites=ds_map_create();

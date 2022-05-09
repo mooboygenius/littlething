@@ -9,6 +9,7 @@ switch state {
 			squish=.2;
 			//show_debug_message(concat("distance: ", point_distance(x, y, gotoX, gotoY)));
 			state=1;
+			playMumbaSound(sfxMumbaLevelSelectMove, 100, random_range(.9, 1.1));
 			sprite_index=sprMumbaWalk;
 		}
 	break;
@@ -37,6 +38,7 @@ switch state {
 			setSprite(self, sprMumbaJump);
 		} else if zSpeed>0 {
 			if sprite_index==sprMumbaJump {
+				playMumbaSound(sfxMumbaLevelSelectFall, 100, 1);
 				setSprite(self, sprMumbaSwitchToFall);
 			} else if sprite_index!=sprMumbaSwitchToFall {
 				setSprite(self, sprMumbaFall);

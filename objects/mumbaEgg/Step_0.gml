@@ -12,6 +12,7 @@ angle=lerp(angle, wave(-1, 1, 1)*25, .5);
 if place_meeting(x, y, mumbaPlayer) {
 	var e=0;
 	with mumbaPlayer {
+		playMumbaSound(sfxMumbaGetEgg, 100, random_range(.9, 1.1));
 		eggs++;
 		e=eggs;
 	}
