@@ -5,6 +5,8 @@ event_inherited();
 state=0;
 timer=0;
 
+if !audio_is_playing(music) playMumbaMusic(music);
+
 doStateMachine=function() {
 	/// @function doStateMachine()
 	

@@ -54,6 +54,50 @@ switch state {
 			}
 		}
 	break;
+	
+	case 4:
+		timer++;
+		if timer>30 {
+			timer=0;
+			circleTransition=instance_create_depth(0, 0, -1000, mumbaCircleTransition);
+			with circleTransition {
+				circleX=GAME_WIDTH/2;
+				circleY=GAME_HEIGHT/2;
+				circleSize=GAME_WIDTH*2;
+				circleChange=-8;
+			}
+			with parentWindow ds_list_add(children, other.circleTransition);
+			state=5;
+		}
+	break;
+	
+	case 5:
+		var go=false;
+		with circleTransition {
+			if circleSize<=0 go=true;
+		}
+		
+		if go {
+			state=6;
+			stopMumbaMusic();
+		}
+	break;
+	
+	case 6:
+		timer++;
+		if timer>60 {
+			instance_destroy();
+			with mumbaIntroCard {
+				instance_destroy();
+			}
+			var inst=instance_create_depth(0, 0, 0, mumbaLevelSelectController);
+			with parentWindow ds_list_insert(children, 0, inst);
+			with circleTransition {
+				circleChange*=-1;
+				destroyAtSize=GAME_WIDTH*2;
+			}
+		}
+	break;
 }
 
 

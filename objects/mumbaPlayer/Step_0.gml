@@ -67,17 +67,18 @@ if canControl {
 }
 #endregion
 
-#region handle weapon
+#region handle weapon & hat
 if canControl {
 	playerData=noone;
 	with parentWindow {
 		other.playerData=playerData;
 	}
-
+	
+	#region weapons
 	var swap=false;
 	with playerData {
 		//show_debug_message(concat("successfully accessing player data #", id, " from player object"));
-		var in=input(mumbaInputWeaponDown, PRESS)-input(mumbaInputWeaponUp, PRESS);
+		var in=!input(vk_shift)*(input(mumbaInputWeaponDown, PRESS)-input(mumbaInputWeaponUp, PRESS));
 		if in!=0 {
 			currentGun+=in;
 			var s=ds_list_size(gunInventory)-1;
@@ -107,6 +108,41 @@ if canControl {
 			}
 		}
 	}
+	#endregion
+	
+	#region hats
+	var swap=false;
+	with playerData {
+		//show_debug_message(concat("successfully accessing player data #", id, " from player object"));
+		var in=input(vk_shift)*(input(mumbaInputWeaponDown, PRESS)-input(mumbaInputWeaponUp, PRESS));
+		if in!=0 {
+			currentHat+=in;
+			var s=ds_list_size(hatInventory)-1;
+			if currentHat<0 currentHat=s else if currentHat>s currentHat=0;
+			swap=true;
+		}
+		other.myHatObject=hatInventory[| currentHat];
+	}
+	if swap {
+		instance_destroy(myHatInstance);
+	}
+
+	var hatInstanceExists=instance_exists(myHatInstance);
+	if myHatObject!=noone && object_exists(myHatObject) && ((myHatObject && !hatInstanceExists) || (myHatObject && hatInstanceExists && myHatObject!=myHatInstance.object_index)) {
+		show_debug_message(concat("my new hat: ", object_get_name(myHatObject)));
+		myHatInstance=instance_create_depth(x, y, depth, myHatObject);
+		with myHatInstance {
+			owner=other;
+			grace=5;
+			squish=-.5;
+		}
+		with parentWindow {
+			if ds_list_find_index(children, other.myHatInstance)<0 {
+				ds_list_insert(children, 0, other.myHatInstance);
+			}
+		}
+	}
+	#endregion
 }
 #endregion
 
@@ -204,6 +240,12 @@ if hp<=0 {
 	}
 }
 
+if DEV_MODE && input(ord("H"), PRESS) {
+	hurt(self, 1);
+}
+
+if DEV_MODE && input(ord("E"), PRESS) eggs+=10;
+
 setCameraFocus(self);
 
 killCoolDown--;
@@ -217,3 +259,5 @@ if y>lim && hp>0 {
 	hp=0;
 	setCameraShake(4);
 }
+	
+canHurt--;

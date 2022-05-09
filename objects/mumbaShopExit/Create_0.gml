@@ -22,6 +22,7 @@ doStateMachine=function() {
 			timer++;
 			if timer>180 {
 				goAwayTransition=instance_create_depth(0, 0, -1000, mumbaCircleTransition);
+				with goAwayTransition owner=other;
 				var w=1, h=1;
 				with parentWindow {
 					w=portWidth;
@@ -42,6 +43,7 @@ doStateMachine=function() {
 		case 1:
 			with goAwayTransition {
 				if circleSize<=0 {
+					stopMumbaMusic();
 					circleSize=0;
 					other.state=2;
 				}

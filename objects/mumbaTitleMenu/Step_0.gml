@@ -15,8 +15,6 @@ if ds_exists(children, ds_type_list) {
 			var yy=drawY,
 			xx=drawX;
 
-			menuHorizontalAlignment=menuHAlign.right;
-
 			for (var i=0; i<ds_list_size(children); i++) {
 				if instance_exists(children[| i]) {
 					with parentWindow {

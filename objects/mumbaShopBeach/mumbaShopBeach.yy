@@ -29,6 +29,9 @@
   "properties": [],
   "overriddenProperties": [
     {"propertyId":{"name":"exitScene","path":"objects/mumbaShopController/mumbaShopController.yy",},"objectId":{"name":"mumbaShopController","path":"objects/mumbaShopController/mumbaShopController.yy",},"value":"mumbaShopExitBeach","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"greetingSprite","path":"objects/mumbaShopController/mumbaShopController.yy",},"objectId":{"name":"mumbaShopController","path":"objects/mumbaShopController/mumbaShopController.yy",},"value":"sprMumbaShopHulaNormal","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"normalSprite","path":"objects/mumbaShopController/mumbaShopController.yy",},"objectId":{"name":"mumbaShopController","path":"objects/mumbaShopController/mumbaShopController.yy",},"value":"sprMumbaShopHulaNormal","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"cantBuySprite","path":"objects/mumbaShopController/mumbaShopController.yy",},"objectId":{"name":"mumbaShopController","path":"objects/mumbaShopController/mumbaShopController.yy",},"value":"sprMumbaShopHulaNormal","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "shops",

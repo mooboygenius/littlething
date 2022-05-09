@@ -4,11 +4,6 @@ if live_call() return live_result;
 
 event_inherited();
 
-purchaseScript=function() {
-	/// @function purchaseScript()
-	/// do nothing
-}
-
 active=false;
 
 defaultColor=$B8A44F;
@@ -21,15 +16,52 @@ buyText="";
 cantBuyText="";
 outOfStockText="";
 
-buyWeapon=function() {
+buyWeapon=function(name) {
 	/// @function buyWeapon(name)
-	var obj=getMumbaItemObject(longName);
+	var obj=getMumbaItemObject(name);
 	with mumbaShopController {
 		boughtSomething=true;
 	}
 	with mumbaPlayerData {
 		if obj { 
 			ds_list_add(gunInventory, obj);
+			updateData("mumbaGunInventory", ds_list_write(gunInventory));
+			var a=[mumbaMagicStaff, mumbaBazooka, mumbaMushroom, mumbaPeter, mumbaSnowmanHead, mumbaIceAxe, mumbaBoomerang, mumbaFlower, mumbaMagicHarp, mumbaHolyBow, mumbaPitchfork, mumbaFlameThrower, mumbaFryCrossbow, mumbaBurgerCannon, mumbaTikiGun, mumbaCoconutShotgun],
+			unlock=true;
+			for (var i=0; i<array_length(a); i++) {
+				if ds_list_find_index(gunInventory, a[i])<0 {
+					unlock=false;
+					break;
+				}
+			}
+			if unlock {
+				unlockMedal("Gun Nut");
+			}
+		}
+	}
+}
+
+buyHat=function(name) {
+	/// @function buyHat(name)
+	var obj=getMumbaItemObject(name);
+	with mumbaShopController {
+		boughtSomething=true;
+	}
+	with mumbaPlayerData {
+		if obj {
+			ds_list_add(hatInventory, obj);
+			updateData("mumbaHatInventory", ds_list_write(hatInventory));
+			var a=[mumbaShrimpHat, mumbaTruckerHat, mumbaFunnyGlasses, mumbaWitchHat, mumbaBlockHead, mumbaScarf, mumbaRaccoonCap, mumbaHalo, mumbaDevilHorns, mumbaCheeseHead, mumbaStrawHat],
+			unlock=true;
+			for (var i=0; i<array_length(a); i++) {
+				if ds_list_find_index(hatInventory, a[i])<0 {
+					unlock=false;
+					break;
+				}
+			}
+			if unlock {
+				unlockMedal("Hat Fancier");
+			}
 		}
 	}
 }

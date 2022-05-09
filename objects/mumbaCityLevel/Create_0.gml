@@ -182,3 +182,6 @@ with spawner {
 	]
 }
 ds_list_add(children, spawner);
+
+winLevelName="manicMetropolis";
+unlockLevels=["viciousVolcano", "tenseTundra"];

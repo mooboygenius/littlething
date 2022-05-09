@@ -37,7 +37,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "home page",
-    "path": "folders/shrimp browser/home page.yy",
+    "path": "folders/Objects/shrimp browser/home page.yy",
   },
   "resourceVersion": "1.0",
   "name": "textLink",

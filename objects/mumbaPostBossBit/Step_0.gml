@@ -15,6 +15,7 @@ switch state {
 				surface_copy(graySurface, 0, 0, surf);
 				state=1;
 				drawSurface=true;
+				playMumbaMusic(bgmMumbaBossWin);
 			}
 		}
 	break;
@@ -24,7 +25,7 @@ switch state {
 			instance_destroy();
 		}
 		timer++;
-		if timer>90 {
+		if timer>10 {
 			showText=true;
 			timer=0;
 			state=2;
@@ -35,7 +36,7 @@ switch state {
 	
 	case 2:
 		timer++;
-		if timer>150 {
+		if timer>160 {
 			timer=0;
 			text+="\n\nMumba successfully rescued his eggs and his girlfriend from the kidnapper, but after further investigation he was found guilty of illegal firearm possession in the state of Ohio.";
 			state++;
@@ -53,7 +54,7 @@ switch state {
 	
 	case 4:
 		timer++;
-		if timer>120 {
+		if timer>150 {
 			timer=0;
 			text="Fortunately for our hero, Mumba was let off easy with merely a $500.00 fine.";
 			state=5;
@@ -62,7 +63,7 @@ switch state {
 	
 	case 5:
 		timer++;
-		if timer>210 {
+		if timer>270 {
 			timer=0;
 			text+="\n\nAfter it was all said and done, Mumba went home and had lots of unprotected sex with his girlfriend and listened to prog rock playlists on Youtube.";
 			state=6;
@@ -104,6 +105,17 @@ switch state {
 			text="";
 			state=10;
 			timer=0;
+		}
+	break;
+	
+	case 10:
+		timer++;
+		if timer>120 {
+			var inst=instance_create_depth(0, 0, 0, mumbaCreditsLevel);
+			with parentWindow ds_list_add(children, inst);
+			instance_destroy();
+		} else if timer>60 {
+			stopMumbaMusic();
 		}
 	break;
 }

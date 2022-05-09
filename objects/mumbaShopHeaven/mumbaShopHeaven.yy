@@ -25,6 +25,7 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [
@@ -38,6 +39,9 @@
     {"propertyId":{"name":"outOfStockTryToBuyText","path":"objects/mumbaShopController/mumbaShopController.yy",},"objectId":{"name":"mumbaShopController","path":"objects/mumbaShopController/mumbaShopController.yy",},"value":"We just ran out of those!","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"buyText","path":"objects/mumbaShopController/mumbaShopController.yy",},"objectId":{"name":"mumbaShopController","path":"objects/mumbaShopController/mumbaShopController.yy",},"value":"Knock yourself out!","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"exitScene","path":"objects/mumbaShopController/mumbaShopController.yy",},"objectId":{"name":"mumbaShopController","path":"objects/mumbaShopController/mumbaShopController.yy",},"value":"mumbaShopExitHeaven","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"cantBuySprite","path":"objects/mumbaShopController/mumbaShopController.yy",},"objectId":{"name":"mumbaShopController","path":"objects/mumbaShopController/mumbaShopController.yy",},"value":"sprMumbaShopFaithNormal","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"greetingSprite","path":"objects/mumbaShopController/mumbaShopController.yy",},"objectId":{"name":"mumbaShopController","path":"objects/mumbaShopController/mumbaShopController.yy",},"value":"sprMumbaShopFaithNormal","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"normalSprite","path":"objects/mumbaShopController/mumbaShopController.yy",},"objectId":{"name":"mumbaShopController","path":"objects/mumbaShopController/mumbaShopController.yy",},"value":"sprMumbaShopFaithNormal","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "shops",

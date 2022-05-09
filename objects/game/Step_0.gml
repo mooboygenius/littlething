@@ -3,6 +3,13 @@ if live_call() return live_result;
 #region dev keybinds
 if DEV_MODE {
 	if input(vk_home, PRESS) game_restart();
+	if input(vk_delete, PRESS) {
+		if show_question("delete save data?") {
+			file_delete(SAVE_FILE);
+			ds_map_destroy(saveDataMap);
+			game_restart();
+		}
+	}
 }
 #endregion
 

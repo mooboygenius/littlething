@@ -2,6 +2,11 @@ if live_call() return live_result;
 
 event_inherited();
 
+with keeper {
+	xOffset=other.keeperXOffset
+	yOffset=other.keeperYOffset;
+}
+
 var width=0, height=0;
 
 for (var i=0; i<ds_list_size(children); i++) {
@@ -23,6 +28,9 @@ size=ds_list_size(menuItems)-1,
 previousSelection=currentSelection;
 
 if in!=0 && !leaving {
+	with keeper {
+		sprite_index=other.normalSprite;
+	}
 	currentSelection+=in;
 	if currentSelection<1 currentSelection=size else if currentSelection>size currentSelection=1;
 }
@@ -98,6 +106,9 @@ switch state {
 	case 0:
 		// idle
 		if leaving {
+			with keeper {
+				sprite_index=other.greetingSprite;
+			}
 			state=1;
 		}
 	break;
@@ -106,6 +117,12 @@ switch state {
 		var mx=0;
 		with mumber {
 			mx=meX;
+		}
+		if leaving {
+			with mumber {
+				meX-=3;
+				mx=meX;
+			}
 		}
 		if mx<64 {
 			state=2;
@@ -117,13 +134,14 @@ switch state {
 				h=portHeight;
 			}
 			with transition {
-				show_debug_message(instance_number(mumbaCircleTransition));
+				owner=other;
 				circleSize=360;
 				circleChange=-8;
 				circleX=w/2;
 				circleY=h/2;
 			}
 		}
+	break;
 		
 	case 2:
 		with mumber {
@@ -137,15 +155,16 @@ switch state {
 			}
 		}
 	break;
-	break;
 	
 	case 3:
 		var inst=instance_create_depth(0, 0, 0, exitScene);
+		with inst {
+			transitionFrom=other.transition;
+		}
 		if boughtSomething {
 			with inst {
 				cart=instance_create_depth(goalX, goalY, -50, mumbaShoppingCart);
 				ds_list_insert(children, 0, cart);
-				transitionFrom=other.transition;
 			}
 		}
 		with parentWindow {
@@ -155,3 +174,5 @@ switch state {
 		state=4;
 	break;
 }
+
+show_debug_message(state);

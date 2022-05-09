@@ -24,7 +24,7 @@ switch state {
 	
 	case 1:
 		if !instance_exists(mumbaLevelIntro) timer++;
-		if timer>20 {
+		if timer>16 {
 			timer=0;
 			state=2;
 		}
@@ -70,7 +70,7 @@ switch state {
 	
 	case 3:
 		timer++;
-		if timer>120 {
+		if timer>180 {
 			timer=0;
 			state=4;
 			with circleTransition {

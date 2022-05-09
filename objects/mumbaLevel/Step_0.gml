@@ -2,6 +2,7 @@ if live_call() return live_result;
 
 event_inherited();
 
+
 addChildrenToParentWindow(children);
 
 var w=tileSurfaceWidth, h=tileSurfaceHeight;

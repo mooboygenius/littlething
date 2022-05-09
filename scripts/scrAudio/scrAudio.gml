@@ -54,11 +54,10 @@ createSong(bgmBrandySong, "Shrimp Hacker", "BrandyBuizel");
 createSong(bgmSponge, "Big Boy Rumble Tumble", "HeyOPC & Droid");
 createSong(bgmShrimpBattle1, "Shrimp Battle #1", "HeyOPC");
 createSong(bgmShrimpBattle2, "Shrimp Battle #2", "HeyOPC");
-createSong(bgmShrimpOS, "test", "test");
-createSong(bgmShrimpOS, "placeholder", "jack");
-createSong(bgmShrimpOS, "placeholder", "ConnorGrail");
-createSong(bgmShrimpOS, "placeholder", "DefaultLabs");
-createSong();
+createSong(bgmDryShrimpOS, "Shrimp OS", "Dry");
+createSong(bgmDryShrimpFi, "Shrimp-Fi", "Dry");
+createSong(bgmNowEnteringTheShrimpNexus, "Now Entering the Shrimp Nexus", "Magibauble");
+createSong(bgmShrookie, "Shrookie", "Crashtroid");
 #endregion
 
 function setAudioBaseGains() {

@@ -30,8 +30,11 @@ with back1 {
 }
 ds_list_add(children, back1);
 
-state=5;
+state=0;
 timer=0;
 
 whiteFlash=noone;
 freakyBack=noone;
+
+winLevelName="boss";
+unlockLevels=["deadEstate"];

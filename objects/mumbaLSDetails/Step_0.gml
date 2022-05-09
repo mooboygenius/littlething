@@ -2,6 +2,11 @@ if live_call() return live_result;
 
 event_inherited();
 
+with mumbaWindow {
+	other.xstart=-cameraX+16;
+	other.ystart=-cameraY+4;
+}
+
 if DEV_MODE && input(vk_f1, PRESS) {
 	generateSprite=function(text) {
 		/// @function generateSprite(text)
@@ -121,20 +126,6 @@ if state>0 {
 	waveIntensity=lerp(waveIntensity, 0, l);
 }
 
-drawScript=function(x, y) {
-	var w=1, h=1;
-	with parentWindow {
-		w=portWidth;
-		h=portHeight;
-	}
-	var nx=w div 2, ny=h div 2-60;
-	setWaveShader(sprite_width*waveHorizontalMultiplier, sprite_height, waveIntensity, waveIntensity, current_time);
-	defaultDrawScript(nx, ny+wave(-1, 1, .5)*3);
-	shader_reset();
-	
-	ny+=sprite_yoffset+8;
-	if timer%60<40 && state==3 {
-		draw_set_font(fntShrimpcordUsername);
-		drawTextOutlinedGeneral(nx, ny+wave(-1, 1, .5, .1)*2, concat("Press [", getStringFromInput(mumbaInputJump), "]"), 12, 9999, $83EEFF, BLACK_COLOR);
-	}
+while sprite_width>GAME_WIDTH-40 {
+	image_xscale-=.01;
 }

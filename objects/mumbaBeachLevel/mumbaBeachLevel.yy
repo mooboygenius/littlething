@@ -33,8 +33,8 @@
     {"propertyId":{"name":"bonusLevel","path":"objects/mumbaRealLevel/mumbaRealLevel.yy",},"objectId":{"name":"mumbaRealLevel","path":"objects/mumbaRealLevel/mumbaRealLevel.yy",},"value":"mumbaBeachBonusLevel","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "levels",
-    "path": "folders/Objects/mumba/in-game stuff/levels.yy",
+    "name": "normal mode",
+    "path": "folders/Objects/mumba/in-game stuff/levels/normal mode.yy",
   },
   "resourceVersion": "1.0",
   "name": "mumbaBeachLevel",

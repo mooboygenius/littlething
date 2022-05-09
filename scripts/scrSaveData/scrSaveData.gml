@@ -26,8 +26,22 @@ function loadSetting(name, defaultValue=0) {
 	return d;
 }
 
+function loadData(name, defaultValue=0) {
+	var d=defaultValue;
+	if ds_map_exists(saveDataMap, name) {
+		d=saveDataMap[? name];
+	}
+	show_debug_message(concat("loaded ", name, " as ", d));
+	return d;
+}
+
 function updateSetting(name, value) {
 	settingDataMap[? name]=value;
+	show_debug_message(concat("updated \"", name, "\": ", value));
+}
+
+function updateData(name, value) {
+	saveDataMap[? name]=value;
 	show_debug_message(concat("updated \"", name, "\": ", value));
 }
 

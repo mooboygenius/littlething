@@ -18,3 +18,5 @@ state=0;
 timer=0;
 lvl=noone;
 intro=noone;
+owner=noone;
+goingToRealLevel=false;

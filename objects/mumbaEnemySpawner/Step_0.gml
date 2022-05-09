@@ -56,6 +56,12 @@ switch state {
 			}
 			spawnX=other.spawnX;
 			spawnY=other.spawnY;
+			if chance(other.hardWaveChance/2) {
+				hp*=4;
+				image_xscale=1.5;
+				image_yscale=image_xscale;
+			}
+			while place_meeting(x, y, mumbaWall) y--;
 		}
 		
 		with parentWindow {

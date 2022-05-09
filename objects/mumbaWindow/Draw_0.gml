@@ -5,6 +5,7 @@ event_inherited();
 if surface_exists(finalSurf) {
 	surface_set_target(finalSurf);
 	draw_clear_alpha(BLACK_COLOR, 1);
+	
 	if surface_exists(childrenObjectSurf) {
 		var hot=false;
 		with mumbaLevel {
@@ -21,9 +22,11 @@ if surface_exists(finalSurf) {
 			t=current_time/4;
 			setWaveShader(sw, sh, int, int, t);
 		}
+		
 		draw_surface_ext(childrenObjectSurf, childrenSurfaceX, childrenSurfaceY, 1, 1, 0, c_white, 1);
 		shader_reset();
 	}
+	
 	if mumbaParticlesOn {
 		part_system_position(particleSystem, childrenSurfaceX+cameraX, childrenSurfaceY+cameraY);
 		part_system_position(uiParticleSystem, childrenSurfaceX, childrenSurfaceY);

@@ -30,10 +30,12 @@
   "properties": [],
   "overriddenProperties": [
     {"propertyId":{"name":"bonusLevel","path":"objects/mumbaRealLevel/mumbaRealLevel.yy",},"objectId":{"name":"mumbaRealLevel","path":"objects/mumbaRealLevel/mumbaRealLevel.yy",},"value":"mumbaHeavenBonusLevel","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"levelName","path":"objects/mumbaRealLevel/mumbaRealLevel.yy",},"objectId":{"name":"mumbaRealLevel","path":"objects/mumbaRealLevel/mumbaRealLevel.yy",},"value":"Hazardous Heaven","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"music","path":"objects/mumbaLevel/mumbaLevel.yy",},"objectId":{"name":"mumbaLevel","path":"objects/mumbaLevel/mumbaLevel.yy",},"value":"bgmMumbaHeavenLevel","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "levels",
-    "path": "folders/Objects/mumba/in-game stuff/levels.yy",
+    "name": "normal mode",
+    "path": "folders/Objects/mumba/in-game stuff/levels/normal mode.yy",
   },
   "resourceVersion": "1.0",
   "name": "mumbaHeavenLevel",

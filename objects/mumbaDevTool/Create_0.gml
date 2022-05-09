@@ -2,7 +2,7 @@ if live_call() return live_result;
 
 event_inherited();
 
-startObjects=[mumbaTestLevel,		// 0
+startObjects=[mumbaMilkbarLadsIntro,		// 0
 mumbaShopEnterCity,						// 1
 mumbaStatsScreen,						// 2
 mumbaBeachBonusLevel,
@@ -21,6 +21,12 @@ mumbaMilkbarLadsIntro,
 mumbaHeavenLevel,
 mumbaCaveLevel,
 mumbaIntroController,
-mumbaBossLevel];
+mumbaBossLevel,
+mumbaDeadEstateLevel,
+mumbaShrimpLevel,
+mumbaShopEnterShrimp,
+mumbaModeSelect,
+mumbaCreditsLevel];
+//startObjects=[mumbaShopBeach, mumbaShopCity, mumbaShopPlains, mumbaShopVolcano, mumbaShopSnow, mumbaShopHeaven, mumbaShopCave, mumbaShopDeadEstate, mumbaShopShrimp];
 
 current=0;

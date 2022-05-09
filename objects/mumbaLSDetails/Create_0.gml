@@ -2,6 +2,42 @@ if live_call() return live_result;
 
 event_inherited();
 
+medalsArray=[];
+
+drawScript=function(mx, my) {
+	var w=1, h=1;
+	with parentWindow {
+		w=portWidth;
+		h=portHeight;
+	}
+	var nx=w div 2, ny=h div 2-60;
+	setWaveShader(sprite_width*waveHorizontalMultiplier, sprite_height, waveIntensity, waveIntensity, current_time);
+	defaultDrawScript(nx, ny+wave(-1, 1, .5)*3);
+	shader_reset();
+	
+	ny+=sprite_yoffset+8;
+	if timer%60<40 && state==3 {
+		draw_set_font(fntShrimpcordUsername);
+		with mumbaLSMumba {
+			if y<(1/2*GAME_HEIGHT) ny+=80;
+		}
+		drawTextOutlinedGeneral(nx, ny+wave(-1, 1, .5, .1)*2, concat("Press [", getStringFromInput(mumbaInputJump), "]"), 12, 9999, $83EEFF, BLACK_COLOR);
+	}
+	
+	if array_length(medalsArray)>0 {
+		var pw=18,
+		s=array_length(medalsArray),
+		ax=GAME_WIDTH/2+pw/2-(s*pw/2),
+		ay=GAME_HEIGHT-12;
+		for (var i=0; i<array_length(medalsArray); i++) {
+			var in=medalsArray[i][1];
+		
+			draw_sprite(medalsArray[i][0], in, ax, ay+wave(-1, 1, .8, i*.2)*in);
+			ax+=pw;
+		}
+	}
+}
+
 generateSprite=function(text) {
 	/// @function generateSprite(text)
 	draw_set_font(mumbaLevelFont);
@@ -49,7 +85,7 @@ generateSprite=function(text) {
 	return sprite;
 }
 
-sprite_index=generateSprite("cuntyyy");
+sprite_index=generateSprite("aaa");
 
 timer=0;
 state=0;

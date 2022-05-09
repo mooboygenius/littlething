@@ -69,3 +69,6 @@ repeat(irandom_range(4, 6)) {
 
 spawner=instance_create_depth(tileSurfaceWidth/2, 0, depth, mumbaEnemySpawner);
 ds_list_add(children, spawner);
+
+winLevelName="beginnerBeach";
+unlockLevels=["manicMetropolis", "perilousPlain"];

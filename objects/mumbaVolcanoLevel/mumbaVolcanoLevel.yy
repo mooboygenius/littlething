@@ -31,10 +31,12 @@
   "overriddenProperties": [
     {"propertyId":{"name":"bonusLevel","path":"objects/mumbaRealLevel/mumbaRealLevel.yy",},"objectId":{"name":"mumbaRealLevel","path":"objects/mumbaRealLevel/mumbaRealLevel.yy",},"value":"mumbaVolcanoBonusLevel","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"reallyHot","path":"objects/mumbaLevel/mumbaLevel.yy",},"objectId":{"name":"mumbaLevel","path":"objects/mumbaLevel/mumbaLevel.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"levelName","path":"objects/mumbaRealLevel/mumbaRealLevel.yy",},"objectId":{"name":"mumbaRealLevel","path":"objects/mumbaRealLevel/mumbaRealLevel.yy",},"value":"Vicious Volcano","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"music","path":"objects/mumbaLevel/mumbaLevel.yy",},"objectId":{"name":"mumbaLevel","path":"objects/mumbaLevel/mumbaLevel.yy",},"value":"bgmMumbaVolcanoLevel","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "levels",
-    "path": "folders/Objects/mumba/in-game stuff/levels.yy",
+    "name": "normal mode",
+    "path": "folders/Objects/mumba/in-game stuff/levels/normal mode.yy",
   },
   "resourceVersion": "1.0",
   "name": "mumbaVolcanoLevel",

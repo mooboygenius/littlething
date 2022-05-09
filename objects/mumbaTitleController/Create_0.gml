@@ -21,3 +21,7 @@ centerX=0;
 state=0;
 timer=0;
 littleMumba=noone;
+
+unlockMedal("Guess Who's Back?!");
+
+playMumbaMusic(bgmMumbaTitleScreen);

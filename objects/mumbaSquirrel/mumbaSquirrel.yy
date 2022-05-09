@@ -30,7 +30,7 @@
   "properties": [],
   "overriddenProperties": [
     {"propertyId":{"name":"corpseSprite","path":"objects/mumbaEnemy/mumbaEnemy.yy",},"objectId":{"name":"mumbaEnemy","path":"objects/mumbaEnemy/mumbaEnemy.yy",},"value":"sprMumbaSquirrelDead","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"hp","path":"objects/mumbaLivingObject/mumbaLivingObject.yy",},"objectId":{"name":"mumbaLivingObject","path":"objects/mumbaLivingObject/mumbaLivingObject.yy",},"value":"4","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"hp","path":"objects/mumbaLivingObject/mumbaLivingObject.yy",},"objectId":{"name":"mumbaLivingObject","path":"objects/mumbaLivingObject/mumbaLivingObject.yy",},"value":"3","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "enemies and hazards",

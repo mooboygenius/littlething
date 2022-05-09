@@ -1,5 +1,7 @@
 if live_call() return live_result;
 
+sprite=noone;
+
 tileSurface=-1;
 tileSurfaceWidth=0;
 tileSurfaceHeight=0;
@@ -52,6 +54,8 @@ children=ds_list_create();
 
 levelInstances=ds_list_create();
 
+unlockLevels=[];
+
 generateMap=function() {
 	/// @function generateMap()
 	
@@ -69,8 +73,22 @@ generateMap=function() {
 				inst=instance_create_depth(tx, ty, -10, mumbaEnemySpawnPoint);
 			} else if a=="R" {
 				inst=instance_create_depth(tx, ty, -10, mumbaEnemyReturn);
+			} else if a=="{" {
+				inst=instance_create_depth(tx, ty, -10, mumbaBlueTeleportCrystal);
+				with inst {
+					x+=sprite_xoffset;
+					y+=sprite_yoffset;
+				}
+			} else if a=="}" {
+				inst=instance_create_depth(tx, ty, -10, mumbaRedTeleportCrystal);
+				with inst {
+					x+=sprite_xoffset;
+					y+=sprite_yoffset;
+				}
 			} else if a=="&" {
 				inst=instance_create_depth(tx, ty, -10, mumbaAngel);
+			} else if a=="O" {
+				inst=instance_create_depth(tx, ty, -10, mumbaGhost);
 			} else if a=="@" {
 				inst=instance_create_depth(tx, ty, -10, mumbaCrab);
 			} else if a=="^" {
@@ -83,6 +101,8 @@ generateMap=function() {
 				inst=instance_create_depth(tx, ty, -10, mumbaRat);
 			} else if a=="T" {
 				inst=instance_create_depth(tx, ty, -10, mumbaFungus);
+			} else if a=="<" {
+				inst=instance_create_depth(tx, ty, -10, mumbaShrimp);
 			} else if a=="1" {
 				var left=xx>0 && levelMap[currentTiles][yy][xx-1]==1,
 				up=yy>0 && levelMap[currentTiles][yy-1][xx]==1,
@@ -100,6 +120,10 @@ generateMap=function() {
 				}
 			} else if a=="$" {
 				inst=instance_create_depth(tx, ty, -10, mumbaCoinSpawner);
+			} else if a=="[" {
+				inst=instance_create_depth(tx, ty, -10, mumbaSwapBlueBlock);
+			} else if a=="]" {
+				inst=instance_create_depth(tx, ty, -10, mumbaSwapRedBlock);
 			} else if a=="/" {
 				inst=instance_create_depth(tx, ty, other.depth-10, mumbaIceBlock);
 			} else if a=="?" {
@@ -270,6 +294,10 @@ generateMap=function() {
 	surface_reset_target();
 	
 	currentTiles++;
+	
+	sprite=sprite_create_from_surface(tileSurface, 0, 0, tileSurfaceWidth, tileSurfaceHeight, false, false, tileSurfaceWidth/2, tileSurfaceHeight/2);
+	
+	sprite_index=sprite;
 }
 
 generateLevelMapArray(["0"]);

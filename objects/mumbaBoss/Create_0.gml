@@ -3,9 +3,9 @@ if live_call() return live_result;
 // Inherit the parent event
 event_inherited();
 
-hp=500;
+hp=400;
+hp=1;
 maximumHp=hp;
-hp=1
 setSizeToHp=false;
 
 eyes=ds_list_create();

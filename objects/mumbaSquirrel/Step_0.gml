@@ -11,7 +11,7 @@ if place_meeting(x+horizontalSpeed, y, mumbaWall) {
 	horizontalSpeed*=-1;
 }
 
-var cx=x+horizontalSpeed*16;
+var cx=x+sign(horizontalSpeed)*16;
 if place_meeting(x, y+1, mumbaWall) && !collision_line(cx, y, cx, y+48, mumbaWall, false, false) {
 	verticalSpeed=-3;
 	createMumbaParticle(x-sprite_xoffset, y+sprite_yoffset, mumbaDustParticle);

@@ -55,8 +55,10 @@ useMumbaPhysics=function() {
 		if canCollide && place_meeting(x, y+v, mumbaWall) {
 			if v>2 squish=.2;
 			
-			while !place_meeting(x, y+sign(v), mumbaWall) {
+			var a=0;
+			while !place_meeting(x, y+sign(v), mumbaWall) && a<100 && y<9999 {
 				y+=sign(v);
+				a++;
 			}
 			v=0;
 			verticalSpeed=0;
@@ -117,4 +119,9 @@ createMumbaTextEffect=function(x, y, str, c=c_white, oc=BLACK_COLOR, l=120, hor=
 		ds_list_add(children, te);
 	}
 	return te;
+}
+
+stickToWindow=function() {
+	/// @function stickToWindow()
+	forceDraw=true;
 }

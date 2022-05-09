@@ -5,27 +5,32 @@ event_inherited();
 drawScript=function(x, y) {}
 
 gunInventory=ds_list_create();
-ds_list_add(gunInventory, mumbaBazooka);
-ds_list_add(gunInventory, mumbaMagicStaff);
-ds_list_add(gunInventory, mumbaMushroom);
-ds_list_add(gunInventory, mumbaPeter);
-ds_list_add(gunInventory, mumbaSnowmanHead);
-ds_list_add(gunInventory, mumbaIceAxe);
-ds_list_add(gunInventory, mumbaBoomerang);
-ds_list_add(gunInventory, mumbaFlower);
-ds_list_add(gunInventory, mumbaHolyBow);
-ds_list_add(gunInventory, mumbaMagicHarp);
-ds_list_add(gunInventory, mumbaPitchfork);
-ds_list_add(gunInventory, mumbaFlameThrower);
-ds_list_add(gunInventory, mumbaFryCrossbow);
-ds_list_add(gunInventory, mumbaBurgerCannon);
-ds_list_add(gunInventory, mumbaCoconutShotgun);
-ds_list_add(gunInventory, mumbaGun);
-ds_list_add(gunInventory, mumbaTikiGun);
+var gi=loadData("mumbaGunInventory", 0);
+if gi!=0 {
+	show_debug_message("gun inventory found");
+	ds_list_read(gunInventory, gi);
+} else {
+	show_debug_message("gun inventory not previously saved");
+}
+
+if ds_list_size(gunInventory)<=0 ds_list_add(gunInventory, mumbaGun);
+
+hatInventory=ds_list_create();
+var hi=loadData("mumbaHatInventory", 0);
+if hi!=0 {
+	show_debug_message("hat inventory found");
+	ds_list_read(hatInventory, hi);
+} else {
+	show_debug_message("hat inventory not previously saved");
+}
+
+if ds_list_size(hatInventory)<=0 ds_list_add(hatInventory, mumbaNoHat);
 
 currentGun=0;
+currentHat=0;
 
-money=0;
+money=loadData("mumbaMoney", 0);
+show_debug_message(concat("loaded money as ", money));
 
-levelA=0;
-levelB=0;
+levelA=loadData("mumbaLevelA", 0);
+levelB=loadData("mumbaLevelB", 0);

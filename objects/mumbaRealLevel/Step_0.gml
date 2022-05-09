@@ -7,7 +7,14 @@ switch state {
 		var e=0;
 		with mumbaPlayer {
 			e=eggs;
-			//if e>0 e=other.eggGoal;
+		}
+		
+		if e>=50 && !unlockedEggs {
+			repeat(20) show_debug_message("EGGATHON GET");
+			unlockMedal(eggMedalName);
+			updateData(concat(winLevelName, "Eggathon"), true);
+			saveGame();
+			unlockedEggs=true;
 		}
 		
 		time++;
@@ -20,7 +27,14 @@ switch state {
 			time=0;
 		}
 		
+		maximumTime--;
+		
 		if enableGoal && e>=eggGoal {
+			if maximumTime>=0 {
+				unlockMedal(timeMedalName);
+				updateData(concat(winLevelName, "TimeTrial"), true);
+			}
+			won=true;
 			state=1;
 			setCameraShake(4);
 			with mumbaLivingObject {
@@ -29,6 +43,7 @@ switch state {
 			repeat(100) {
 				createMumbaParticle(random(GAME_WIDTH), random(-128), mumbaConfettiParticle, 1);
 			}
+			playMumbaMusic(bgmMumbaWin, false);
 			var inst=instance_create_depth(0, 0, -10000, mumbaWinPopup);
 			with parentWindow {
 				ds_list_add(children, inst);
@@ -80,6 +95,14 @@ switch state {
 				}
 			}
 			
+			var alreadyComplete=loadData(concat(winLevelName, "State"), mumbaLevelState.complete)==mumbaLevelState.complete;
+			updateData(concat(winLevelName, "State"), mumbaLevelState.complete);
+			for (var i=0; i<array_length(unlockLevels); i++) {
+				var n=concat(unlockLevels[i], "State");
+				updateData(n, max(mumbaLevelState.unlocked, loadData(n, mumbaLevelState.unlocked)));
+			}
+			saveGame();
+			
 			instance_destroy();
 			
 			with mumbaWorldObject instance_destroy();
@@ -93,6 +116,7 @@ switch state {
 				enemiesKilled=other.enemiesKilled;
 				eggs=other.eggsGrabbed;
 				bonusLevel=other.bonusLevel;
+				unlockedHardMode=!alreadyComplete;
 			}
 			
 			for (var i=0; i<ds_list_size(backs); i++) {

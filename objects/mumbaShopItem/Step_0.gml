@@ -10,34 +10,47 @@ if active {
 		with mumbaPlayerData {
 			m=money;
 		}
-		m=1000;
 		
-		if m>=price {
-			show_debug_message("can buy");
-			
-			if stock {
-				grace=10;
-				squish=.2;	
-				
-				with mumbaWindow cameraShake=1;
-				with mumbaPlayerData money-=other.price;
-				with mumbaShopController setTextBubbleText(other.buyText);
-				
-				stock--;
-				if !stock {
-					color=outOfStockColor;
-				}
-				
-				buyScript();
-			} else {
-				with mumbaWindow cameraShake=2;
-				with mumbaShopController setTextBubbleText(other.outOfStockText);
-				squish=-.1;
-				show_debug_message("can't buy -- out of stock");
+		if !stock {
+			with mumbaWindow cameraShake=2;
+			with mumbaShopController {
+				setTextBubbleText(other.outOfStockText);
+				keeper.sprite_index=cantBuySprite;
+				keeper.squish=.1;
 			}
+			squish=-.1;
+			show_debug_message("can't buy -- out of stock");
+		} else if m>=price {
+			show_debug_message("can buy");
+
+			grace=10;
+			squish=.2;	
+				
+			with mumbaWindow cameraShake=1;
+			with mumbaPlayerData {
+				money-=other.price;
+				updateData("mumbaMoney", money);
+			}
+			with mumbaShopController {
+				setTextBubbleText(other.buyText);
+				keeper.sprite_index=greetingSprite;
+				keeper.squish=-.1;
+			}
+			stock--;
+			if !stock {
+				color=outOfStockColor;
+			}
+				
+			buyScript();
+				
+			saveGame();
 		} else {
 			with mumbaWindow cameraShake=2;
-			with mumbaShopController setTextBubbleText(other.cantBuyText);
+			with mumbaShopController {
+				setTextBubbleText(other.cantBuyText);
+				keeper.sprite_index=cantBuySprite;
+				keeper.squish=.1;
+			}
 			squish=-.1;
 			show_debug_message("not enough money");
 		}

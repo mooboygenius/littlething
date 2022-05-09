@@ -36,6 +36,7 @@
   ],
   "overriddenProperties": [
     {"propertyId":{"name":"tileSet","path":"objects/mumbaLevel/mumbaLevel.yy",},"objectId":{"name":"mumbaLevel","path":"objects/mumbaLevel/mumbaLevel.yy",},"value":"tlsMumbaSand","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"music","path":"objects/mumbaLevel/mumbaLevel.yy",},"objectId":{"name":"mumbaLevel","path":"objects/mumbaLevel/mumbaLevel.yy",},"value":"bgmMumbaShop","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "intros",

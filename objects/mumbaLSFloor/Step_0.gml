@@ -1,5 +1,8 @@
 if live_call() return live_result;
 event_inherited();
+
+stickToWindow();
+
 drawScript=function(x, y) {
 	var gf=-gameFrame/3,
 	tx=x+gf,

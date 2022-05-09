@@ -2,6 +2,11 @@ if live_call() return live_result;
 
 event_inherited();
 
+audio_group_stop_all(bgm);
+
+xstart=0;
+ystart=0;
+
 drawScript=function(x, y) {
 	draw_clear_alpha(BLACK_COLOR, 1);
 	draw_set_halign(fa_left);

@@ -31,7 +31,9 @@
     {"varType":1,"value":"30","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"coins","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":5,"value":"mumbaShopEnter","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"gotoShopIntro","tags":[],"resourceType":"GMObjectProperty",},
   ],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"music","path":"objects/mumbaLevel/mumbaLevel.yy",},"objectId":{"name":"mumbaLevel","path":"objects/mumbaLevel/mumbaLevel.yy",},"value":"bgmMumbaBonusLevel","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
     "name": "bonus levels",
     "path": "folders/Objects/mumba/in-game stuff/levels/bonus levels.yy",

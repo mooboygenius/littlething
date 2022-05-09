@@ -2,9 +2,13 @@ if live_call() return live_result;
 
 event_inherited();
 
+canHurt=0;
 myGunObject=noone;
 myGunInstance=noone;
+myHatObject=noone;
+myHatInstance=noone;
 myUI=instance_create_depth(0, 0, 0, mumbaUIController);
+
 with myUI {
 	visible=false;
 }
@@ -15,7 +19,7 @@ die=function() {
 }
 
 getHurt=function(amt) {
-	if grace<-30 {
+	if grace<-30 && canHurt<0 {
 		setCameraShake(2);
 		hp-=amt;
 		grace=amt*30;

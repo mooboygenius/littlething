@@ -129,3 +129,6 @@ with spawner {
 ds_list_add(children, spawner);
 
 fallingRockTimer=0;
+
+winLevelName="viciousVolcano";
+unlockLevels=["hazardousHeaven", "turmoilTunnels"];

@@ -4,6 +4,8 @@ event_inherited();
 
 with createMenuOption("START", WHITE_COLOR, BLACK_COLOR, mumbaLevelFont, 2, mumbaTitlePressableOption) {
 	pressScript=function() {
+		var inst=instance_create_depth(0, 0, owner.depth-10, mumbaStartGame);
+		with parentWindow ds_list_insert(children, 0, inst);
 		with owner {
 			throwOptions();
 		}

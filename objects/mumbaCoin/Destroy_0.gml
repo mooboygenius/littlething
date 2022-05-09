@@ -8,6 +8,7 @@ if hp<=0 {
 	}
 	with mumbaPlayerData {
 		money+=other.amount;
+		updateData("mumbaMoney", money);
 	}
 	with createMumbaTextEffect(x, y-8, concat("+", amount), $83EEFF, BLACK_COLOR, 90, 0, -.3, .001) {
 		squish=.5;

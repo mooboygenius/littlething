@@ -21,7 +21,7 @@ generateLevelMapArray([
 "                              ",
 "                              ",
 "                              ",
-"             2                ",
+"R            2               R",
 "111111111111111111111111111111",
 "111111111111111111111111111111",
 "111111111111111111111111111111",
@@ -116,9 +116,6 @@ ds_list_add(children, back1, back2, back3, back4);
 
 spawner=instance_create_depth(tileSurfaceWidth/2, 0, depth, mumbaEnemySpawner);
 with spawner {
-	spawnTimerMinimum=180;
-	spawnTimerMaximum=240;
-	
 	normalWaves=[
 	[mumbaSnowman],
 	[mumbaSnowman, mumbaSnowman]
@@ -130,3 +127,6 @@ with spawner {
 	]
 }
 ds_list_add(children, spawner);
+
+winLevelName="tenseTundra";
+unlockLevels=["hazardousHeaven", "turmoilTunnels"];

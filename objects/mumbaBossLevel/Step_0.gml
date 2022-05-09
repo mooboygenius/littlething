@@ -140,6 +140,7 @@ switch state {
 				with mumbaPlayer {
 					x=other.tileSurfaceWidth div 2;
 				}
+				playMumbaMusic(bgmMumbaBoss);
 			}
 		}
 	break;
@@ -153,5 +154,15 @@ switch state {
 	break;
 	
 	case 8:
+		if gameFrame%5==0 setCameraShake(1);
+		if !instance_exists(mumbaBoss) {
+			stopMumbaMusic();
+			unlockMedal("Ugby Mumba Gamer Extreme");
+			won=true;
+			state=9;
+		}
+	break;
+	
+	case 9:
 	break;
 }

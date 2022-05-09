@@ -31,7 +31,7 @@
   ],
   "parent": {
     "name": "shrimp browser",
-    "path": "folders/shrimp browser.yy",
+    "path": "folders/Objects/shrimp browser.yy",
   },
   "resourceVersion": "1.0",
   "name": "fireShrimpIcon",

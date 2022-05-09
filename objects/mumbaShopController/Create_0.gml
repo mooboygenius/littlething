@@ -30,7 +30,13 @@ with moneyDisplay {
 	image_yscale=.7;
 }
 
+keeperXOffset=0;
+keeperYOffset=0;
+
 keeper=instance_create_depth(0, 0, -100, mumbaShopkeeper);
+with keeper {
+	sprite_index=other.greetingSprite;
+}
 mumber=instance_create_depth(0, 0, -110, mumbaInShop);
 textBubble=instance_create_depth(0, 0, -50, mumbaShopTextBubble);
 detailer=instance_create_depth(0, 0, -200, mumbaShopItemDetails);
@@ -60,10 +66,24 @@ generateShopList=function() {
 				description=getMumbaItemDescription(n);
 				shopKeeperDescription=getMumbaItemShopKeeperDescription(n);
 				color=other.shopColor;
+				var alreadyBought=false;
 				var object=getMumbaItemObject(n);
+				with mumbaPlayerData {
+					if ds_list_find_index(gunInventory, object)>=0 || ds_list_find_index(hatInventory, object)>=0 {
+						alreadyBought=true;
+					}
+				}
+				if alreadyBought {
+					stock=0;
+					color=outOfStockColor;
+				}
 				if object_is_ancestor(object, mumbaGun) {
 					buyScript=function() {
 						buyWeapon(self.longName);
+					}
+				} else if object_is_ancestor(object, mumbaHat) {
+					buyScript=function() {
+						buyHat(self.longName);
 					}
 				}
 				buyText=other.buyText;
@@ -110,4 +130,30 @@ transition=noone;
 
 with mumbaShopItem {
 	color=other.shopColor;
+}
+
+with mumbaPlayerData{ 
+	var a=[mumbaMagicStaff, mumbaBazooka, mumbaMushroom, mumbaPeter, mumbaSnowmanHead, mumbaIceAxe, mumbaBoomerang, mumbaFlower, mumbaMagicHarp, mumbaHolyBow, mumbaPitchfork, mumbaFlameThrower, mumbaFryCrossbow, mumbaBurgerCannon, mumbaTikiGun, mumbaCoconutShotgun],
+	unlock=true;
+	for (var i=0; i<array_length(a); i++) {
+		if ds_list_find_index(gunInventory, a[i])<0 {
+			unlock=false;
+			break;
+		}
+	}
+	if unlock {
+		unlockMedal("Gun Nut");
+	}
+	
+	var a=[mumbaShrimpHat, mumbaTruckerHat, mumbaFunnyGlasses, mumbaWitchHat, mumbaBlockHead, mumbaScarf, mumbaRaccoonCap, mumbaHalo, mumbaDevilHorns, mumbaCheeseHead, mumbaStrawHat],
+	unlock=true;
+	for (var i=0; i<array_length(a); i++) {
+		if ds_list_find_index(hatInventory, a[i])<0 {
+			unlock=false;
+			break;
+		}
+	}
+	if unlock {
+		unlockMedal("Hat Fancier");
+	}
 }

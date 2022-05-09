@@ -2,6 +2,10 @@ if live_call() return live_result;
 
 event_inherited();
 
+stickToWindow();
+
+show_debug_message(concat(xstart, ", ", ystart));
+
 drawX=72;
 
 switch state {

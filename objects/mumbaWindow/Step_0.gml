@@ -5,7 +5,7 @@ previous=noone,
 inst=noone;
 
 var s=ds_list_size(children);
-repeat(5) {
+repeat(1) {
 	for (var i=1; i<s; i++) {
 		var d=0,
 		prevDepth=0;
@@ -32,6 +32,12 @@ if input(vk_f3, PRESS) && DEV_MODE {
 for (var i=0; i<s; i++) {
 	var d=0;
 	with children[| i] d=depth;
+}
+
+if !instance_exists(cameraFocus) {
+	cameraFocus=noone;
+	cameraTargetX=0;
+	cameraTargetY=0;
 }
 
 with cameraFocus {
@@ -80,3 +86,10 @@ event_inherited();
 var xo=4,
 yo=10;
 setWindowSize(self, -xo, -yo, GAME_WIDTH+xo*2+4, GAME_HEIGHT+yo+3);
+
+if DEV_MODE && input(vk_f2, PRESS) {
+	var a=["beginnerBeachState", "manicMetropolisState", "perilousPlainState", "viciousVolcanoState", "tenseTundraState", "hazardousHeavenState", "turmoilTunnelsState", "bossState", "deadEstateState", "shrimpState"];
+	for (var i=0; i<array_length(a); i++) {
+		updateData(a[i], mumbaLevelState.complete);
+	}
+}

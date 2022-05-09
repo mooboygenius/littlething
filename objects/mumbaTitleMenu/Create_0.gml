@@ -48,7 +48,7 @@ drawScript=function(x, y) {}
 
 enum menuHAlign {center, left, right}
 
-menuHorizontalAlignment=0;
+menuHorizontalAlignment=menuHAlign.right;
 
 current=-1;
 

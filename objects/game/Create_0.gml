@@ -74,3 +74,7 @@ for (var i=0; audio_exists(i); i++) {
 audioNameLength=array_length(audioNames);
 
 audioBaseGains=setAudioBaseGains();
+
+ng_connect("54499:9t2jINR8", "04g53mW64Tpe6MsiLKdsBQ==");
+ng_initialize_medals_and_scoreboard();
+ng_request_login();

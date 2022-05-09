@@ -26,12 +26,15 @@ if hp<=0 {
 	setCameraShake(3);
 	var corpse=instance_create_depth(x, y, depth+10, mumbaCorpse);
 	with corpse {
+		image_xscale=other.image_xscale;
+		image_yscale=other.image_yscale;
 		sprite_index=other.corpseSprite;
 		mask_index=sprite_index;
 		grace=8;
 		squish=.2;
 		horizontalSpeed=other.horizontalKnockback*2;
 		verticalSpeed=-abs(horizontalSpeed)*random_range(.9, 1.1);
+		while place_meeting(x, y, mumbaWall) y--;
 	}
 	with parentWindow {
 		ds_list_add(children, corpse);

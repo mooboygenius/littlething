@@ -14,6 +14,7 @@ with createMenuOption("GRAPHICS", WHITE_COLOR, BLACK_COLOR, fnt, 1, mumbaTitleSw
 	pressScript=function() {
 		defaultSwitchOptionScript();
 		mumbaGraphicsOn=!current;
+		unlockMedal("Pitch Black");
 		updateSetting("mumbaGraphicsOn", mumbaGraphicsOn);
 		saveGame();
 	}

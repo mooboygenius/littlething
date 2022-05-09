@@ -34,6 +34,7 @@
     {"propertyId":{"name":"bulletSpeed","path":"objects/mumbaGun/mumbaGun.yy",},"objectId":{"name":"mumbaGun","path":"objects/mumbaGun/mumbaGun.yy",},"value":"8.5","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"multiShotSpread","path":"objects/mumbaGun/mumbaGun.yy",},"objectId":{"name":"mumbaGun","path":"objects/mumbaGun/mumbaGun.yy",},"value":"30","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"bulletObject","path":"objects/mumbaGun/mumbaGun.yy",},"objectId":{"name":"mumbaGun","path":"objects/mumbaGun/mumbaGun.yy",},"value":"mumbaHolyArrowProjectile","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"fireRate","path":"objects/mumbaGun/mumbaGun.yy",},"objectId":{"name":"mumbaGun","path":"objects/mumbaGun/mumbaGun.yy",},"value":"30","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "weapons",

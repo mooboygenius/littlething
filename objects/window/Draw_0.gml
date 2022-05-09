@@ -20,6 +20,7 @@ if !surface_exists(storeFinalSurf) {
 
 if surface_exists(finalSurf) {
 	var surfToDraw=finalSurf;
+	
 	if surface_exists(storeFinalSurf) {
 		if portWidth!=oldPortWidth || portHeight!=oldPortHeight {
 			oldPortWidth=portWidth;
@@ -33,7 +34,9 @@ if surface_exists(finalSurf) {
 			surface_copy(storeFinalSurf, 0, 0, finalSurf);
 		}
 	}
+	
 	draw_surface_stretched(surfToDraw, portX, portY, portWidth*windowScale, portHeight*windowScale);
+	
 	surface_set_target(finalSurf);
 	draw_clear_alpha(0, 0);
 	surface_reset_target();
@@ -45,15 +48,22 @@ if surface_exists(finalSurf) {
 #region children object surface
 if surface_exists(childrenObjectSurf) {
 	surface_resize(childrenObjectSurf, portWidth, portHeight);
+	
 	surface_set_target(childrenObjectSurf);
+	
 	draw_clear_alpha(0, 0);
+	
 	if ds_exists(children, ds_type_list) {
 		for (var i=0; i<ds_list_size(children); i++) {
 			with children[| i] {
-				drawScript(xstart+other.drawXOffset, ystart+other.drawYOffset);
+				var dx=xstart+other.drawXOffset, dy=ystart+other.drawYOffset;
+				if forceDraw || rectangle_in_rectangle(0, 0, other.portWidth, other.portHeight, dx-sprite_xoffset, dy-sprite_yoffset, dx+sprite_xoffset, dy+sprite_yoffset) {
+					drawScript(dx, dy);
+				}
 			}
 		}
 	}
+	
 	surface_reset_target();
 	
 } else {

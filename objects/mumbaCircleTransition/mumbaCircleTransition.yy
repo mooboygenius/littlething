@@ -30,7 +30,9 @@
   "properties": [
     {"varType":1,"value":"-1","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"destroyAtSize","tags":[],"resourceType":"GMObjectProperty",},
   ],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"forceDraw","path":"objects/worldObject/worldObject.yy",},"objectId":{"name":"worldObject","path":"objects/worldObject/worldObject.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
     "name": "shop cutscene",
     "path": "folders/Objects/mumba/in-game stuff/shop/shop cutscene.yy",

@@ -28,10 +28,12 @@
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
-  "overriddenProperties": [],
+  "overriddenProperties": [
+    {"propertyId":{"name":"music","path":"objects/mumbaLevel/mumbaLevel.yy",},"objectId":{"name":"mumbaLevel","path":"objects/mumbaLevel/mumbaLevel.yy",},"value":"bgmMumbaSilence","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+  ],
   "parent": {
-    "name": "levels",
-    "path": "folders/Objects/mumba/in-game stuff/levels.yy",
+    "name": "normal mode",
+    "path": "folders/Objects/mumba/in-game stuff/levels/normal mode.yy",
   },
   "resourceVersion": "1.0",
   "name": "mumbaBossLevel",

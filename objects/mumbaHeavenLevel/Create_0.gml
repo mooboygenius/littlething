@@ -5,7 +5,7 @@ event_inherited();
 tileSet=tlsMumbaClouds;
 
 generateLevelMapArray([
-"                        ",
+"111111111111111111111111",
 "                        ",
 "                        ",
 "                        ",
@@ -103,3 +103,6 @@ with spawner {
 	]
 }
 ds_list_add(children, spawner);
+
+winLevelName="hazardousHeaven";
+unlockLevels=["boss"];

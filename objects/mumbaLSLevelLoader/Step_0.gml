@@ -10,15 +10,18 @@ switch state {
 		if timer>30 {
 			lvl=instance_create_depth(0, 0, 0, levelObject);
 			ds_list_add(children, lvl);
-			var w=GAME_WIDTH;
-			with lvl {
-				w=tileSurfaceWidth;
-			}
-			with mumbaPlayer {
-				canMove=false;
-				canControl=false;
-				showUI=false;
-				x=w/2;
+			goingToRealLevel=object_is_ancestor(levelObject, mumbaLevel) && !object_is_ancestor(levelObject, mumbaShopEnter);
+			if goingToRealLevel {
+				var w=GAME_WIDTH;
+				with lvl {
+					w=tileSurfaceWidth;
+				}
+				with mumbaPlayer {
+					canMove=false;
+					canControl=false;
+					showUI=false;
+					x=w/2;
+				}
 			}
 			state=1;
 			timer=0;
@@ -27,6 +30,9 @@ switch state {
 	
 	case 1:
 		timer++;
+		with owner {
+			instance_destroy();
+		}
 		if timer>30 {
 			with circle {
 				circleChange=8;
@@ -46,11 +52,13 @@ switch state {
 	break;
 	
 	case 3:
-		intro=instance_create_depth(0, 0, -1000, mumbaLevelIntro);
-		ds_list_add(children, intro);
-		with parentWindow {
-			ds_list_add(children, other.intro);
+		if goingToRealLevel {
+			intro=instance_create_depth(0, 0, -1000, mumbaLevelIntro);
+			ds_list_add(children, intro);
+			with parentWindow {
+				ds_list_add(children, other.intro);
+			}
 		}
-		state=4;
+		instance_destroy();
 	break;
 }

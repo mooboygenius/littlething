@@ -2,6 +2,8 @@ if live_call() return live_result;
 
 event_inherited();
 
+circleTransition=noone;
+
 drawScript=function(dx, dy) {
 	draw_clear_alpha($2B1D29, 1);
 	setSwapAmountShader(BLACK_COLOR, c_white, 1, 1);
@@ -33,3 +35,5 @@ copy=0;
 
 children=ds_list_create();
 card=noone;
+
+playMumbaMusic(bgmMumbaIntro);

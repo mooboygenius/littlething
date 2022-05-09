@@ -2,6 +2,8 @@ if live_call() return live_result;
 
 addChildrenToParentWindow(children);
 
+stickToWindow();
+
 switch state {
 	case 0:
 		with parentWindow {
@@ -16,13 +18,7 @@ switch state {
 	case 1:
 		timer++;
 		if timer>60 {
-			text=[
-			"EGGS: ", concat(eggs, "\n"),
-			"TIME: ", string_replace_all(concat(string_format(minutes, 2, 0), ":", string_format(seconds, 2, 0), "\n"), " ", "0"), 
-			"ENEMIES BLAMMED: ", concat(enemiesKilled, "\n"), 
-			"COINS ACQUIESCED: ", concat(coins, "\n"), 
-			concat("\n",
-			choose(
+			var n=choose(
 			"HAVE A GREAT DAY! :)",
 			"EAT YOUR GREENS",
 			"GET PLENTY OF SLEEP",
@@ -37,8 +33,22 @@ switch state {
 			"DEATH IS INEVITABLE SPEND TIME WITH YOUR FAMILY",
 			"LEARN FROM THE MISTAKES OF OTHERS",
 			"HOIST THAT RAG",
+			"EPIC WIN",
+			"W",
+			"AWESOME BASICALLY",
+			"HOPE UR HAVING FUN",
 			"EARTH WILL DIE SCREAMING"
-			)
+			);
+			if unlockedHardMode {
+				n="\n";
+			}
+			text=[
+			"EGGS: ", concat(eggs, "\n"),
+			"TIME: ", string_replace_all(concat(string_format(minutes, 2, 0), ":", string_format(seconds, 2, 0), "\n"), " ", "0"), 
+			"ENEMIES BLAMMED: ", concat(enemiesKilled, "\n"), 
+			"COINS ACQUIESCED: ", concat(coins, "\n"), 
+			concat("\n",
+			n
 			)
 			];
 			timer=0;
@@ -65,6 +75,7 @@ switch state {
 			}
 			current++;
 			if current>=array_length(text) {
+				if unlockedHardMode showUnlockText=true;
 				state=3;
 			}
 		}
@@ -76,6 +87,7 @@ switch state {
 			state=4;
 			timer=0;
 			circleTransition=instance_create_depth(0, 0, -1000, mumbaCircleTransition);
+			with circleTransition owner=other;
 			with circleTransition {
 				circleX=GAME_WIDTH div 2;
 				circleY=GAME_HEIGHT div 2;
@@ -91,6 +103,7 @@ switch state {
 	case 4:
 		with circleTransition {
 			if circleSize<=0 {
+				stopMumbaMusic();
 				other.state=5;
 			}
 		}

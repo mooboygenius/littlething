@@ -5,7 +5,7 @@ event_inherited();
 tileSet=tlsMumbaGrass;
 
 generateLevelMapArray([
-"                             ",
+"11111111111111111111111111111",
 "                             ",
 "                             ",
 "                             ",
@@ -117,3 +117,6 @@ with spawner {
 	]
 }
 ds_list_add(children, spawner);
+
+winLevelName="perilousPlain";
+unlockLevels=["viciousVolcano", "tenseTundra"];

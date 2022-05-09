@@ -20,10 +20,16 @@ if place_meeting(x, y, mumbaPlayer) {
 	}
 	with mumbaEnemySpawner {
 		if e%10==0 {
+			repeat(5) show_debug_message("THE WAVES ARE GETTING HARDER");
 			hardWaveFrequency--;
 			hardWaveChance+=.05;
 			if hardWaveFrequency<2 hardWaveFrequency=2;
 			if hardWaveChance>.6 hardWaveChance=.6;
+			var t=20;
+			spawnTimerMinimum-=t;
+			spawnTimerMaximum-=t/2;
+			if spawnTimerMinimum<60 spawnTimerMinimum=60;
+			if spawnTimerMaximum<120 spawnTimerMaximum=120;
 		}
 	}
 	show_debug_message("egg obtained");

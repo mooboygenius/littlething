@@ -10,3 +10,7 @@ if ds_exists(dots, ds_type_list) {
 		}
 	}
 }
+
+with decor {
+	instance_destroy();
+}

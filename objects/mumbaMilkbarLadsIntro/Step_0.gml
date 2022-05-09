@@ -16,11 +16,12 @@ var doThing=function() {
 
 switch state {
 	case 0:
+		audio_group_stop_all(bgm);
 		timer++;
 		if timer>30 {
 			timer=0;
 			state=1;
-			playMumbaMusic(bgmMilkbarLadsIntro, false);
+			playMumbaMusic(bgmMumbaMilkbarLadsIntro, false);
 		}
 	break;
 	

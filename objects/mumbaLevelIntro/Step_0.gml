@@ -2,6 +2,8 @@ if live_call() return live_result;
 
 event_inherited();
 
+stickToWindow();
+
 drawScript=function() {
 	if show {
 		var cy=GAME_HEIGHT div 3;
@@ -55,6 +57,11 @@ switch state {
 			goSquish=-.5;
 			goX=centerX;
 			state=4;
+			with mumbaLevel {
+				var loops=true;
+				if music==bgmMumbaBonusLevel loops=false;
+				playMumbaMusic(music, loops);
+			}
 			with mumbaPlayer {
 				canMove=true;
 				canControl=true;

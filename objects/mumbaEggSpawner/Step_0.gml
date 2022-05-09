@@ -27,20 +27,28 @@ if timer>30 {
 		show_debug_message(concat("potential x: ", potentialX));
 		
 		with mumbaLevel {
-			while !instance_position(potentialX, bottom, mumbaWall) {
+			var b=0;
+			while !instance_position(potentialX, bottom, mumbaWall) && b<100 {
 				bottom-=16;
+				b++;
 			}
 			
 			bottom-=16;
 			
-			while !instance_position(potentialX, bottom, mumbaWall) {
+			while !instance_position(potentialX, bottom, mumbaWall) && b<100 {
 				bottom-=16;
+				b++;
 			}
 			
 			show_debug_message(concat("encountered lowest wall @ ", bottom));
 			
-			while instance_position(potentialX, bottom, mumbaWall) {
+			while instance_position(potentialX, bottom, mumbaWall) && b<100 {
 				bottom-=16;
+				b++;
+			}
+			
+			if b>=100 {
+				break;
 			}
 		}
 	

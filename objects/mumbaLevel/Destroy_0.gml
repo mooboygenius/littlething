@@ -18,3 +18,14 @@ if ds_exists(levelInstances, ds_type_list) {
 }
 
 if surface_exists(tileSurface) surface_free(tileSurface);
+
+if won {
+	updateData(concat(winLevelName, "State"), mumbaLevelState.complete);
+	for (var i=0; i<array_length(unlockLevels); i++) {
+		var n=concat(unlockLevels[i], "State");
+		updateData(n, max(mumbaLevelState.unlocked, loadData(n, mumbaLevelState.unlocked)));
+	}
+	saveGame();
+}
+
+sprite_delete(sprite);

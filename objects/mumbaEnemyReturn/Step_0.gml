@@ -23,7 +23,7 @@ for (var i=0; i<enemies; i++) {
 				x=spawnX;
 				y=spawnY;
 			}
-		} else if (other.x<left && x<other.x) || (other.x>right && x>other.x) {
+		} else if (other.x<left && x<other.x) || (other.x>right && x>other.x) && object_index!=mumbaGhost {
 			if x<left {
 				horizontalSpeed=moveSpeed;
 			} else if x>right {
