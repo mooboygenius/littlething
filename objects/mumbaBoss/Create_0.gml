@@ -4,8 +4,8 @@ if live_call() return live_result;
 event_inherited();
 
 hp=400;
-hp=1;
 maximumHp=hp;
+//hp=50;
 setSizeToHp=false;
 
 eyes=ds_list_create();

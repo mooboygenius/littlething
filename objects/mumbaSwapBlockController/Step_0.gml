@@ -8,6 +8,14 @@ with mumbaPlayer {
 
 var t=240;
 
+if timer%60==0 && timer>0 {
+	if timer>=t {
+		playMumbaSound(sfxMumbaSwapBlockTrigger);
+	} else {
+		playMumbaSound(sfxMumbaSwapBlock);
+	}
+}
+
 if timer>t {
 	with mumbaSwapBlock {
 		grace=10;

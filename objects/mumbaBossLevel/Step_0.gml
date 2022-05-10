@@ -11,6 +11,7 @@ switch state {
 		}
 		if timer>180 {
 			ds_list_add(children, instance_create_depth(tileSurfaceWidth div 2, tileSurfaceHeight div 2, -10, mumbaEyeBallLookingAtPlayer));
+			playMumbaSound(sfxMumbaLand, 100, random_range(.7, .8));
 			setCameraShake(2);
 			state=1;
 			timer=0;
@@ -23,6 +24,7 @@ switch state {
 		if timer>120 {
 			if timer%15==0 {
 				with mumbaEyeBall squish=1;
+				playMumbaSound(sfxMumbaLand, 100, random_range(1.4, 1.6));
 				blinks++;
 				if blinks>=2 {
 					state=2;
@@ -43,6 +45,7 @@ switch state {
 	case 3:
 		timer++;
 		if timer%30==0 {
+			playMumbaSound(sfxMumbaLand, 100, random_range(.7, .8));
 			var px=irandom(tileSurfaceWidth),
 			py=irandom(tileSurfaceHeight div 2);
 			with mumbaPlayer {
@@ -65,6 +68,7 @@ switch state {
 			}
 			ds_list_add(children, inst);
 		}
+		if !audio_is_playing(sfxMumbaRumble) playMumbaSound(sfxMumbaRumble);
 		if gameFrame%5==0 setCameraShake(1);
 		if timer>180 {
 			timer=0;
@@ -74,7 +78,10 @@ switch state {
 	
 	case 4:
 		with mumbaEyeBall {
-			if chance(.005) squish=1;
+			if chance(.005) {
+				squish=1;
+				playMumbaSound(sfxMumbaLand, 100, random_range(1.5, 1.7));
+			}
 		}
 		timer++;
 		if timer>180 {
@@ -85,7 +92,7 @@ switch state {
 	
 	case 5:
 		setCameraShake(2);
-		
+		if !audio_is_playing(sfxMumbaRumble) playMumbaSound(sfxMumbaRumble, 100, .8);
 		timer++;
 		
 		if timer%4==0 {
@@ -97,7 +104,7 @@ switch state {
 				py++;
 				n++;
 			}
-			
+			playMumbaSound(sfxMumbaLand, 100, random_range(1.2, 1.8));
 			var inst=instance_create_depth(px, py, -10, mumbaEyeBallLookingAtPlayer);
 			with inst {
 				image_xscale=random_range(.4, .8);
@@ -116,8 +123,10 @@ switch state {
 		timer++;
 		var t=180;
 		if timer>t {
+			if !audio_is_playing(sfxMumbaRumble) playMumbaSound(sfxMumbaRumble, 100, .6);
 			setCameraShake(3);
 			if timer>t+15 {
+				playSound(sfxMumbaLoudExplosion);
 				setCameraShake(5);
 				timer=0;
 				state=7;

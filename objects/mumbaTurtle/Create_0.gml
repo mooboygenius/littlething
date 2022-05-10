@@ -12,6 +12,7 @@ getHurt=function(amt) {
 		if !flipped {
 			grace=amt*10;
 			fakeHp-=amt;
+			playMumbaSound(choose(sfxMumbaEnemyHurt1, sfxMumbaEnemyHurt2, sfxMumbaEnemyHurt3), 10, random_range(.8, 1.1));
 		}
 	}
 }

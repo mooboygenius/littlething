@@ -33,8 +33,8 @@
   ],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "general window setup stuff",
+    "path": "folders/Objects/general window setup stuff.yy",
   },
   "resourceVersion": "1.0",
   "name": "textButton",

@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "paint",
+    "path": "folders/Sprites/paint.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprPaintDocument",

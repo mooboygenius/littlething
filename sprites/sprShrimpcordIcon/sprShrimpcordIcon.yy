@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "shrimpcord",
+    "path": "folders/Sprites/shrimpcord.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprShrimpcordIcon",

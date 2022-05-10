@@ -36,8 +36,8 @@
     {"propertyId":{"name":"hasShadow","path":"objects/worldObject/worldObject.yy",},"objectId":{"name":"worldObject","path":"objects/worldObject/worldObject.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "desktop files",
+    "path": "folders/Objects/desktop files.yy",
   },
   "resourceVersion": "1.0",
   "name": "desktopFile",

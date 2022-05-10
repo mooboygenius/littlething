@@ -29,6 +29,7 @@ switch state {
 			repeat(4) {
 				createMumbaParticle(startX+xo+random_range(-xo, xo), startY+yo+random_range(-yo, yo), mumbaDustParticle);
 			}
+			playMumbaSound(sfxMumbaFallingBlock, 100, 1.3);
 			timer=0;
 			x=-999;
 			y=-999;

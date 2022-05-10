@@ -23,3 +23,5 @@ drawScript=function(x, y) {
 }
 
 depth=-100000;
+
+forceDraw=true;

@@ -91,6 +91,10 @@ switch state {
 				with eyes[| i] {
 					xScale=1;
 					yScale=lerp(yScale, 1, .5);
+					if !playedSound {
+						playedSound=true;
+						playSound(sfxMumbaLand, 100, random_range(1.3, 1.5));
+					}
 				}
 			}
 		}
@@ -168,12 +172,14 @@ switch state {
 		if halfway l=.1;
 		x=lerp(x, px, l);
 		verticalSpeed=lerp(verticalSpeed, -.1, .1);
+		if !audio_is_playing(sfxMumbaRumble) playMumbaSound(sfxMumbaRumble, 100, 1);
 		timer++;
 		if timer>240 {
 			grace=10;
 			squish=.3;
 			verticalSpeed=10;
 			state=7;
+			playMumbaSound(sfxMumbaLevelSelectMove, 100, 1.3);
 			setCameraShake(3);
 		} else if timer>180 {
 			if grace<-5 grace=2;
@@ -184,6 +190,8 @@ switch state {
 	
 	case 7:
 		if place_meeting(x, y+1, mumbaWall) {
+			playMumbaSound(sfxMumbaRumble, 100, .8);
+			playMumbaSound(sfxMumbaLouderExplosion, 100, .8);
 			setCameraShake(4+halfway*2);
 			grace=10;
 			squish=.5;
@@ -219,6 +227,7 @@ switch state {
 			verticalSpeed=0;
 			timer=0;
 			state=BOSS_IDLE_STATE;
+			playMumbaSound(sfxMumbaMenuConfirm, 100, .5);
 		}
 	break;
 	
@@ -279,6 +288,7 @@ switch state {
 			setCameraShake(3);
 			setSizeToHp=false;
 		}
+		if !audio_is_playing(sfxMumbaRumble) playMumbaSound(sfxMumbaRumble, 100, 1.5);
 	break;
 	
 	case 13:
@@ -289,6 +299,7 @@ switch state {
 				grace=10;
 				squish=.2;
 			}
+			if !audio_is_playing(sfxMumbaRumble) playMumbaSound(sfxMumbaRumble, 100, .9);
 			setCameraShake(abs(horizontalSpeed)*.25);
 			horizontalSpeed+=rollDirection*.05;
 			if halfway horizontalSpeed+=rollDirection*.015;
@@ -317,6 +328,7 @@ switch state {
 							d=random(360);
 							createMumbaParticle(x+lengthdir_x(l, d), y+lengthdir_y(l, d), mumbaDustParticle);
 						}
+						playMumbaSound(sfxMumbaLouderExplosion, 100, 1.3);
 						setCameraShake(5);
 						angle=point_direction(0, 0, lengthdir_x(1, angle), lengthdir_y(1, angle));
 						setSizeToHp=true;
@@ -340,6 +352,7 @@ switch state {
 			grace=10;
 			state=15;
 			squish=-.25;
+			playMumbaSound(sfxMumbaMenuConfirm, 100, .6);
 			with mumbaEyeBall {
 				staringAtPlayer=true;
 			}
@@ -387,6 +400,7 @@ switch state {
 	
 	case 18:
 		timer++;
+		if !audio_is_playing(sfxMumbaRumble) playMumbaSound(sfxMumbaRumble, 100, 1.3);
 		if timer>90 {
 			state=19;
 			horizontalSpeed=15;
@@ -397,6 +411,7 @@ switch state {
 	
 	case 19:
 		if (x+horizontalSpeed)>(centerX*2-48) {
+			playMumbaSound(sfxMumbaLoudExplosion, 100, 1.2);
 			squish=-.5;
 			grace=10;
 			setCameraShake(5);
@@ -414,7 +429,9 @@ switch state {
 	
 	case 20:
 		angle+=20;
+		if !audio_is_playing(sfxMumbaRumble) playMumbaSound(sfxMumbaRumble);
 		if (x+horizontalSpeed)<(48) {
+			playMumbaSound(sfxMumbaLoudExplosion, 100, 1);
 			squish=-.5;
 			grace=10;
 			setCameraShake(5);
@@ -479,6 +496,7 @@ switch state {
 	case 22:
 		timer++;
 		if timer>30 {
+			playMumbaSound(sfxMumbaMenuConfirm, 100, .8);
 			state=BOSS_IDLE_STATE;
 			timer=-30;
 		}

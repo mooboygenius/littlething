@@ -5,8 +5,9 @@ event_inherited();
 useMumbaPhysics();
 
 xstart=x;
-ystart=y;
+ystart=y;		// <----- THIS
 
+// IGNORE THIS DOWN HERE
 if turnTowardsMovementDirection {
 	if horizontalSpeed!=0 {
 		xScale=lerp(xScale, sign(horizontalSpeed), .25);

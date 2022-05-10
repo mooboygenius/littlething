@@ -8,3 +8,4 @@ drawScript=function(x, y) {
 
 darknessSurface=-1;
 darknessSurface=surface_create(GAME_WIDTH, GAME_HEIGHT);
+forceDraw=true;

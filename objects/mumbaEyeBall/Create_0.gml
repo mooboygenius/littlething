@@ -12,3 +12,5 @@ drawScript=function(x, y) {
 	draw_sprite_ext(sprBossEyePupil, image_index, px, py, xScale*image_xscale+squish, yScale*image_yscale-squish, angle, c_white, 1);
 	shader_reset();
 }
+
+playedSound=false;

@@ -6,7 +6,7 @@ children=ds_list_create();
 menuItems=ds_list_create();
 background=instance_create_depth(0, 0, 100, mumbaBackground);
 with background {
-	sprite_index=sprMumbaPlaceholderShopBackground;
+	sprite_index=other.backgroundSprite;
 	loops=true;
 }
 

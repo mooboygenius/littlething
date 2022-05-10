@@ -14,6 +14,7 @@ makeDust=function() {
 gotHurt=false;
 getHurt=function(amt) {
 	/// @function getHurt(amount)
+	playMumbaSound(choose(sfxMumbaEnemyHurt1, sfxMumbaEnemyHurt2, sfxMumbaEnemyHurt3), 10, random_range(.8, 1.1));
 	grace=amt*10;
 	hp-=amt;
 	gotHurt=true;

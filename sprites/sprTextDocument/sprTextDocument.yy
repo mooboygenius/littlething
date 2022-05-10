@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "notepad",
+    "path": "folders/Sprites/notepad.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprTextDocument",

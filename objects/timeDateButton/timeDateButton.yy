@@ -32,8 +32,8 @@
     {"propertyId":{"name":"lockSize","path":"objects/button/button.yy",},"objectId":{"name":"button","path":"objects/button/button.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "general window setup stuff",
+    "path": "folders/Objects/general window setup stuff.yy",
   },
   "resourceVersion": "1.0",
   "name": "timeDateButton",

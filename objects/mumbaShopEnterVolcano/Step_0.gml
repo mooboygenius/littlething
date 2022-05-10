@@ -13,6 +13,8 @@ if ds_exists(children, ds_type_list) {
 	}
 }
 
+if !audio_is_playing(sfxMumbaRumble) playSound(sfxMumbaRumble);
+
 with parentWindow {
 	cameraShake=1;
 }

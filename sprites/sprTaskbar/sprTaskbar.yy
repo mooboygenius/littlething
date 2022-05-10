@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "windows and popups",
+    "path": "folders/Sprites/windows and popups.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprTaskbar",

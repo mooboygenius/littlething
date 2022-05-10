@@ -30,6 +30,8 @@ switch state {
 				grace=5;
 				canHurt=60;
 			}
+			playMumbaSound(sfxMumbaFungusManDeath, 100, 1.5);
+			playMumbaSound(sfxMumbaMagicHarp, 100, 1.3);
 			setCameraShake(2);
 		}
 	break;

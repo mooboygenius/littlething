@@ -52,6 +52,7 @@ switch state {
 		}
 		
 		if timer>t {
+			playSound(sfxMumbaLouderExplosion);
 			timer=0;
 			var fade=instance_create_depth(0, 0, -10000, mumbaBossWhiteFlash),
 			boss=instance_create_depth(x, y, depth, mumbaBoss);

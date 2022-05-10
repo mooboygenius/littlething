@@ -41,6 +41,7 @@
     {"propertyId":{"name":"greetingSprite","path":"objects/mumbaShopController/mumbaShopController.yy",},"objectId":{"name":"mumbaShopController","path":"objects/mumbaShopController/mumbaShopController.yy",},"value":"sprMumbaShopEmberNormal","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"normalSprite","path":"objects/mumbaShopController/mumbaShopController.yy",},"objectId":{"name":"mumbaShopController","path":"objects/mumbaShopController/mumbaShopController.yy",},"value":"sprMumbaShopEmberNormal","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"cantBuySprite","path":"objects/mumbaShopController/mumbaShopController.yy",},"objectId":{"name":"mumbaShopController","path":"objects/mumbaShopController/mumbaShopController.yy",},"value":"sprMumbaShopEmberNormal","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"backgroundSprite","path":"objects/mumbaShopController/mumbaShopController.yy",},"objectId":{"name":"mumbaShopController","path":"objects/mumbaShopController/mumbaShopController.yy",},"value":"sprMumbaVolcanoShopBackground","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "shops",
